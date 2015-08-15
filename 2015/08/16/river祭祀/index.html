@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>river祭祀 | Fractal128 | We are OIers</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="description" content="前些日子WCMG给我（蒟蒻）们上过二分图，也讲了这道题，然而课上晕头转向，并没有搞清楚什么，这次认真学习了然而并没有什么用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="river祭祀">
+<meta property="og:url" content="http://fractal128.gitcafe.io/2015/08/16/river祭祀/index.html">
+<meta property="og:site_name" content="Fractal128 | We are OIers">
+<meta property="og:description" content="前些日子WCMG给我（蒟蒻）们上过二分图，也讲了这道题，然而课上晕头转向，并没有搞清楚什么，这次认真学习了然而并没有什么用">
+<meta property="og:updated_time" content="2015-08-15T18:24:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="river祭祀">
+<meta name="twitter:description" content="前些日子WCMG给我（蒟蒻）们上过二分图，也讲了这道题，然而课上晕头转向，并没有搞清楚什么，这次认真学习了然而并没有什么用">
+  
+  
+    <link rel="icon" href="favicon.png">
+  
+  <link href="//fonts.useso.com/css?family=Open+Sans:400italic,400,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  
+  
+</head></html>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo" style="background-image: url(/css/images/logo.png)"></i><span class="site-title">Fractal128 | We are OIers</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/.">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/1.jpg"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+      
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://fractal128.gitcafe.io"></form>
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+        
+          <td><a class="main-nav-link" href="/.">Home</a></td>
+        
+          <td><a class="main-nav-link" href="/archives">Archives</a></td>
+        
+          <td><a class="main-nav-link" href="/categories">Categories</a></td>
+        
+          <td><a class="main-nav-link" href="/tags">Tags</a></td>
+        
+          <td><a class="main-nav-link" href="/about">About</a></td>
+        
+        <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="sitesearch" value="http://fractal128.gitcafe.io"></form>
+        </td>
+      </tr>
+    </table>
+  </div>
+</header>
+    <div class="outer">
+      
+        <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="/css/images/1.jpg">
+      <h2 id="name">fractal128</h2>
+      <h3 id="title">Programmer maybe</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>HangZhou, China</span>
+      <a id="follow" href="https://gitcafe.com/fractal128/">FOLLOW</a>
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        2
+        <span>posts</span>
+      </div>
+      <div class="article-info-block">
+        5
+        <span>tags</span>
+      </div>
+    </div>
+    
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+          
+          <td><a href="https://github.com/fractal128" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+          
+          <td><a href="/#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+          
+          <td><a href="https://www.facebook.com/profile.php?id=100008201833794" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+          
+          <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+          
+        </tr>
+      </table>
+    </div>
+    
+    
+  </div>
+</aside>
+      
+      <section id="main"><article id="post-river祭祀" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <img src="http://fractal128.gitcafe.io/css/images/01.jpg" class="article-banner">
+    
+    
+    
+      <header class="article-header">
+        <h1 class="article-title" itemprop="name">
+      river祭祀
+    </h1>
+        <div class="article-meta">
+          <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/08/16/river祭祀/">
+      <time datetime="2015-08-15T18:24:29.000Z" itemprop="datePublished">2015-08-16</time>
+    </a>
+  </div>
+          <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/二分图/">二分图</a>
+  </div>
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <p>前些日子WCMG给我（蒟蒻）们上过二分图，也讲了这道题，然而课上晕头转向，并没有搞清楚什么，这次认真学习了然而并没有什么用<br><a id="more"></a><br>题目链接：<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1143" target="_blank" rel="external">http://www.lydsy.com/JudgeOnline/problem.php?id=1143</a></p>
+<h2 id="题目大意:">题目大意:</h2><p>给出一个DAG，求出其最大点独立集（集合间任意两点不联通）</p>
+<blockquote>
+</blockquote>
+<h2 id="Solution&amp;Story:">Solution&amp;Story:</h2><p>根据foreseeable大爷的课件，此问题可以转化为求改图的最小可相交路径覆盖。（下文会解释为什么）</p>
+<p>我们可以先讨论一下如何求出改图的最小不可相交路径覆盖，可以讲图上的点u拆为(u,u’)，对于任意边(u,v),则连接(u,v’)，形成一个二分图，在上面跑二分图匹配，可得，</p>
+<blockquote>
+<p>  最小路径覆盖数＝G的点数－最小路径覆盖中的边数。</p>
+</blockquote>
+<p>应该使得最小路径覆盖中的边数尽量多，但是又不能让两条边在同一个顶点相交。</p>
+<p>所以又可以得到最小路径覆盖数＝G的点数－二分图最大匹配数。而如果如果要求的是可相交路径覆盖，只需要预处理时用floyd得到两点间联通性然后手动加边即可。</p>
+<p>下面再来填一下一开始的坑，为什么此问题可以转化为求改图的最小可相交路径覆盖。foreseeable大爷的课件上明明白白地写着dilworth定理，并写了一些介绍： 偏序集最大独立集（最长反链）＝最小链覆盖大小，然而这个公式我却根本看不懂，什么偏序集，什么反链，是该科普一下。</p>
+<ul>
+<li>偏序集：（可自行参看wikipedia）。而foreseeable大爷对其进行了简单说 明：什么是偏序关系:具有自反性，反对称性，传递性的一种关系。(更严谨定义请看组合数学类的书)</li>
+<li>链:一个集合,集合中的任意数可比。</li>
+<li>反链：一个集合，集合中任意的两数均不可以比较。</li>
+</ul>
+<p>接下来就是dilworth定理的严谨证明，foreseeable因课件空间太小不能完美地写下而留作了回家作业（费马既视感＝ ＝），下面便是交作业的时候了其实根本不会</p>
+<blockquote>
+<p>dilworth定理:最长反链＝最小链覆盖的大小（其对偶定理：最长链＝最小反链覆盖的大小</p>
+</blockquote>
+<ol>
+<li><ul>
+<li>首先，我们假设偏序集X最长反链长度为p,最小链覆盖为r。</li>
+<li>因为反链内的任意两点不可比，所以它们肯定出现于不同的链中，所以r≤p。</li>
+</ul>
+</li>
+<li><p>接下来我们分为两种情况进行考虑</p>
+<ul>
+<li>最长反链为最小元的集合或是最大元的集合或两者都是，那么我们可以取出一个最小元x和一个对应最大元y，然后通过归纳假设，可得偏序集X-{x,y}的最小链覆盖为r-1,加上x,y所形成的边覆盖，形成共有r条边的覆盖  </li>
+<li>最长链既不为最小元的集合也不为最大元的集合，此时设这个最长链为A，并定义一下两个集合：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> P = &#123;x | x对于A中的某个a,有a≤x&#125;</span><br><span class="line"><span class="built_in">set</span> Q = &#123;x | x对于A中的某个a,有x≤a&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<p>有性质如下</p>
+<ol>
+<li>由于存在一个不在A中的极小元，故 P ≠ X;</li>
+<li>由于存在一个不在A中的最大元，故 Q ≠ X;</li>
+<li>P ∩ Q = A, 这是因为假如存在一个元素 x, 在 P ∩ Q中但不在A中, 那么我们就会对A中的某元素a1和a2有a1&lt;x&lt;a2, 这与A是反链矛盾。</li>
+<li>P ∪ Q = X, 这是因为加入存在一个元素 x不在P ∪ Q 中，那么A ∪ {x}就是一个大小比A还要大的反链。</li>
+</ol>
+<p>然后我们可以使用归纳假设法，得到A+和A-都可以被划分为r个链，并且这些链的起点和终点分别都在A上，所以可以将A+和A-中的不同的链经过共同点而相连，最终形成覆盖的r条链。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxn <span class="number">110</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> n,m,ind,ans,tot;</span><br><span class="line"><span class="keyword">bool</span> f[maxn][maxn];</span><br><span class="line"><span class="keyword">int</span> state[maxn],p[maxn],fir[maxn];</span><br><span class="line"><span class="keyword">int</span> b[maxn*maxn],nex[maxn*maxn];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>; <span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123; <span class="keyword">if</span> (ch==<span class="string">'-'</span>) f=-<span class="number">1</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123; x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    b[++tot]=y; nex[tot]=fir[x]; fir[x]=tot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">hungray</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> u=fir[x]; u; u=nex[u])&#123;</span><br><span class="line">        <span class="keyword">if</span> (state[b[u]]!=ind)&#123;</span><br><span class="line">            state[b[u]]=ind;</span><br><span class="line">            <span class="keyword">if</span> (p[b[u]]==<span class="number">0</span>||hungray(p[b[u]]))&#123;</span><br><span class="line">                p[b[u]]=x;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n=read(); m=read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> x=read(); <span class="keyword">int</span> y=read();</span><br><span class="line">        f[x][y]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k=<span class="number">1</span>; k&lt;=n; k++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++)</span><br><span class="line">            f[i][j]|=f[i][k]&amp;f[k][j];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++)</span><br><span class="line">            <span class="keyword">if</span> (f[i][j]) add(i,j);</span><br><span class="line">    &#125;</span><br><span class="line">    ans=<span class="number">0</span>; ind=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        ind++;</span><br><span class="line">        <span class="keyword">if</span> (hungray(i)) ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,n-ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fractal128.gitcafe.io/2015/08/16/river祭祀/" data-id="cidde8ayz00080745h530h6qq" class="article-share-link">Share</a>
+      
+        <a href="http://fractal128.gitcafe.io/2015/08/16/river祭祀/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BZOJ/">BZOJ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctsc/">ctsc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dilworth定理/">dilworth定理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二分图/">二分图</a></li></ul>
+    </footer>
+  </div>
+  
+    <nav id="article-nav">
+  
+  
+    <a href="/2015/08/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World!</div>
+    </a>
+  
+</nav>
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'fractal128';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section></section>
+      
+        <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">recents</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/08/16/river祭祀/" class="thumbnail">
+  
+    <span style="background-image:url(/css/images/crown.jpg)" alt="river祭祀" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/二分图/">二分图</a></p>
+              <p class="item-title"><a href="/2015/08/16/river祭祀/" class="title">river祭祀</a></p>
+              <p class="item-date"><time datetime="2015-08-15T18:24:29.000Z" itemprop="datePublished">2015-08-16</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/08/16/hello-world/" class="thumbnail">
+  
+    <span style="background-image:url(/css/images/hello-world.jpg)" alt="Hello World!" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/随记/">随记</a></p>
+              <p class="item-title"><a href="/2015/08/16/hello-world/" class="title">Hello World!</a></p>
+              <p class="item-date"><time datetime="2015-08-15T17:38:09.000Z" itemprop="datePublished">2015-08-16</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/二分图/">二分图</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随记/">随记</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BZOJ/">BZOJ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctsc/">ctsc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dilworth定理/">dilworth定理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图/">二分图</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">tag cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BZOJ/" style="font-size: 10px">BZOJ</a> <a href="/tags/ctsc/" style="font-size: 10px">ctsc</a> <a href="/tags/dilworth定理/" style="font-size: 10px">dilworth定理</a> <a href="/tags/test/" style="font-size: 10px">test</a> <a href="/tags/二分图/" style="font-size: 10px">二分图</a>
+    </div>
+  </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+  
+    <div class="widget-wrap widget-list">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io/">Hexo</a>
+          </li>
+        
+          <li>
+            <a href="http://i301void.gitcafe.io">i301void</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 fractal128<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    <script>
+  var disqus_shortname = 'fractal128';
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.useso.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
