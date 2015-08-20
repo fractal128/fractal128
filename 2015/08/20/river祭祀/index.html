@@ -8,10 +8,10 @@
   <meta name="description" content="前些日子WCMG给我（蒟蒻）们上过二分图，也讲了这道题，然而课上晕头转向，并没有搞清楚什么，这次认真学习了然而并没有什么用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="river祭祀">
-<meta property="og:url" content="http://fractal128.gitcafe.io/2015/08/16/river祭祀/index.html">
+<meta property="og:url" content="http://fractal128.gitcafe.io/2015/08/20/river祭祀/index.html">
 <meta property="og:site_name" content="Fractal128 | We are OIers">
 <meta property="og:description" content="前些日子WCMG给我（蒟蒻）们上过二分图，也讲了这道题，然而课上晕头转向，并没有搞清楚什么，这次认真学习了然而并没有什么用">
-<meta property="og:updated_time" content="2015-08-15T18:30:48.000Z">
+<meta property="og:updated_time" content="2015-08-20T11:02:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="river祭祀">
 <meta name="twitter:description" content="前些日子WCMG给我（蒟蒻）们上过二分图，也讲了这道题，然而课上晕头转向，并没有搞清楚什么，这次认真学习了然而并没有什么用">
@@ -136,8 +136,8 @@
         <div class="article-meta">
           <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/08/16/river祭祀/">
-      <time datetime="2015-08-15T18:30:48.000Z" itemprop="datePublished">2015-08-16</time>
+    <a href="/2015/08/20/river祭祀/">
+      <time datetime="2015-08-20T11:02:09.000Z" itemprop="datePublished">2015-08-20</time>
     </a>
   </div>
           <div class="article-category">
@@ -193,13 +193,13 @@
 <li>P ∪ Q = X, 这是因为加入存在一个元素 x不在P ∪ Q 中，那么A ∪ {x}就是一个大小比A还要大的反链。</li>
 </ol>
 <p>然后我们可以使用归纳假设法，得到A+和A-都可以被划分为r个链，并且这些链的起点和终点分别都在A上，所以可以将A+和A-中的不同的链经过共同点而相连，最终形成覆盖的r条链。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxn <span class="number">110</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> n,m,ind,ans,tot;</span><br><span class="line"><span class="keyword">bool</span> f[maxn][maxn];</span><br><span class="line"><span class="keyword">int</span> state[maxn],p[maxn],fir[maxn];</span><br><span class="line"><span class="keyword">int</span> b[maxn*maxn],nex[maxn*maxn];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>; <span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123; <span class="keyword">if</span> (ch==<span class="string">'-'</span>) f=-<span class="number">1</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123; x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    b[++tot]=y; nex[tot]=fir[x]; fir[x]=tot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">hungray</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> u=fir[x]; u; u=nex[u])&#123;</span><br><span class="line">        <span class="keyword">if</span> (state[b[u]]!=ind)&#123;</span><br><span class="line">            state[b[u]]=ind;</span><br><span class="line">            <span class="keyword">if</span> (p[b[u]]==<span class="number">0</span>||hungray(p[b[u]]))&#123;</span><br><span class="line">                p[b[u]]=x;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n=read(); m=read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> x=read(); <span class="keyword">int</span> y=read();</span><br><span class="line">        f[x][y]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k=<span class="number">1</span>; k&lt;=n; k++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++)</span><br><span class="line">            f[i][j]|=f[i][k]&amp;f[k][j];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++)</span><br><span class="line">            <span class="keyword">if</span> (f[i][j]) add(i,j);</span><br><span class="line">    &#125;</span><br><span class="line">    ans=<span class="number">0</span>; ind=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        ind++;</span><br><span class="line">        <span class="keyword">if</span> (hungray(i)) ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,n-ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxn <span class="number">110</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> n,m,ind,ans,tot;</span><br><span class="line"><span class="keyword">bool</span> f[maxn][maxn];</span><br><span class="line"><span class="keyword">int</span> state[maxn],p[maxn],fir[maxn];</span><br><span class="line"><span class="keyword">int</span> b[maxn*maxn],nex[maxn*maxn];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>; <span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123; <span class="keyword">if</span> (ch==<span class="string">'-'</span>) f=-<span class="number">1</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123; x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    b[++tot]=y; nex[tot]=fir[x]; fir[x]=tot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">hungray</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> u=fir[x]; u; u=nex[u])&#123;</span><br><span class="line">        <span class="keyword">if</span> (state[b[u]]!=ind)&#123;</span><br><span class="line">            state[b[u]]=ind;</span><br><span class="line">            <span class="keyword">if</span> (p[b[u]]==<span class="number">0</span>||hungray(p[b[u]]))&#123;</span><br><span class="line">                p[b[u]]=x;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n=read(); m=read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> x=read(); <span class="keyword">int</span> y=read();</span><br><span class="line">        f[x][y]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k=<span class="number">1</span>; k&lt;=n; k++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++)</span><br><span class="line">            f[i][j]|=f[i][k]&amp;f[k][j];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++)</span><br><span class="line">            <span class="keyword">if</span> (f[i][j]) add(i,j);</span><br><span class="line">    &#125;</span><br><span class="line">    ans=<span class="number">0</span>; ind=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        ind++;</span><br><span class="line">        <span class="keyword">if</span> (hungray(i)) ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,n-ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fractal128.gitcafe.io/2015/08/16/river祭祀/" data-id="cidhfcox1000cjo45ogo64rmi" class="article-share-link">Share</a>
+      <a data-url="http://fractal128.gitcafe.io/2015/08/20/river祭祀/" data-id="cidk3muai000cef45agg2shm6" class="article-share-link">Share</a>
       
-        <a href="http://fractal128.gitcafe.io/2015/08/16/river祭祀/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://fractal128.gitcafe.io/2015/08/20/river祭祀/#disqus_thread" class="article-comment-link">Comments</a>
       
       <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BZOJ/">BZOJ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctsc/">ctsc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dilworth定理/">dilworth定理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二分图/">二分图</a></li></ul>
     </footer>
@@ -207,19 +207,10 @@
   
     <nav id="article-nav">
   
-    <a href="/2015/08/17/读东野圭吾《解忧杂货店》的感受/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          读东野圭吾《解忧杂货店》的感受
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/08/15/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/08/17/读东野圭吾《解忧杂货店》的感受/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World!</div>
+      <div class="article-nav-title">读东野圭吾《解忧杂货店》的感受</div>
     </a>
   
 </nav>
@@ -254,6 +245,23 @@
           <li>
             
             <div class="item-thumbnail">
+              <a href="/2015/08/20/river祭祀/" class="thumbnail">
+  
+    <span style="background-image:url(/css/images/crown.jpg)" alt="river祭祀" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/二分图/">二分图</a></p>
+              <p class="item-title"><a href="/2015/08/20/river祭祀/" class="title">river祭祀</a></p>
+              <p class="item-date"><time datetime="2015-08-20T11:02:09.000Z" itemprop="datePublished">2015-08-20</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
               <a href="/2015/08/17/读东野圭吾《解忧杂货店》的感受/" class="thumbnail">
   
     <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/jieyou.jpg-normal)" alt="读东野圭吾《解忧杂货店》的感受" class="thumbnail-image"></span>
@@ -265,23 +273,6 @@
               <p class="item-category"><a class="article-category-link" href="/categories/随记/">随记</a></p>
               <p class="item-title"><a href="/2015/08/17/读东野圭吾《解忧杂货店》的感受/" class="title">读东野圭吾《解忧杂货店》的感受</a></p>
               <p class="item-date"><time datetime="2015-08-16T20:09:34.000Z" itemprop="datePublished">2015-08-17</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/08/16/river祭祀/" class="thumbnail">
-  
-    <span style="background-image:url(/css/images/crown.jpg)" alt="river祭祀" class="thumbnail-image"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/二分图/">二分图</a></p>
-              <p class="item-title"><a href="/2015/08/16/river祭祀/" class="title">river祭祀</a></p>
-              <p class="item-date"><time datetime="2015-08-15T18:30:48.000Z" itemprop="datePublished">2015-08-16</time></p>
             </div>
           </li>
         
