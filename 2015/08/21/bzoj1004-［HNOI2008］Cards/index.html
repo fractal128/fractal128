@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>BZOJ1004:[HNOI2008]Cards | Fractal128 | We are OIers</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="description" content="算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好补作业 (dǎ yóu xì) 。。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BZOJ1004:[HNOI2008]Cards">
+<meta property="og:url" content="http://fractal128.gitcafe.io/2015/08/21/bzoj1004-［HNOI2008］Cards/index.html">
+<meta property="og:site_name" content="Fractal128 | We are OIers">
+<meta property="og:description" content="算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好补作业 (dǎ yóu xì) 。。。">
+<meta property="og:updated_time" content="2015-08-21T08:25:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BZOJ1004:[HNOI2008]Cards">
+<meta name="twitter:description" content="算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好补作业 (dǎ yóu xì) 。。。">
+  
+  
+    <link rel="icon" href="css/images/f1.ico">
+  
+  <link href="//fonts.useso.com/css?family=Open+Sans:400italic,400,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  
+  
+</head></html>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo" style="background-image: url(/css/images/logo.png)"></i><span class="site-title">Fractal128 | We are OIers</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/.">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/1.jpg"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+      
+      <div id="search-form-wrap">
+        <form action="//Google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search..."><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://fractal128.gitcafe.io"></form>
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+        
+          <td><a class="main-nav-link" href="/.">Home</a></td>
+        
+          <td><a class="main-nav-link" href="/archives">Archives</a></td>
+        
+          <td><a class="main-nav-link" href="/categories">Categories</a></td>
+        
+          <td><a class="main-nav-link" href="/tags">Tags</a></td>
+        
+          <td><a class="main-nav-link" href="/about">About</a></td>
+        
+        <td>
+          <form action="//Google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search..."><input type="hidden" name="sitesearch" value="http://fractal128.gitcafe.io"></form>
+        </td>
+      </tr>
+    </table>
+  </div>
+</header>
+    <div class="outer">
+      
+        <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="/css/images/1.jpg">
+      <h2 id="name">fractal128</h2>
+      <h3 id="title">Programmer maybe</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>HangZhou, China</span>
+      <a id="follow" href="https://gitcafe.com/fractal128/">FOLLOW</a>
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        4
+        <span>posts</span>
+      </div>
+      <div class="article-info-block">
+        10
+        <span>tags</span>
+      </div>
+    </div>
+    
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+          
+          <td><a href="https://github.com/fractal128" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+          
+          <td><a href="/#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+          
+          <td><a href="https://www.facebook.com/profile.php?id=100008201833794" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+          
+          <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+          
+        </tr>
+      </table>
+    </div>
+    
+    
+  </div>
+
+    <script type="text/javascript" src="http://www.xiami.com/widget/player-multi?uid=55528284&sid=1774520624,385041,3508431,385073,92815,1773710439,1773642404,&width=284&height=346&mainColor=29a7e0&backColor=ffffff&autoplay=1&mode=js"></script>
+</aside>
+      
+      <section id="main"><article id="post-bzoj1004-［HNOI2008］Cards" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <img src="http://7xl5lt.com1.z0.glb.clouddn.com/egoist02.jpg-b1" class="article-banner">
+    
+    
+    
+      <header class="article-header">
+        <h1 class="article-title" itemprop="name">
+      BZOJ1004:[HNOI2008]Cards
+    </h1>
+        <div class="article-meta">
+          <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/08/21/bzoj1004-［HNOI2008］Cards/">
+      <time datetime="2015-08-21T05:52:40.000Z" itemprop="datePublished">2015-08-21</time>
+    </a>
+  </div>
+          <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/群论/">群论</a>
+  </div>
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <p>算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好<ruby>补作业<rp> (</rp><rt>dǎ yóu xì</rt><rp>) </rp></ruby>。。。<br><a id="more"></a><br>题目链接：<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1004/&quot;OTZ&quot;" target="_blank" rel="external">http://www.lydsy.com/JudgeOnline/problem.php?id=1004</a></p>
+<h2 id="题目大意">题目大意</h2><p>n张牌用3种颜色进行染色，并且有m种洗牌的方式，并规定任意两种可以用洗牌而相互变化的染色方式算为一种，问总染色方法数。</p>
+<h2 id="Solution">Solution</h2><p>如若没听过置换群之类的东西请先向⬇️浏览<br>明显m种洗牌方式为m中1～n的排列，并且可发现加上不洗牌的方式，即1-&gt;1,2-&gt;2,….，构成一个置换群。<br>引用burnside引理可以得到：<br>$$ L={1\over|G|}\cdot\sum_{i=1}^{s} D(a_{i})\ $$<br>公式解释：其中s为置换的数量，D(a[i])表示的是第i个置换后不发生变化的染色可能(不动点)的数量，L为等价类的数量，即题目所求的答案。<br>然而我们发现D(a[i])并不是很好求，介绍一个循环的概念：</p>
+<ul>
+<li>每个置换都可以写若⼲干互不相交的循环的乘积,两个 循环(a1a2…an)和(b1b2…bn)互不相交是指ai≠bj, i,j=1,2,…,n。例如:<br>$$\begin{pmatrix} 1&amp;2&amp;3&amp;4&amp;5  \\ 3&amp;5&amp;1&amp;4&amp;2\end{pmatrix}=(13)(25)(4)$$<br>容易发现，不动点的所有循环内的颜色应该一样，题目就被转化为一个简单的背包问题：每次对整一个循环内的染色方案进行决策，可设计方程：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">f[i][r][b]表示前i 个循环用去r个红色染色，b个蓝色染色的方案，g可以通过前缀和-r-b进行计算。  </span><br><span class="line">转移方程: f[i][r][b]=f[i-<span class="number">1</span>][r<span class="operator">-s</span>[i]][b]+f[i-<span class="number">1</span>][r][b<span class="operator">-s</span>[i]]+f[i-<span class="number">1</span>][r][b]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>最后$$ ans = {每个方程的DP方程答案之和\over |G|} (mod    P) $$</p>
+<h2 id="Code">Code</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxn <span class="number">100</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> s[maxn],ss[maxn],a[maxn],dp[maxn][<span class="number">21</span>][<span class="number">21</span>];</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];</span><br><span class="line"><span class="keyword">int</span> Sr,Sg,Sb,m,M,sum;</span><br><span class="line"><span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x=<span class="number">0</span>; <span class="keyword">char</span> ch=getchar();</span><br><span class="line">	<span class="keyword">while</span> (ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>) ch=getchar();</span><br><span class="line">	<span class="keyword">while</span> (ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123; x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>; ch=getchar();&#125;</span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	vis[x]=<span class="number">1</span>; sum++;</span><br><span class="line">	<span class="keyword">if</span> (!vis[a[x]]) dfs(a[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ans=(a%=M);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> q=b-<span class="number">1</span>; q&gt;<span class="number">0</span>; q=q&gt;&gt;<span class="number">1</span>)&#123; <span class="keyword">if</span> (q&amp;<span class="number">1</span>) ans=(ans*a) % M; a=(a*a) % M;&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	Sr=read(); Sb=read(); Sg=read(); m=read(); M=read();</span><br><span class="line">	<span class="keyword">int</span> n=Sr+Sb+Sg;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m+<span class="number">1</span>; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span> (i!=m+<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++)&#123;</span><br><span class="line">				a[j]=read();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++) a[j]=j;</span><br><span class="line">		<span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span>(vis));</span><br><span class="line">		<span class="keyword">int</span> t=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++)</span><br><span class="line">		<span class="keyword">if</span> (!vis[j])&#123;</span><br><span class="line">			sum=<span class="number">0</span>;</span><br><span class="line">			dfs(j);</span><br><span class="line">			s[++t]=sum;</span><br><span class="line">			ss[t]=ss[t-<span class="number">1</span>]+sum;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">memset</span>(dp,<span class="number">0</span>,<span class="keyword">sizeof</span>(dp));</span><br><span class="line">		dp[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=t; j++)</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> r=<span class="number">0</span>; r&lt;=Sr; r++)</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> b=<span class="number">0</span>; b&lt;=Sb; b++)&#123;</span><br><span class="line">					<span class="keyword">int</span> g=ss[j]-r-b;</span><br><span class="line">					<span class="keyword">if</span> (g&lt;<span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">					<span class="keyword">int</span> tmp=<span class="number">0</span>;</span><br><span class="line">					<span class="keyword">if</span> (r&gt;=s[j]) tmp=(tmp+dp[j-<span class="number">1</span>][r-s[j]][b]) % M;</span><br><span class="line">					<span class="keyword">if</span> (b&gt;=s[j]) tmp=(tmp+dp[j-<span class="number">1</span>][r][b-s[j]]) % M;</span><br><span class="line">					<span class="keyword">if</span> (g&gt;=s[j]) tmp=(tmp+dp[j-<span class="number">1</span>][r][b]) % M;</span><br><span class="line">					dp[j][r][b]=tmp;</span><br><span class="line">				&#125;</span><br><span class="line">		ans+=dp[t][Sr][Sb]; ans%=M;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans*(<span class="built_in">pow</span>(m+<span class="number">1</span>,M-<span class="number">2</span>)) % M);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="And_more…">And more…</h1><p>最后对于群论和pólya进行介绍和初步证明。</p>
+<h3 id="群">群</h3><p>给定一个集合G={a,b,c,…}和集合G上的⼆二元运算,并满足:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a) 封闭性:∀a,b∈G, ∃c∈G, a*b=c。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b) 结合律:∀a,b,c∈G, (a*b)*c=a*(b*c)。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(c) 单位元:∃e∈G, ∀a∈G, a*e=e*a=a。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(d) 逆元:∀a∈G, ∃b∈G, a*b=b*a=e,记b=a-1。</p>
+<h3 id="置换">置换</h3><p>置换:n个元素1,2,…,n之间的一个置换表⽰示1被1到n 中的某个数a1取代,2被1到n中的某个数a2取代,直到n被1到n中的 某个数an取代,且a1,a2,…,an互不相同。</p>
+<h3 id="置换群">置换群</h3><p>将上面两个概念合并。置换群的元素是置换,运算是置换的连接。例如：<br>$$\begin{pmatrix} 1&amp;2&amp;3&amp;4  \\ 3&amp;1&amp;2&amp;4\end{pmatrix}\begin{pmatrix} 1&amp;2&amp;3&amp;4  \\ 4&amp;3&amp;2&amp;1\end{pmatrix}=\begin{pmatrix} 1&amp;2&amp;3&amp;4  \\ 2&amp;4&amp;3&amp;1\end{pmatrix}$$<br>ps.置换群需满足群的所有性质，例如本题如果不加入不洗牌的决策，即<br>$$\begin{pmatrix} 1&amp;2&amp;3&amp;4  \\ 3&amp;1&amp;2&amp;4\end{pmatrix} $$其余的置换并不能构成置换群。</p>
+<h3 id="一个有用的公式：|E[k]|*|Z[k]|=|G|">一个有用的公式：|E[k]|*|Z[k]|=|G|</h3><ul>
+<li><strong>Z[k] (K不动置换类)</strong>:设G是1…n的置换群。若K是1…n中某个元素, G中使K保持不变的置换的全体,记以Z[k],叫做G中使K保持不动的置换类,简称K不动置换类。</li>
+<li><strong>E[k](等价类)</strong>:设G是1…n的置换群。若K是1…n中某个元素,K在G 作⽤用下的轨迹,记作E[k]。即K在G的作⽤用下所能变化成的所有元素的集合。</li>
+<li><ruby>限于篇幅<rp> (</rp><rt>yīn wèi bú huì</rt><rp>) </rp></ruby>,这里就不对这个定理进行证明。</li>
+</ul>
+<h3 id="Burnside引理">Burnside引理</h3><p>设N={1,……,n}中共有L个等价类,N=E1+ E2+……+EL, 则当j和k属于同⼀一等价类时,有│Zj│=│Zk│。所以<br>$$ \sum_{k=1}^{n} |Z_k|=\sum_{i=1}^{L}{\sum_{k∈E_i}|Z_k|}=\sum_{i=1}^{L} {|E_i|\cdot |Z_i|}= L\cdot |G|$$<br>$$L={1\over{|G|}}\sum_{k=1}^{n}{|Z_k|}={1\over{|G|}}\sum_{j=1}^{s}{|D_j|}$$</p>
+<h3 id="pólya定理">pólya定理</h3><p>如果对于染色的数量没有限制，即将题目改成，用m种颜色染色，那么我们依然可以用某一置换不动点的每个循环的颜色相同的性质，得到式子：<br>$$L={1\over|G|}(m^{c(g1)}+m^{c(g2)}+…+m^{c(gn)})$$<br>其中c(gi)表示第i个置换的循环数量。</p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fractal128.gitcafe.io/2015/08/21/bzoj1004-［HNOI2008］Cards/" data-id="cidl812h30000q7450b4qxews" class="article-share-link">Share</a>
+      
+        <a href="http://fractal128.gitcafe.io/2015/08/21/bzoj1004-［HNOI2008］Cards/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BZOJ/">BZOJ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HNOI/">HNOI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/burnside引理/">burnside引理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/polya/">pólya</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/一般递推/">一般递推</a></li></ul>
+    </footer>
+  </div>
+  
+    <nav id="article-nav">
+  
+  
+    <a href="/2015/08/17/读东野圭吾《解忧杂货店》的感受/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">读东野圭吾《解忧杂货店》的感受</div>
+    </a>
+  
+</nav>
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'fractal128';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section></section>
+      
+        <aside id="sidebar">
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">recents</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/08/21/bzoj1004-［HNOI2008］Cards/" class="thumbnail">
+  
+    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/egoist01.jpg-normal)" alt="BZOJ1004:[HNOI2008]Cards" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/群论/">群论</a></p>
+              <p class="item-title"><a href="/2015/08/21/bzoj1004-［HNOI2008］Cards/" class="title">BZOJ1004:[HNOI2008]Cards</a></p>
+              <p class="item-date"><time datetime="2015-08-21T05:52:40.000Z" itemprop="datePublished">2015-08-21</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/08/17/读东野圭吾《解忧杂货店》的感受/" class="thumbnail">
+  
+    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/jieyou.jpg-normal)" alt="读东野圭吾《解忧杂货店》的感受" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/随记/">随记</a></p>
+              <p class="item-title"><a href="/2015/08/17/读东野圭吾《解忧杂货店》的感受/" class="title">读东野圭吾《解忧杂货店》的感受</a></p>
+              <p class="item-date"><time datetime="2015-08-16T20:09:34.000Z" itemprop="datePublished">2015-08-17</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/08/16/river祭祀/" class="thumbnail">
+  
+    <span style="background-image:url(/css/images/crown.jpg)" alt="BZOJ1143: [CTSC2008]祭祀river" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/二分图/">二分图</a></p>
+              <p class="item-title"><a href="/2015/08/16/river祭祀/" class="title">BZOJ1143: [CTSC2008]祭祀river</a></p>
+              <p class="item-date"><time datetime="2015-08-15T23:09:34.000Z" itemprop="datePublished">2015-08-16</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/08/15/hello-world/" class="thumbnail">
+  
+    <span style="background-image:url(/css/images/hello-world.jpg)" alt="Hello World!" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/随记/">随记</a></p>
+              <p class="item-title"><a href="/2015/08/15/hello-world/" class="title">Hello World!</a></p>
+              <p class="item-date"><time datetime="2015-08-15T06:09:34.000Z" itemprop="datePublished">2015-08-15</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/二分图/">二分图</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/群论/">群论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随记/">随记</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">tag cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BZOJ/" style="font-size: 20px">BZOJ</a> <a href="/tags/HNOI/" style="font-size: 10px">HNOI</a> <a href="/tags/burnside引理/" style="font-size: 10px">burnside引理</a> <a href="/tags/ctsc/" style="font-size: 10px">ctsc</a> <a href="/tags/dilworth定理/" style="font-size: 10px">dilworth定理</a> <a href="/tags/polya/" style="font-size: 10px">pólya</a> <a href="/tags/test/" style="font-size: 10px">test</a> <a href="/tags/一般递推/" style="font-size: 10px">一般递推</a> <a href="/tags/东野圭吾/" style="font-size: 10px">东野圭吾</a> <a href="/tags/二分图/" style="font-size: 10px">二分图</a>
+    </div>
+  </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+  
+    <div class="widget-wrap widget-list">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io/">Hexo</a>
+          </li>
+        
+          <li>
+            <a href="http://i301void.gitcafe.io">i301void</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 fractal128 <br> 
+      
+      <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+		</script>
+		<span id="busuanzi_container_site_uv">
+  		您是本站第<span id="busuanzi_value_site_uv"></span>位访客
+		</span><br>
+
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    <script>
+  var disqus_shortname = 'fractal128';
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.useso.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+messageStyle: "none"
+    }); 
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </div>
+</body>
