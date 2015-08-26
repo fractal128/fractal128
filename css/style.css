@@ -1988,3 +1988,31 @@ pre .javascript .function {
 #recent-post li:hover .item-title a {
   color: #38b7ea;
 }
+.toc-article {
+  background: #fafafa;
+  padding: 1em;
+  position: relative;
+  left: 0em;
+}
+.toc-article .toc-title {
+  padding-bottom: 2em;
+  font-weight: bold;
+}
+#toc {
+  line-height: 0.5em;
+  font-size: 1em;
+  float: left;
+}
+#toc .toc {
+  padding: 100;
+}
+#toc li,
+.toc li {
+  list-style-type: none;
+}
+#toc ol {
+  margin: 0;
+}
+#toc .toc-child {
+  padding-left: 1.5em;
+}
