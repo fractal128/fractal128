@@ -1638,90 +1638,140 @@ ol.toc {
 .article-entry .gist .gist-file .gist-meta a:hover {
   text-decoration: underline;
 }
-pre .comment,
-pre .title,
-pre .template_comment,
-pre .header,
-pre .javadoc {
-  color: #999;
+pre {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+  -webkit-text-size-adjust: none;
 }
-pre .variable,
-pre .attribute,
-pre .tag,
-pre .regexp,
-pre .ruby .constant,
-pre .xml .tag .title,
-pre .xml .pi,
-pre .xml .doctype,
-pre .html .doctype,
-pre .css .id,
-pre .css .class,
-pre .css .pseudo,
-pre .winutils,
-pre .method,
-pre .request,
-pre .status,
-pre .nginx .title,
-pre .diff .change,
-pre .special,
-pre .attr_selector,
-pre .important,
-pre .subst,
-pre .clojure .title,
-pre .deletion {
-  color: #f2777a;
+pre,
+.tag,
+.css .rules,
+.css .value,
+.aspectj .function,
+.css .function,
+.preprocessor,
+.pragma {
+  color: #ddd;
 }
-pre .number,
-pre .preprocessor,
-pre .preprocessor .keyword,
-pre .built_in,
-pre .literal,
-pre .params,
-pre .constant,
-pre .command,
-pre .lisp .body,
-pre .parent,
-pre .haskell .type {
-  color: #f99157;
+.strongemphasis,
+.strong,
+.emphasis {
+  color: #a8a8a2;
 }
-pre .class,
-pre .ruby .class .title,
-pre .css .rules .attribute,
-pre .addition {
-  color: #9c9;
+.bullet,
+.blockquote,
+.horizontal_rule,
+.number,
+.regexp,
+.alias .keyword,
+.literal,
+.hexcolor {
+  color: #ae81ff;
 }
-pre .string,
-pre .value,
-pre .inheritance,
-pre .ruby .symbol,
-pre .symbol .string,
-pre .xml .cdata,
-pre .function .title {
-  color: #9c9;
+.tag .value,
+.code,
+.title,
+.css .class,
+.class .title:last-child {
+  color: #a6e22e;
 }
-pre .css .hexcolor,
-pre .phpdoc,
-pre .tex .formula {
-  color: #6cc;
+.link_url {
+  font-size: 80%;
 }
-pre .function,
-pre .python .decorator,
-pre .python .title,
-pre .ruby .function .title,
-pre .ruby .title .keyword,
-pre .perl .sub,
-pre .javascript .title,
-pre .coffeescript .title,
-pre .localvars,
-pre .chunk,
-pre .decorator,
-pre .identifier,
-pre .vhdl {
-  color: #69c;
+.strong,
+.strongemphasis {
+  font-weight: bold;
 }
-pre .keyword,
-pre .javascript .function {
-  color: #c9c;
+.emphasis,
+.strongemphasis,
+.class .title:last-child,
+.typename {
+  font-style: italic;
+}
+.keyword,
+.ruby .class .keyword:first-child,
+.ruby .function .keyword,
+.function,
+.change,
+.winutils,
+.flow,
+.nginx .title,
+.tex .special,
+.header,
+.attribute,
+.symbol,
+.symbol .string,
+.tag .title,
+.value,
+.alias .keyword:first-child,
+.css .tag,
+.css .unit,
+.css .important {
+  color: #f92672;
+}
+.function .keyword,
+.class .keyword:first-child,
+.aspect .keyword:first-child,
+.constant,
+.typename,
+.built_in,
+.css .attribute {
+  color: #66d9ef;
+}
+.variable,
+.params,
+.class .title,
+.aspect .title {
+  color: #f8f8f2;
+}
+.string,
+.css .id,
+.subst,
+.type,
+.ruby .class .parent,
+.django .template_tag,
+.django .variable,
+.smalltalk .class,
+.django .filter .argument,
+.smalltalk .localvars,
+.smalltalk .array,
+.attr_selector,
+.pseudo,
+.addition,
+.stream,
+.envvar,
+.apache .tag,
+.apache .cbracket,
+.tex .command,
+.prompt,
+.link_label,
+.link_url {
+  color: #e6db74;
+}
+.comment,
+.javadoc,
+.annotation,
+.decorator,
+.pi,
+.doctype,
+.deletion,
+.shebang,
+.apache .sqbracket,
+.tex .formula {
+  color: #75715e;
+}
+.coffeescript .javascript,
+.javascript .xml,
+.tex .formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .cdata,
+.xml .php,
+.php .xml {
+  opacity: 0.5;
 }
 @media screen and (min-width: 1200px) {
   #sidebar {
@@ -2000,8 +2050,8 @@ pre .javascript .function {
 }
 #toc {
   line-height: 0.5em;
-  font-size: 1em;
-  float: left;
+  font-size: 0.7em;
+  float: right;
 }
 #toc .toc {
   padding: 100;
