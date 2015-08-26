@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://fractal128.gitcafe.io/2015/08/21/bzoj1004-［HNOI2008］Cards/index.html">
 <meta property="og:site_name" content="Fractal128 | We are OIers">
 <meta property="og:description" content="算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好补作业 (dǎ yóu xì) 。。。">
-<meta property="og:updated_time" content="2015-08-26T12:45:31.000Z">
+<meta property="og:updated_time" content="2015-08-26T12:50:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BZOJ1004:[HNOI2008]Cards">
 <meta name="twitter:description" content="算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好补作业 (dǎ yóu xì) 。。。">
@@ -155,7 +155,7 @@
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目大意"><span class="toc-number">1.</span> <span class="toc-text">题目大意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code"><span class="toc-number">3.</span> <span class="toc-text">Code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#And_more…"><span class="toc-number">4.</span> <span class="toc-text">And more…</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#群"><span class="toc-number">4.1.</span> <span class="toc-text">群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#置换"><span class="toc-number">4.2.</span> <span class="toc-text">置换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#置换群"><span class="toc-number">4.3.</span> <span class="toc-text">置换群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个有用的公式：|E[k]|*|Z[k]|=|G|"><span class="toc-number">4.4.</span> <span class="toc-text">一个有用的公式：|E[k]|*|Z[k]|=|G|</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Burnside引理"><span class="toc-number">4.5.</span> <span class="toc-text">Burnside引理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pólya定理"><span class="toc-number">4.6.</span> <span class="toc-text">pólya定理</span></a></li></ol></li></ol>
     </div>
     
-        <p><br><br><br><br><br><br><br><br><br><br><br><br><br>算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好<ruby>补作业<rp> (</rp><rt>dǎ yóu xì</rt><rp>) </rp></ruby>。。。<br><a id="more"></a><br>题目链接：<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1004/&quot;OTZ&quot;" target="_blank" rel="external">http://www.lydsy.com/JudgeOnline/problem.php?id=1004</a></p>
+        <p>算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好<ruby>补作业<rp> (</rp><rt>dǎ yóu xì</rt><rp>) </rp></ruby>。。。<br><a id="more"></a><br>题目链接：<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1004/&quot;OTZ&quot;" target="_blank" rel="external">http://www.lydsy.com/JudgeOnline/problem.php?id=1004</a></p>
 <h2 id="题目大意">题目大意</h2><p>n张牌用3种颜色进行染色，并且有m种洗牌的方式，并规定任意两种可以用洗牌而相互变化的染色方式算为一种，问总染色方法数。</p>
 <h2 id="Solution">Solution</h2><p>如若没听过置换群之类的东西请先向⬇️浏览<br>明显m种洗牌方式为m中1～n的排列，并且可发现加上不洗牌的方式，即1-&gt;1,2-&gt;2,….，构成一个置换群。<br>引用burnside引理可以得到：<br>$$ L={1\over|G|}\cdot\sum_{i=1}^{s} D(a_{i})\ $$<br>公式解释：其中s为置换的数量，D(a[i])表示的是第i个置换后不发生变化的染色可能(不动点)的数量，L为等价类的数量，即题目所求的答案。<br>然而我们发现D(a[i])并不是很好求，介绍一个循环的概念：</p>
 <ul>
@@ -178,7 +178,7 @@
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fractal128.gitcafe.io/2015/08/21/bzoj1004-［HNOI2008］Cards/" data-id="cidss2ye30000yg45efotdflo" class="article-share-link">Share</a>
+      <a data-url="http://fractal128.gitcafe.io/2015/08/21/bzoj1004-［HNOI2008］Cards/" data-id="cidss4ymd0000z045xltj1yms" class="article-share-link">Share</a>
       
         <a href="http://fractal128.gitcafe.io/2015/08/21/bzoj1004-［HNOI2008］Cards/#disqus_thread" class="article-comment-link">Comments</a>
       
