@@ -118,7 +118,7 @@ body,
 body {
   color: #565a5f;
   background: #f5f8f9;
-  font: 16px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
+  font: 16px "HanziPen SC Regular", "Comic Sans MS", "open sans";
   -webkit-text-size-adjust: 100%;
 }
 a {
@@ -218,6 +218,8 @@ a:visited {
   background: #fff;
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 .article-entry h1,
 .widget h1 {
@@ -536,7 +538,7 @@ a:visited {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font: 16px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
+  font: 16px "HanziPen SC Regular", "Comic Sans MS", "open sans";
   border: 1px solid #eceff2;
 }
 .search-form-input:focus {
@@ -901,14 +903,14 @@ a.article-title:hover {
 }
 .article-entry blockquote {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.4em;
-  margin: 1.6em 20px;
-  text-align: center;
+  font-size: 1em;
+  margin: 1.6em 170px;
+  text-align: left;
 }
 .article-entry blockquote footer {
   font-size: 16px;
   margin: 1.6em 0;
-  font-family: "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
+  font-family: "HanziPen SC Regular", "Comic Sans MS", "open sans";
 }
 .article-entry blockquote footer cite:before {
   content: "—";
@@ -1113,7 +1115,7 @@ a.article-title:hover {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font: 14px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
+  font: 14px "HanziPen SC Regular", "Comic Sans MS", "open sans";
   padding: 0 15px;
   color: #565a5f;
   outline: none;
@@ -1527,6 +1529,8 @@ ol.toc {
   overflow: auto;
   color: #ccc;
   line-height: 25.6px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 .article-entry .highlight .gutter pre,
 .article-entry .gist .gist-file .gist-data .line-numbers {
@@ -1535,7 +1539,7 @@ ol.toc {
 }
 .article-entry pre,
 .article-entry code {
-  font-family: "Gill Sans", "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: STkaiti, "Gill Sans", "Source Code Pro";
 }
 .article-entry code {
   background: #f5f8f9;
@@ -1594,7 +1598,7 @@ ol.toc {
 }
 .article-entry .gist .gist-file {
   border: none;
-  font-family: "Gill Sans", "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: STkaiti, "Gill Sans", "Source Code Pro";
   margin: 0;
 }
 .article-entry .gist .gist-file .gist-data {
@@ -1625,7 +1629,7 @@ ol.toc {
 .article-entry .gist .gist-file .gist-meta {
   background: #34383d;
   color: #999;
-  font: 0.85em "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
+  font: 0.85em "HanziPen SC Regular", "Comic Sans MS", "open sans";
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
