@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://fractal128.gitcafe.io/"/>
-  <updated>2015-08-26T12:58:25.000Z</updated>
+  <updated>2015-08-26T13:19:29.000Z</updated>
   <id>http://fractal128.gitcafe.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://fractal128.gitcafe.io/2015/08/21/bzoj1004-%EF%BC%BBHNOI2008%EF%BC%BDCards/"/>
     <id>http://fractal128.gitcafe.io/2015/08/21/bzoj1004-［HNOI2008］Cards/</id>
     <published>2015-08-21T05:52:40.000Z</published>
-    <updated>2015-08-26T12:58:25.000Z</updated>
+    <updated>2015-08-26T13:19:29.000Z</updated>
     <content type="html"><![CDATA[<p>算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好<ruby>补作业<rp> (</rp><rt>dǎ yóu xì</rt><rp>) </rp></ruby>。。。<br><a id="more"></a><br>题目链接<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1004/&quot;OTZ&quot;" target="_blank" rel="external">在此</a><br><br><br></p>
 <h2 id="题目大意">题目大意</h2><p>n张牌用3种颜色进行染色，并且有m种洗牌的方式，并规定任意两种可以用洗牌而相互变化的染色方式算为一种，问总染色方法数。</p>
 <h2 id="Solution">Solution</h2><p>如若没听过置换群之类的东西请先向⬇️浏览<br>明显m种洗牌方式为m中1～n的排列，并且可发现加上不洗牌的方式，即1-&gt;1,2-&gt;2,….，构成一个置换群。<br>引用burnside引理可以得到：<br>$$ L={1\over|G|}\cdot\sum_{i=1}^{s} D(a_{i})\ $$<br>公式解释：其中s为置换的数量，D(a[i])表示的是第i个置换后不发生变化的染色可能(不动点)的数量，L为等价类的数量，即题目所求的答案。<br>然而我们发现D(a[i])并不是很好求，介绍一个循环的概念：</p>
@@ -39,8 +39,7 @@
 <li><ruby>限于篇幅<rp> (</rp><rt>yīn wèi bú huì</rt><rp>) </rp></ruby>,这里就不对这个定理进行证明。</li>
 </ul>
 <h3 id="Burnside引理">Burnside引理</h3><p>设N={1,……,n}中共有L个等价类,N=E1+ E2+……+EL, 则当j和k属于同一等价类时,有│Zj│=│Zk│。所以<br>$$ \sum_{k=1}^{n} |Z_k|=\sum_{i=1}^{L}{\sum_{k∈E_i}|Z_k|}=\sum_{i=1}^{L} {|E_i|\cdot |Z_i|}= L\cdot |G|$$<br>$$L={1\over{|G|}}\sum_{k=1}^{n}{|Z_k|}={1\over{|G|}}\sum_{j=1}^{s}{|D_j|}$$</p>
-<h3 id="pólya定理">pólya定理</h3><p>如果对于染色的数量没有限制，即将题目改成，用m种颜色染色，那么我们依然可以用某一置换不动点的每个循环的颜色相同的性质，得到式子：<br>$$L={1\over|G|}(m^{c(g1)}+m^{c(g2)}+…+m^{c(gn)})$$<br>其中c(gi)表示第i个置换的循环数量。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;link rel=&#34;stylesheet&#34; href=&#34;/path/to/styles/default.css&#34;&#62;&#10;&#60;script src=&#34;/path/to/highlight.pack.js&#34;&#62;&#60;/script&#62;&#10;&#60;script&#62;hljs.initHighlightingOnLoad();&#60;/script&#62;</span><br></pre></td></tr></table></figure>]]></content>
+<h3 id="pólya定理">pólya定理</h3><p>如果对于染色的数量没有限制，即将题目改成，用m种颜色染色，那么我们依然可以用某一置换不动点的每个循环的颜色相同的性质，得到式子：<br>$$L={1\over|G|}(m^{c(g1)}+m^{c(g2)}+…+m^{c(gn)})$$<br>其中c(gi)表示第i个置换的循环数量。</p>]]></content>
     <summary type="html">
     <![CDATA[<p>算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好<ruby>补作业<rp> (</rp><rt>dǎ yóu xì</rt><rp>) </rp></ruby>。。。<br>]]>
     
