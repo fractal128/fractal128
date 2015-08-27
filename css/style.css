@@ -118,7 +118,7 @@ body,
 body {
   color: #565a5f;
   background: #f5f8f9;
-  font: 16px "HanziPen SC Regular", "Comic Sans MS", "open sans";
+  font: 16px "HanziPen SC Regular", "Gill Sans", "open sans";
   -webkit-text-size-adjust: 100%;
 }
 a {
@@ -538,7 +538,7 @@ a:visited {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font: 16px "HanziPen SC Regular", "Comic Sans MS", "open sans";
+  font: 16px "HanziPen SC Regular", "Gill Sans", "open sans";
   border: 1px solid #eceff2;
 }
 .search-form-input:focus {
@@ -910,7 +910,7 @@ a.article-title:hover {
 .article-entry blockquote footer {
   font-size: 16px;
   margin: 1.6em 0;
-  font-family: "HanziPen SC Regular", "Comic Sans MS", "open sans";
+  font-family: "HanziPen SC Regular", "Gill Sans", "open sans";
 }
 .article-entry blockquote footer cite:before {
   content: "—";
@@ -1115,7 +1115,7 @@ a.article-title:hover {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font: 14px "HanziPen SC Regular", "Comic Sans MS", "open sans";
+  font: 14px "HanziPen SC Regular", "Gill Sans", "open sans";
   padding: 0 15px;
   color: #565a5f;
   outline: none;
@@ -1629,7 +1629,7 @@ ol.toc {
 .article-entry .gist .gist-file .gist-meta {
   background: #34383d;
   color: #999;
-  font: 0.85em "HanziPen SC Regular", "Comic Sans MS", "open sans";
+  font: 0.85em "HanziPen SC Regular", "Gill Sans", "open sans";
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
