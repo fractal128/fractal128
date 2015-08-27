@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://fractal128.gitcafe.io/2015/08/21/bzoj1004-［HNOI2008］Cards/index.html">
 <meta property="og:site_name" content="Fractal128 | We are OIers">
 <meta property="og:description" content="算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好补作业 (dǎ yóu xì) 。。。">
-<meta property="og:updated_time" content="2015-08-26T13:19:29.000Z">
+<meta property="og:updated_time" content="2015-08-27T15:32:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BZOJ1004:[HNOI2008]Cards">
 <meta name="twitter:description" content="算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好补作业 (dǎ yóu xì) 。。。">
@@ -160,7 +160,7 @@
     
         <p>算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好<ruby>补作业<rp> (</rp><rt>dǎ yóu xì</rt><rp>) </rp></ruby>。。。<br><a id="more"></a><br>题目链接<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1004/&quot;OTZ&quot;" target="_blank" rel="external">在此</a><br><br><br></p>
 <h2 id="题目大意">题目大意</h2><p>n张牌用3种颜色进行染色，并且有m种洗牌的方式，并规定任意两种可以用洗牌而相互变化的染色方式算为一种，问总染色方法数。</p>
-<h2 id="Solution">Solution</h2><p>如若没听过置换群之类的东西请先向⬇️浏览<br>明显m种洗牌方式为m中1～n的排列，并且可发现加上不洗牌的方式，即1-&gt;1,2-&gt;2,….，构成一个置换群。<br>引用burnside引理可以得到：<br>$$ L={1\over|G|}\cdot\sum_{i=1}^{s} D(a_{i})\ $$<br>公式解释：其中s为置换的数量，D(a[i])表示的是第i个置换后不发生变化的染色可能(不动点)的数量，L为等价类的数量，即题目所求的答案。<br>然而我们发现D(a[i])并不是很好求，介绍一个循环的概念：</p>
+<h2 id="Solution">Solution</h2><p>如若没听过置换群之类的东西请先向⬇️浏览<br>明显m种洗牌方式为m中1～n的排列，并且可发现加上不洗牌的方式，即1-&gt;1,2-&gt;2,….,n-&gt;n构成一个置换群。<br>引用burnside引理可以得到：<br>$$ L={1\over|G|}\cdot\sum_{i=1}^{s} D(a_{i})\ $$<br>公式解释：其中s为置换的数量，D(a[i])表示的是第i个置换后不发生变化的染色可能(不动点)的数量，L为等价类的数量，即题目所求的答案。<br>然而我们发现D(a[i])并不是很好求，介绍一个循环的概念：</p>
 <ul>
 <li>每个置换都可以写若⼲干互不相交的循环的乘积,两个 循环(a1a2…an)和(b1b2…bn)互不相交是指ai≠bj, i,j=1,2,…,n。例如:<br>$$\begin{pmatrix} 1&amp;2&amp;3&amp;4&amp;5  \\ 3&amp;5&amp;1&amp;4&amp;2\end{pmatrix}=(13)(25)(4)$$<br>容易发现，不动点的所有循环内的颜色应该一样，题目就被转化为一个简单的背包问题：每次对整一个循环内的染色方案进行决策，可设计方程：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f[i][r][b]表示前i 个循环用去r个红色染色，b个蓝色染色的方案，g可以通过前缀和-r-b进行计算。  </span><br><span class="line">转移方程: f[i][r][b]=f[i-<span class="number">1</span>][r<span class="operator">-s</span>[i]][b]+f[i-<span class="number">1</span>][r][b<span class="operator">-s</span>[i]]+f[i-<span class="number">1</span>][r][b]</span><br></pre></td></tr></table></figure>
 </li>
@@ -181,7 +181,7 @@
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fractal128.gitcafe.io/2015/08/21/bzoj1004-［HNOI2008］Cards/" data-id="cidud9vty0000td45y034zoem" class="article-share-link">Share</a>
+      <a data-url="http://fractal128.gitcafe.io/2015/08/21/bzoj1004-［HNOI2008］Cards/" data-id="ciduddqbl0000ua45ak02r1e5" class="article-share-link">Share</a>
       
         <a href="http://fractal128.gitcafe.io/2015/08/21/bzoj1004-［HNOI2008］Cards/#disqus_thread" class="article-comment-link">Comments</a>
       

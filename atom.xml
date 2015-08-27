@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://fractal128.gitcafe.io/"/>
-  <updated>2015-08-26T13:19:29.000Z</updated>
+  <updated>2015-08-27T15:32:07.000Z</updated>
   <id>http://fractal128.gitcafe.io/</id>
   
   <author>
@@ -19,10 +19,10 @@
     <link href="http://fractal128.gitcafe.io/2015/08/21/bzoj1004-%EF%BC%BBHNOI2008%EF%BC%BDCards/"/>
     <id>http://fractal128.gitcafe.io/2015/08/21/bzoj1004-［HNOI2008］Cards/</id>
     <published>2015-08-21T05:52:40.000Z</published>
-    <updated>2015-08-26T13:19:29.000Z</updated>
+    <updated>2015-08-27T15:32:07.000Z</updated>
     <content type="html"><![CDATA[<p>算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好<ruby>补作业<rp> (</rp><rt>dǎ yóu xì</rt><rp>) </rp></ruby>。。。<br><a id="more"></a><br>题目链接<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1004/&quot;OTZ&quot;" target="_blank" rel="external">在此</a><br><br><br></p>
 <h2 id="题目大意">题目大意</h2><p>n张牌用3种颜色进行染色，并且有m种洗牌的方式，并规定任意两种可以用洗牌而相互变化的染色方式算为一种，问总染色方法数。</p>
-<h2 id="Solution">Solution</h2><p>如若没听过置换群之类的东西请先向⬇️浏览<br>明显m种洗牌方式为m中1～n的排列，并且可发现加上不洗牌的方式，即1-&gt;1,2-&gt;2,….，构成一个置换群。<br>引用burnside引理可以得到：<br>$$ L={1\over|G|}\cdot\sum_{i=1}^{s} D(a_{i})\ $$<br>公式解释：其中s为置换的数量，D(a[i])表示的是第i个置换后不发生变化的染色可能(不动点)的数量，L为等价类的数量，即题目所求的答案。<br>然而我们发现D(a[i])并不是很好求，介绍一个循环的概念：</p>
+<h2 id="Solution">Solution</h2><p>如若没听过置换群之类的东西请先向⬇️浏览<br>明显m种洗牌方式为m中1～n的排列，并且可发现加上不洗牌的方式，即1-&gt;1,2-&gt;2,….,n-&gt;n构成一个置换群。<br>引用burnside引理可以得到：<br>$$ L={1\over|G|}\cdot\sum_{i=1}^{s} D(a_{i})\ $$<br>公式解释：其中s为置换的数量，D(a[i])表示的是第i个置换后不发生变化的染色可能(不动点)的数量，L为等价类的数量，即题目所求的答案。<br>然而我们发现D(a[i])并不是很好求，介绍一个循环的概念：</p>
 <ul>
 <li>每个置换都可以写若⼲干互不相交的循环的乘积,两个 循环(a1a2…an)和(b1b2…bn)互不相交是指ai≠bj, i,j=1,2,…,n。例如:<br>$$\begin{pmatrix} 1&amp;2&amp;3&amp;4&amp;5  \\ 3&amp;5&amp;1&amp;4&amp;2\end{pmatrix}=(13)(25)(4)$$<br>容易发现，不动点的所有循环内的颜色应该一样，题目就被转化为一个简单的背包问题：每次对整一个循环内的染色方案进行决策，可设计方程：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f[i][r][b]表示前i 个循环用去r个红色染色，b个蓝色染色的方案，g可以通过前缀和-r-b进行计算。  </span><br><span class="line">转移方程: f[i][r][b]=f[i-<span class="number">1</span>][r<span class="operator">-s</span>[i]][b]+f[i-<span class="number">1</span>][r][b<span class="operator">-s</span>[i]]+f[i-<span class="number">1</span>][r][b]</span><br></pre></td></tr></table></figure>
 </li>
@@ -66,8 +66,8 @@
     <link href="http://fractal128.gitcafe.io/2015/08/17/%E8%AF%BB%E4%B8%9C%E9%87%8E%E5%9C%AD%E5%90%BE%E3%80%8A%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E5%BA%97%E3%80%8B%E7%9A%84%E6%84%9F%E5%8F%97/"/>
     <id>http://fractal128.gitcafe.io/2015/08/17/读东野圭吾《解忧杂货店》的感受/</id>
     <published>2015-08-16T20:09:34.000Z</published>
-    <updated>2015-08-27T04:37:56.000Z</updated>
-    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如今回顾写作过程，我发现自己始终在思考一个问题：站在人生的岔路口，人究竟应该怎么做？我希望读者能在掩卷时喃喃自语：我从没读过这样的小说。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;————东野圭吾《解忧杂货店》<br><a id="more"></a></p>
+    <updated>2015-08-27T15:52:22.000Z</updated>
+    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如今回顾写作过程，我发现自己始终在思考一个问题：站在人生的岔路口，人究竟应该怎么做？我希望读者能在掩卷时喃喃自语：我从没读过这样的小说。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;————东野圭吾《解忧杂货店》<br><a id="more"></a></p>
 <h2 id="Preface">Preface</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上个月我看了一本东野圭吾的书——《解忧杂货店》，若因为不是暑假的征文作业，也许人生中便要错失错失一次如此奇幻的经历了。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只花了一个下午，便在咖啡馆读完了这整本书，是一种流畅，快活的感觉。不同的人，不同的故事，个个感人泪下，而在这些珍珠连成项链的时候，相信多数人都会不禁地赞叹世间万物的奇妙。给我的感觉，这本书就像是豆瓣里很多人评价的那样——最不“东野圭吾”的东野圭吾小说。  </p>
 <h2 id="About">About</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;整本书讲了很多的故事，多到读完全书以后很有可能记不住所有的故事，但神奇的是，你对于这些故事的感觉依然强烈。这份独特的心情，伴你一直从开篇到了结尾。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我也不想赘述每一个故事的起因经过，只是大概的聊聊这个杂货店。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这间杂货店因为因为店主爷爷和附近孩子们开的一些玩笑而提供了解忧的服务，起初也只是些孩子们的玩笑，慢慢地，店里收到了真正的烦恼和忧愁，而店主爷爷浪矢也用认真、真诚的态度回信，虽然有些时候并不能提供什么完美的解决方法，却也可以让那些咨询的人感到认同感或是有人陪伴的感觉，其实也如书中浪矢爷爷所说的一样“<strong>通常咨询者心里已经有了答案，找人咨询的目的，只是为了确认这个答案是正确的。所以，有些咨询者在看了我的回信后，会再写信给我，可能是我的回答和他原本想的不一样。</strong>”<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时光一转30多年过去了，网路上再次传来了有关于“解忧杂货店”的消息，称当年的杂货店咨询窗口会“复活”，希望当年接受过咨询的人们可以写一封回信诉说这些年来因为这些建议而带来的影响。那些因为浪矢爷爷的回信而改变了一生的人们纷纷从老店的卷闸门投入或是倾诉或是感激的回信，令人感到神奇的是，这些信件竟穿越了时空来到了33年前的杂货店，交到了浪矢的手中。而那些没有被浪矢所看见的咨询信，也鬼使神差地来到了33年后，被三个在店中暂时避难的小偷给拿到了，小偷们利用了过去的历史，即求助人的未来，真诚地给出自己的见解，虽然文化有限，连书写时也是错字连篇，也第一次感觉到了帮助别人解决烦恼的开心。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;与常常出现出现于东野书中的连环杀人，密室悬疑不同，这本书中的故事更为“生活”，例如亲人与事业之间的两难、背井离乡打拼与继承家业的选择，这些都是常能出现于生活中的事，是每个人的故事。写出这样一个又一个本就闪耀的故事，再用上穿越时空这般神奇的丝线将其缀连，作者究竟想表达些什么呢？</p>
 <h2 id="Thoughts">Thoughts</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;思索中，我想起浪矢爷爷最后给那个投递空白信件的人的回信，其中的一句令我印象深刻：“<strong>地图是白纸当然很伤脑筋，任何人都会不知所措。但是，不妨换一个角度思考，正因为是白纸，所以可以画任何地图，一切都掌握在你自己手上。你很自由，充满了无限可能。这是很棒的事。我衷心祈祷你可以相信自己，无悔地燃烧自己的人生。</strong> ”这段励志的文字足以激起每个迷茫的人内心的希望，白纸并不意味着你无处可走，相反，它意味着你无处不可走。丢失了地图，并不会迷路，而是有了重新画一张地图的机会。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有时想想，人生便就如同在一张地图上的旅程，有时走的是阳关大道，有事却是泥泞小路，也会碰上很多的岔路口，人们会在哪儿稍作停留，权衡着应该走哪条路才会有更好的未来。这是，也有人会犯难，求助别人的帮助，征求别人的意见，期待别人的赞同或是别人的经验。然而听了再多，想了再多，真正做出了这次改变的，以及整个人生的改变的，仍然是脚下的这个路口和被选择的那条路。一旦决定，大家便要各自向前，站在新的起点，继续旅程。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;没有人会在那一刻知道选择了左或右，在以后意味着什么，唯一能告诉你事实的是未来。它就像浪矢先生般，接受了每一个人的咨询，耐心细致地进行回答，并在合适的时刻给你它的回信。</p>
@@ -78,7 +78,7 @@
 </blockquote>
 <blockquote><p>I shall be telling this with a sigh<br>Somewhere ages and ages hence:<br>Two roads diverged in a wood, and I–<br>I took the one less traveled by,<br>And that has made all the difference.</p><footer><strong>Robert Frost</strong><cite>The Road Not Taken</cite></footer></blockquote>]]></content>
     <summary type="html">
-    <![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如今回顾写作过程，我发现自己始终在思考一个问题：站在人生的岔路口，人究竟应该怎么做？我希望读者能在掩卷时喃喃自语：我从没读过这样的小说。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;————东野圭吾《解忧杂货店》<br>]]>
+    <![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如今回顾写作过程，我发现自己始终在思考一个问题：站在人生的岔路口，人究竟应该怎么做？我希望读者能在掩卷时喃喃自语：我从没读过这样的小说。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;————东野圭吾《解忧杂货店》<br>]]>
     
     </summary>
     
