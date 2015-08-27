@@ -1,4 +1,5 @@
 body {
+  zoom: 1;
   width: 100%;
 }
 body:before,
@@ -118,7 +119,7 @@ body,
 body {
   color: #565a5f;
   background: #f5f8f9;
-  font: 16px "HanziPen SC Regular", "Gill Sans", "open sans";
+  font: 16px "Comic Sans MS", STkaiti;
   -webkit-text-size-adjust: 100%;
 }
 a {
@@ -129,6 +130,7 @@ a:visited {
   color: #38b7ea;
 }
 .outer {
+  zoom: 1;
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 20px;
@@ -382,6 +384,7 @@ a:visited {
   border-top: 1px solid #eceff2;
 }
 .header-sub ul {
+  zoom: 1;
   margin: 0 15px;
 }
 .header-sub ul:before,
@@ -459,6 +462,7 @@ a:visited {
   }
 }
 #sub-nav #profile-nav #profile-anchor {
+  zoom: 1;
   display: block;
   height: 40px;
   line-height: 40px;
@@ -538,7 +542,7 @@ a:visited {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font: 16px "HanziPen SC Regular", "Gill Sans", "open sans";
+  font: 16px "Comic Sans MS", STkaiti;
   border: 1px solid #eceff2;
 }
 .search-form-input:focus {
@@ -549,6 +553,7 @@ a:visited {
   overflow-x: auto;
 }
 #main-nav-mobile .menu {
+  zoom: 1;
   margin: 0;
   height: 48px;
 }
@@ -660,6 +665,7 @@ a:visited {
   background: #49c8fb;
 }
 #profile .inner .article-info {
+  zoom: 1;
   padding: 0px;
 }
 #profile .inner .article-info:before,
@@ -773,6 +779,9 @@ a:visited {
   width: 100%;
   height: auto;
 }
+.article-meta {
+  zoom: 1;
+}
 .article-meta:before,
 .article-meta:after {
   content: "";
@@ -830,6 +839,7 @@ a.article-title:hover {
   color: #38b7ea;
 }
 .article-entry {
+  zoom: 1;
   color: #565a5f;
   padding: 0 20px;
   line-height: 1.6em;
@@ -902,7 +912,7 @@ a.article-title:hover {
   padding: 10px 0;
 }
 .article-entry blockquote {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Times New Roman";
   font-size: 1em;
   margin: 1.6em 170px;
   text-align: left;
@@ -910,7 +920,7 @@ a.article-title:hover {
 .article-entry blockquote footer {
   font-size: 16px;
   margin: 1.6em 0;
-  font-family: "HanziPen SC Regular", "Gill Sans", "open sans";
+  font-family: "Comic Sans MS", STkaiti;
 }
 .article-entry blockquote footer cite:before {
   content: "—";
@@ -971,6 +981,7 @@ a.article-title:hover {
   text-shadow: 0 1px #169cd2;
 }
 .article-footer {
+  zoom: 1;
   font-size: 0.85em;
   line-height: 1.6em;
   border-top: 1px solid #eceff2;
@@ -1018,6 +1029,7 @@ a.article-title:hover {
   padding-right: 6px;
 }
 #article-nav {
+  zoom: 1;
   position: relative;
 }
 #article-nav:before,
@@ -1115,7 +1127,7 @@ a.article-title:hover {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font: 14px "HanziPen SC Regular", "Gill Sans", "open sans";
+  font: 14px "Comic Sans MS", STkaiti;
   padding: 0 15px;
   color: #565a5f;
   outline: none;
@@ -1126,6 +1138,7 @@ a.article-title:hover {
   line-height: 36px;
 }
 .article-share-links {
+  zoom: 1;
   background: #f5f8f9;
 }
 .article-share-links:before,
@@ -1250,6 +1263,8 @@ ol.toc {
   font-size: 1em;
   color: color-heading;
   opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
   -webkit-transition: opacity 1s ease-out;
   -moz-transition: opacity 1s ease-out;
   -ms-transition: opacity 1s ease-out;
@@ -1265,6 +1280,8 @@ ol.toc {
   -ms-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
   opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 #toc.toc-aside a {
   -webkit-transition: color 1s ease-out;
@@ -1285,6 +1302,9 @@ ol.toc {
 }
 #comments a {
   color: #38b7ea;
+}
+.archives {
+  zoom: 1;
 }
 .archives:before,
 .archives:after {
@@ -1337,6 +1357,7 @@ ol.toc {
   }
 }
 .archive-article {
+  zoom: 1;
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
   overflow: hidden;
@@ -1451,6 +1472,7 @@ ol.toc {
   content: '#';
 }
 #page-nav {
+  zoom: 1;
   margin: 40px auto;
   text-align: center;
   color: #999;
@@ -1539,7 +1561,7 @@ ol.toc {
 }
 .article-entry pre,
 .article-entry code {
-  font-family: STkaiti, "Gill Sans", "Source Code Pro";
+  font-family: STXihei, "Source Code Pro";
 }
 .article-entry code {
   background: #f5f8f9;
@@ -1565,6 +1587,7 @@ ol.toc {
   padding: 0;
 }
 .article-entry .highlight figcaption {
+  zoom: 1;
   font-size: 0.85em;
   color: #999;
   line-height: 1em;
@@ -1598,7 +1621,7 @@ ol.toc {
 }
 .article-entry .gist .gist-file {
   border: none;
-  font-family: STkaiti, "Gill Sans", "Source Code Pro";
+  font-family: STXihei, "Source Code Pro";
   margin: 0;
 }
 .article-entry .gist .gist-file .gist-data {
@@ -1629,7 +1652,7 @@ ol.toc {
 .article-entry .gist .gist-file .gist-meta {
   background: #34383d;
   color: #999;
-  font: 0.85em "HanziPen SC Regular", "Gill Sans", "open sans";
+  font: 0.85em "Comic Sans MS", STkaiti;
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
@@ -1776,6 +1799,8 @@ pre,
 .xml .php,
 .php .xml {
   opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
 }
 @media screen and (min-width: 1200px) {
   #sidebar {
@@ -1955,6 +1980,7 @@ pre,
   position: fixed;
 }
 #recent-post li {
+  zoom: 1;
   padding: 10px 0 10px 94px;
 }
 #recent-post li:before,
@@ -1970,6 +1996,8 @@ pre,
 }
 #recent-post li .item-thumbnail {
   opacity: 1;
+  -ms-filter: none;
+  filter: none;
   float: left;
   margin-left: -94px;
   -webkit-transition: all 0.2s ease;
@@ -2038,6 +2066,8 @@ pre,
 }
 #recent-post li:hover .item-thumbnail {
   opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
 }
 #recent-post li:hover .item-title a {
   color: #38b7ea;
