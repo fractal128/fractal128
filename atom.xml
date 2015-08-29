@@ -93,7 +93,7 @@
     <link href="http://fractal128.gitcafe.io/2015/08/16/river%E7%A5%AD%E7%A5%80/"/>
     <id>http://fractal128.gitcafe.io/2015/08/16/river祭祀/</id>
     <published>2015-08-15T23:09:34.000Z</published>
-    <updated>2015-08-21T08:32:34.000Z</updated>
+    <updated>2015-08-29T07:03:19.000Z</updated>
     <content type="html"><![CDATA[<p>前些日子WCMG给我（蒟蒻）们上过二分图，也讲了这道题，然而课上晕头转向，并没有搞清楚什么，这次认真学习了然而并没有什么用<br><a id="more"></a><br>题目链接：<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1143" target="_blank" rel="external">http://www.lydsy.com/JudgeOnline/problem.php?id=1143</a></p>
 <h2 id="题目大意:">题目大意:</h2><p>给出一个DAG，求出其最大点独立集（集合间任意两点不联通）</p>
 <blockquote>
@@ -162,7 +162,7 @@
     <link href="http://fractal128.gitcafe.io/2015/08/15/hello-world/"/>
     <id>http://fractal128.gitcafe.io/2015/08/15/hello-world/</id>
     <published>2015-08-15T06:09:34.000Z</published>
-    <updated>2015-08-22T15:36:48.000Z</updated>
+    <updated>2015-08-29T07:02:41.000Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is our very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
 <h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
