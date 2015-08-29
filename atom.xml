@@ -3,9 +3,9 @@
   <title><![CDATA[Fractal128 | We are OIers]]></title>
   
   <link href="/atom.xml" rel="self"/>
-  <link href="http://fractal128.gitcafe.io/"/>
+  <link href="http://blog.fractal128.tk/"/>
   <updated>2015-08-27T15:35:20.000Z</updated>
-  <id>http://fractal128.gitcafe.io/</id>
+  <id>http://blog.fractal128.tk/</id>
   
   <author>
     <name><![CDATA[fractal128]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[BZOJ1004:[HNOI2008]Cards]]></title>
-    <link href="http://fractal128.gitcafe.io/2015/08/21/bzoj1004-%EF%BC%BBHNOI2008%EF%BC%BDCards/"/>
-    <id>http://fractal128.gitcafe.io/2015/08/21/bzoj1004-［HNOI2008］Cards/</id>
+    <link href="http://blog.fractal128.tk/2015/08/21/bzoj1004-%EF%BC%BBHNOI2008%EF%BC%BDCards/"/>
+    <id>http://blog.fractal128.tk/2015/08/21/bzoj1004-［HNOI2008］Cards/</id>
     <published>2015-08-21T05:52:40.000Z</published>
     <updated>2015-08-27T15:35:20.000Z</updated>
     <content type="html"><![CDATA[<p>算是水题吧，早已经嘴巴AC不知道多少遍了，实际写起来也花了些时间［希望赶快写了这篇blog好<ruby>补作业<rp> (</rp><rt>dǎ yóu xì</rt><rp>) </rp></ruby>。。。<br><a id="more"></a><br>题目链接<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1004/&quot;OTZ&quot;" target="_blank" rel="external">在此</a><br><br><br></p>
@@ -45,26 +45,26 @@
     
     </summary>
     
-      <category term="BZOJ" scheme="http://fractal128.gitcafe.io/tags/BZOJ/"/>
+      <category term="BZOJ" scheme="http://blog.fractal128.tk/tags/BZOJ/"/>
     
-      <category term="HNOI" scheme="http://fractal128.gitcafe.io/tags/HNOI/"/>
+      <category term="HNOI" scheme="http://blog.fractal128.tk/tags/HNOI/"/>
     
-      <category term="burnside引理" scheme="http://fractal128.gitcafe.io/tags/burnside%E5%BC%95%E7%90%86/"/>
+      <category term="burnside引理" scheme="http://blog.fractal128.tk/tags/burnside%E5%BC%95%E7%90%86/"/>
     
-      <category term="pólya" scheme="http://fractal128.gitcafe.io/tags/polya/"/>
+      <category term="pólya" scheme="http://blog.fractal128.tk/tags/polya/"/>
     
-      <category term="一般递推" scheme="http://fractal128.gitcafe.io/tags/%E4%B8%80%E8%88%AC%E9%80%92%E6%8E%A8/"/>
+      <category term="一般递推" scheme="http://blog.fractal128.tk/tags/%E4%B8%80%E8%88%AC%E9%80%92%E6%8E%A8/"/>
     
-      <category term="OI" scheme="http://fractal128.gitcafe.io/categories/OI/"/>
+      <category term="OI" scheme="http://blog.fractal128.tk/categories/OI/"/>
     
-      <category term="群论" scheme="http://fractal128.gitcafe.io/categories/OI/%E7%BE%A4%E8%AE%BA/"/>
+      <category term="群论" scheme="http://blog.fractal128.tk/categories/OI/%E7%BE%A4%E8%AE%BA/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[读东野圭吾《解忧杂货店》的感受]]></title>
-    <link href="http://fractal128.gitcafe.io/2015/08/17/%E8%AF%BB%E4%B8%9C%E9%87%8E%E5%9C%AD%E5%90%BE%E3%80%8A%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E5%BA%97%E3%80%8B%E7%9A%84%E6%84%9F%E5%8F%97/"/>
-    <id>http://fractal128.gitcafe.io/2015/08/17/读东野圭吾《解忧杂货店》的感受/</id>
+    <link href="http://blog.fractal128.tk/2015/08/17/%E8%AF%BB%E4%B8%9C%E9%87%8E%E5%9C%AD%E5%90%BE%E3%80%8A%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E5%BA%97%E3%80%8B%E7%9A%84%E6%84%9F%E5%8F%97/"/>
+    <id>http://blog.fractal128.tk/2015/08/17/读东野圭吾《解忧杂货店》的感受/</id>
     <published>2015-08-16T20:09:34.000Z</published>
     <updated>2015-08-27T15:54:03.000Z</updated>
     <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如今回顾写作过程，我发现自己始终在思考一个问题：站在人生的岔路口，人究竟应该怎么做？我希望读者能在掩卷时喃喃自语：我从没读过这样的小说。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;————东野圭吾《解忧杂货店》<br><a id="more"></a></p>
@@ -82,16 +82,16 @@
     
     </summary>
     
-      <category term="东野圭吾" scheme="http://fractal128.gitcafe.io/tags/%E4%B8%9C%E9%87%8E%E5%9C%AD%E5%90%BE/"/>
+      <category term="东野圭吾" scheme="http://blog.fractal128.tk/tags/%E4%B8%9C%E9%87%8E%E5%9C%AD%E5%90%BE/"/>
     
-      <category term="随记" scheme="http://fractal128.gitcafe.io/categories/%E9%9A%8F%E8%AE%B0/"/>
+      <category term="随记" scheme="http://blog.fractal128.tk/categories/%E9%9A%8F%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[BZOJ1143: [CTSC2008]祭祀river]]></title>
-    <link href="http://fractal128.gitcafe.io/2015/08/16/river%E7%A5%AD%E7%A5%80/"/>
-    <id>http://fractal128.gitcafe.io/2015/08/16/river祭祀/</id>
+    <link href="http://blog.fractal128.tk/2015/08/16/river%E7%A5%AD%E7%A5%80/"/>
+    <id>http://blog.fractal128.tk/2015/08/16/river祭祀/</id>
     <published>2015-08-15T23:09:34.000Z</published>
     <updated>2015-08-29T07:03:19.000Z</updated>
     <content type="html"><![CDATA[<p>前些日子WCMG给我（蒟蒻）们上过二分图，也讲了这道题，然而课上晕头转向，并没有搞清楚什么，这次认真学习了然而并没有什么用<br><a id="more"></a><br>题目链接：<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1143" target="_blank" rel="external">http://www.lydsy.com/JudgeOnline/problem.php?id=1143</a></p>
@@ -143,24 +143,24 @@
     
     </summary>
     
-      <category term="BZOJ" scheme="http://fractal128.gitcafe.io/tags/BZOJ/"/>
+      <category term="BZOJ" scheme="http://blog.fractal128.tk/tags/BZOJ/"/>
     
-      <category term="ctsc" scheme="http://fractal128.gitcafe.io/tags/ctsc/"/>
+      <category term="ctsc" scheme="http://blog.fractal128.tk/tags/ctsc/"/>
     
-      <category term="dilworth定理" scheme="http://fractal128.gitcafe.io/tags/dilworth%E5%AE%9A%E7%90%86/"/>
+      <category term="dilworth定理" scheme="http://blog.fractal128.tk/tags/dilworth%E5%AE%9A%E7%90%86/"/>
     
-      <category term="二分图" scheme="http://fractal128.gitcafe.io/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
+      <category term="二分图" scheme="http://blog.fractal128.tk/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
     
-      <category term="OI" scheme="http://fractal128.gitcafe.io/categories/OI/"/>
+      <category term="OI" scheme="http://blog.fractal128.tk/categories/OI/"/>
     
-      <category term="二分图" scheme="http://fractal128.gitcafe.io/categories/OI/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
+      <category term="二分图" scheme="http://blog.fractal128.tk/categories/OI/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hello World!]]></title>
-    <link href="http://fractal128.gitcafe.io/2015/08/15/hello-world/"/>
-    <id>http://fractal128.gitcafe.io/2015/08/15/hello-world/</id>
+    <link href="http://blog.fractal128.tk/2015/08/15/hello-world/"/>
+    <id>http://blog.fractal128.tk/2015/08/15/hello-world/</id>
     <published>2015-08-15T06:09:34.000Z</published>
     <updated>2015-08-29T07:02:41.000Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is our very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
@@ -177,9 +177,9 @@
     
     </summary>
     
-      <category term="test" scheme="http://fractal128.gitcafe.io/tags/test/"/>
+      <category term="test" scheme="http://blog.fractal128.tk/tags/test/"/>
     
-      <category term="随记" scheme="http://fractal128.gitcafe.io/categories/%E9%9A%8F%E8%AE%B0/"/>
+      <category term="随记" scheme="http://blog.fractal128.tk/categories/%E9%9A%8F%E8%AE%B0/"/>
     
   </entry>
   
