@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.fractal128.tk/"/>
-  <updated>2015-09-03T16:15:43.000Z</updated>
+  <updated>2015-09-03T16:19:48.000Z</updated>
   <id>http://blog.fractal128.tk/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://blog.fractal128.tk/2015/09/03/networkflow2/"/>
     <id>http://blog.fractal128.tk/2015/09/03/networkflow2/</id>
     <published>2015-09-03T15:44:07.000Z</published>
-    <updated>2015-09-03T16:15:43.000Z</updated>
+    <updated>2015-09-03T16:19:48.000Z</updated>
     <content type="html"><![CDATA[<p>延续低效啃题传统，又是一个下午，调了半天才发现自己不会求最小割方案。。。<br><a id="more"></a><br>进度条：＃＃－－－－－－－－－－－－－－－－－－－－－－ 2/24</p>
 <p>题目链接<a href="http://cojs.tk/cogs/problem/problem.php?pid=727" target="_blank" rel="external">戳这里</a></p>
 <h2 id="Description">Description</h2><p>W 教授正在为国家航天中心计划一系列的太空飞行。每次太空飞行可进行一系列商业性实验而获取利润。现已确定了一个可供选择的实验集合E={E1,E2,…,Em}，和进行这些实验需要使用的全部仪器的集合I={ I1, I2,…,In }。实验Ej 需要用到的仪器是I的子集Rj∈I。配置仪器Ik 的费用为ck 美元。实验Ej 的赞助商已同意为该实验结果支付pj 美元。W教授的任务是找出一个有效算法，确定在一次太空飞行中要进行哪些实验并因此而配置哪些仪器才能使太空飞行的净收益最大。这里净收益是指进行实验所获得的全部收入与配置仪器的全部费用的差额。</p>
@@ -51,7 +51,7 @@
     <link href="http://blog.fractal128.tk/2015/09/03/network-flow1/"/>
     <id>http://blog.fractal128.tk/2015/09/03/network-flow1/</id>
     <published>2015-09-03T06:10:55.000Z</published>
-    <updated>2015-09-03T06:32:03.000Z</updated>
+    <updated>2015-09-03T16:20:43.000Z</updated>
     <content type="html"><![CDATA[<p>稍微复习了下网络流发现根本不会写了［窘。。。<br>找到了这个传奇的24题神坑,感觉像是立下了未来全A这24题的flag<br><a id="more"></a><br>进度条：＃－－－－－－－－－－－－－－－－－－－－－－－ 1/24</p>
 <p>在线提交来自<a href="http://cojs.tk/cogs/problem/problem.php?pid=14" target="_blank" rel="external">cojs.tk</a></p>
 <h2 id="Description">Description</h2><p>飞行大队有若干个来自各地的驾驶员，专门驾驶一种型号的飞机，这种飞机每架有两个驾驶员,需一个正驾驶员和一个副驾驶员。由于种种原因，例如相互配合的问题，有些驾驶员不能在同一架飞机上飞行，问如何搭配驾驶员才能使出航的飞机最多。</p>
@@ -62,7 +62,7 @@
     
     </summary>
     
-      <category term="dinic" scheme="http://blog.fractal128.tk/tags/dinic/"/>
+      <category term="最大流" scheme="http://blog.fractal128.tk/tags/%E6%9C%80%E5%A4%A7%E6%B5%81/"/>
     
       <category term="网络流" scheme="http://blog.fractal128.tk/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
     
