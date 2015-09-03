@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://blog.fractal128.tk/2015/09/03/bzoj3110/index.html">
 <meta property="og:site_name" content="Fractal128 | We are OIers">
 <meta property="og:description" content="说是树套树裸题，然而连线段树都打不熟的我怎么可能会能，感觉真的好腻害的样子，从昨天和HanTY一起学，到今天写出来，再加一堆调试，终于。。。">
-<meta property="og:updated_time" content="2015-09-02T18:05:02.000Z">
+<meta property="og:updated_time" content="2015-09-03T04:31:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BZOJ3110:[Zjoi2013]K大数查询">
 <meta name="twitter:description" content="说是树套树裸题，然而连线段树都打不熟的我怎么可能会能，感觉真的好腻害的样子，从昨天和HanTY一起学，到今天写出来，再加一堆调试，终于。。。">
@@ -102,11 +102,11 @@ ga('send', 'pageview');
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        6
+        7
         <span>posts</span>
       </div>
       <div class="article-info-block">
-        13
+        15
         <span>tags</span>
       </div>
     </div>
@@ -164,13 +164,14 @@ ga('send', 'pageview');
       
       
         <p>说是树套树裸题，然而连线段树都打不熟的我怎么可能会能，感觉真的好腻害的样子，从昨天和HanTY一起学，到今天写出来，再加一堆调试，终于。。。<a id="more"></a></p>
+<p>链接<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=3110" target="_blank" rel="external">戳这</a></p>
 <h2 id="Description">Description</h2><p>有N个位置，M个操作。操作有两种，每次操作如果是1 a b c的形式表示在第a个位置到第b个位置，每个位置加入一个数c;如果是2 a b c形式，表示询问从第a个位置到第b个位置，第C大的数是多少。</p>
 <h2 id="Solution">Solution</h2><p>方法好像很多。。。［感觉我学的是最<ruby>基础<rp> (</rp><rt>shuǐ shuǐ</rt><rp>) </rp></ruby>的<br>外层树维护每一种不同的权值，内层树维护区间范围，计算答案的时候用二分枚举答案，然后每次调用来求［枚举的答案,权值的最大值(=n)］这一段中，位于所求区间[a,b]段的元素的个数。</p>
 <h2 id="Code">Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxn <span class="number">20000007</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>; <span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123; <span class="keyword">if</span> (ch==<span class="string">'-'</span>) f=-<span class="number">1</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;</span><br><span class="line">        x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>; ch=getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> lazy[maxn],ls[maxn],rs[maxn],sum[maxn],root[maxn];</span><br><span class="line"><span class="keyword">int</span> n,m,size;</span><br><span class="line"><span class="keyword">int</span> o,a,b,c;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushdown</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!lazy[k]||l==r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (ls[k]==<span class="number">0</span>) ls[k]=++size;</span><br><span class="line">    <span class="keyword">if</span> (rs[k]==<span class="number">0</span>) rs[k]=++size;</span><br><span class="line">    lazy[ls[k]]+=lazy[k]; lazy[rs[k]]+=lazy[k];</span><br><span class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    sum[ls[k]]+=(mid-l+<span class="number">1</span>)*lazy[k];</span><br><span class="line">    sum[rs[k]]+=(r-mid)*lazy[k];</span><br><span class="line">    lazy[k]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mod</span><span class="params">(<span class="keyword">int</span> &amp;k,<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> a, <span class="keyword">int</span> b,<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (k==<span class="number">0</span>) k=++size;</span><br><span class="line">    pushdown(k,l,r);</span><br><span class="line">    <span class="keyword">if</span> (a&lt;=l&amp;&amp;r&lt;=b)&#123;</span><br><span class="line">        sum[k]+=r-l+<span class="number">1</span>;</span><br><span class="line">        lazy[k]+=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (a&lt;=mid) mod(ls[k],l,mid,a,b,x);</span><br><span class="line">    <span class="keyword">if</span> (mid&lt;b) mod(rs[k],mid+<span class="number">1</span>,r,a,b,x);</span><br><span class="line">    sum[k]=sum[ls[k]]+sum[rs[k]];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> c,<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">1</span>,r=n,k=<span class="number">1</span>;</span><br><span class="line">    mod(root[k],<span class="number">1</span>,n,a,b,k);</span><br><span class="line">    <span class="keyword">while</span> (l&lt;r)&#123;</span><br><span class="line">        <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (mid&lt;c)&#123;</span><br><span class="line">            k=k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>;</span><br><span class="line">            mod(root[k],<span class="number">1</span>,n,a,b,k);</span><br><span class="line">            l=mid+<span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            k=k&lt;&lt;<span class="number">1</span>;</span><br><span class="line">            mod(root[k],<span class="number">1</span>,n,a,b,k);</span><br><span class="line">            r=mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get_sum</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (k==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    pushdown(k,l,r);</span><br><span class="line">    <span class="keyword">if</span> (a&lt;=l&amp;&amp;r&lt;=b)&#123;</span><br><span class="line">        <span class="keyword">return</span> sum[k];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ret=<span class="number">0</span>,mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (a&lt;=mid) ret+=get_sum(ls[k],l,mid,a,b);</span><br><span class="line">    <span class="keyword">if</span> (mid&lt;b) ret+=get_sum(rs[k],mid+<span class="number">1</span>,r,a,b); </span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">1</span>,r=n,t=c,k=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (l&lt;r)&#123;</span><br><span class="line">        <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> tmp=get_sum(root[k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>],<span class="number">1</span>,n,a,b);</span><br><span class="line">        <span class="keyword">if</span> (tmp&lt;t)&#123;</span><br><span class="line">            t-=tmp; k&lt;&lt;=<span class="number">1</span>; r=mid;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            k=k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>; l=mid+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n=read(); m=read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">        o=read(); a=read(); b=read(); c=read();</span><br><span class="line">        <span class="keyword">if</span> (o==<span class="number">1</span>) insert(c,a,b);</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,query(a,b,c));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.fractal128.tk/2015/09/03/bzoj3110/" data-id="cie33gf460016ve45a249jx65" class="article-share-link">Share</a>
+      <a data-url="http://blog.fractal128.tk/2015/09/03/bzoj3110/" data-id="cie3txyhl001edt45yxtcpn1l" class="article-share-link">Share</a>
       
         <a href="http://blog.fractal128.tk/2015/09/03/bzoj3110/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -179,6 +180,15 @@ ga('send', 'pageview');
   </div>
   
     <nav id="article-nav">
+  
+    <a href="/2015/09/03/network-flow1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+           [网络流24题] 搭配飞行员
+        
+      </div>
+    </a>
   
   
     <a href="/2015/08/30/记暑假之颓/" id="article-nav-older" class="article-nav-link-wrap">
@@ -214,6 +224,23 @@ ga('send', 'pageview');
     <h3 class="widget-title">recents</h3>
     <div class="widget">
       <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/09/03/network-flow1/" class="thumbnail">
+  
+    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/plane.jpeg)" alt=" [网络流24题] 搭配飞行员" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/网络流/">网络流</a></p>
+              <p class="item-title"><a href="/2015/09/03/network-flow1/" class="title"> [网络流24题] 搭配飞行员</a></p>
+              <p class="item-date"><time datetime="2015-09-03T06:10:55.000Z" itemprop="datePublished">2015-09-03</time></p>
+            </div>
+          </li>
         
           <li>
             
@@ -283,23 +310,6 @@ ga('send', 'pageview');
             </div>
           </li>
         
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/08/16/river祭祀/" class="thumbnail">
-  
-    <span style="background-image:url(/css/images/crown.jpg)" alt="BZOJ1143: [CTSC2008]祭祀river" class="thumbnail-image"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/二分图/">二分图</a></p>
-              <p class="item-title"><a href="/2015/08/16/river祭祀/" class="title">BZOJ1143: [CTSC2008]祭祀river</a></p>
-              <p class="item-date"><time datetime="2015-08-15T23:09:34.000Z" itemprop="datePublished">2015-08-16</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -307,21 +317,21 @@ ga('send', 'pageview');
     <div class="widget-wrap">
     <h3 class="widget-title">categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OI/">OI</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OI/二分图/">二分图</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/群论/">群论</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随记/">随记</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OI/">OI</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OI/二分图/">二分图</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/网络流/">网络流</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/群论/">群论</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随记/">随记</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
   
     <div class="widget-wrap">
     <h3 class="widget-title">tag cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/BZOJ/" style="font-size: 20px">BZOJ</a> <a href="/tags/HNOI/" style="font-size: 10px">HNOI</a> <a href="/tags/ZJOI/" style="font-size: 10px">ZJOI</a> <a href="/tags/burnside引理/" style="font-size: 10px">burnside引理</a> <a href="/tags/ctsc/" style="font-size: 10px">ctsc</a> <a href="/tags/dilworth定理/" style="font-size: 10px">dilworth定理</a> <a href="/tags/polya/" style="font-size: 10px">pólya</a> <a href="/tags/test/" style="font-size: 10px">test</a> <a href="/tags/一般递推/" style="font-size: 10px">一般递推</a> <a href="/tags/东野圭吾/" style="font-size: 10px">东野圭吾</a> <a href="/tags/二分图/" style="font-size: 10px">二分图</a> <a href="/tags/数据结构/" style="font-size: 10px">数据结构</a> <a href="/tags/面壁反省/" style="font-size: 10px">面壁反省</a>
+      <a href="/tags/BZOJ/" style="font-size: 20px">BZOJ</a> <a href="/tags/HNOI/" style="font-size: 10px">HNOI</a> <a href="/tags/ZJOI/" style="font-size: 10px">ZJOI</a> <a href="/tags/burnside引理/" style="font-size: 10px">burnside引理</a> <a href="/tags/ctsc/" style="font-size: 10px">ctsc</a> <a href="/tags/dilworth定理/" style="font-size: 10px">dilworth定理</a> <a href="/tags/dinic/" style="font-size: 10px">dinic</a> <a href="/tags/polya/" style="font-size: 10px">pólya</a> <a href="/tags/test/" style="font-size: 10px">test</a> <a href="/tags/一般递推/" style="font-size: 10px">一般递推</a> <a href="/tags/东野圭吾/" style="font-size: 10px">东野圭吾</a> <a href="/tags/二分图/" style="font-size: 10px">二分图</a> <a href="/tags/数据结构/" style="font-size: 10px">数据结构</a> <a href="/tags/网络流/" style="font-size: 10px">网络流</a> <a href="/tags/面壁反省/" style="font-size: 10px">面壁反省</a>
     </div>
   </div>
   
     <div class="widget-wrap">
     <h3 class="widget-title">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
   
