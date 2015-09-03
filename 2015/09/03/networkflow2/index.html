@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[网络流24题] 太空飞行计划 | Fractal128 | We are OIers</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="description" content="延续低效啃题传统，又是一个下午，调了半天才发现自己不会求最小割方案。。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[网络流24题] 太空飞行计划">
+<meta property="og:url" content="http://blog.fractal128.tk/2015/09/03/networkflow2/index.html">
+<meta property="og:site_name" content="Fractal128 | We are OIers">
+<meta property="og:description" content="延续低效啃题传统，又是一个下午，调了半天才发现自己不会求最小割方案。。。">
+<meta property="og:updated_time" content="2015-09-03T16:15:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[网络流24题] 太空飞行计划">
+<meta name="twitter:description" content="延续低效啃题传统，又是一个下午，调了半天才发现自己不会求最小割方案。。。">
+  
+  
+    <link rel="icon" href="css/images/f1.ico">
+  
+  <link href="//fonts.useso.com/css?family=Open+Sans:400italic,400,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  <!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-66886955-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+  
+</head></html>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo" style="background-image: url(/css/images/logo.png)"></i><span class="site-title">Fractal128 | We are OIers</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/.">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/1.jpg"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+      
+      <div id="search-form-wrap">
+        <form action="//Google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search..."><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://blog.fractal128.tk"></form>
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+        
+          <td><a class="main-nav-link" href="/.">Home</a></td>
+        
+          <td><a class="main-nav-link" href="/archives">Archives</a></td>
+        
+          <td><a class="main-nav-link" href="/categories">Categories</a></td>
+        
+          <td><a class="main-nav-link" href="/tags">Tags</a></td>
+        
+          <td><a class="main-nav-link" href="/about">About</a></td>
+        
+        <td>
+          <form action="//Google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search..."><input type="hidden" name="sitesearch" value="http://blog.fractal128.tk"></form>
+        </td>
+      </tr>
+    </table>
+  </div>
+</header>
+    <div class="outer">
+      
+        <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="/css/images/1.jpg">
+      <h2 id="name">fractal128</h2>
+      <h3 id="title">if not me, who, if not now, when.</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>HangZhou, China</span>
+      <a id="follow" href="https://gitcafe.com/fractal128/">FOLLOW</a>
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        8
+        <span>posts</span>
+      </div>
+      <div class="article-info-block">
+        17
+        <span>tags</span>
+      </div>
+    </div>
+
+    <div class="article-info profile-block">
+    	  <script type="text/javascript" src="http://www.xiami.com/widget/player-multi?uid=55528284&sid=1771977511,2073511,1770182616,1770554728,1770776542,1769876919,2051509,&width=260&height=346&mainColor=40B6E8&backColor=ffffff&autoplay=0&mode=js"></script>
+    </div>
+    
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+          
+          <td><a href="https://github.com/fractal128" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+          
+          <td><a href="/#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+          
+          <td><a href="https://www.facebook.com/profile.php?id=100008201833794" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+          
+          <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+          
+        </tr>
+      </table>
+    </div>
+    
+    
+  </div>
+
+    
+</aside>
+      
+      <section id="main"><article id="post-networkflow2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        <h1 class="article-title" itemprop="name">
+      [网络流24题] 太空飞行计划
+    </h1>
+        <div class="article-meta">
+          <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/09/03/networkflow2/">
+      <time datetime="2015-09-03T15:44:07.000Z" itemprop="datePublished">2015-09-03</time>
+    </a>
+  </div>
+          <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/网络流/">网络流</a>
+  </div>
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <p>延续低效啃题传统，又是一个下午，调了半天才发现自己不会求最小割方案。。。<br><a id="more"></a><br>进度条：＃＃－－－－－－－－－－－－－－－－－－－－－－ 2/24</p>
+<p>题目链接<a href="http://cojs.tk/cogs/problem/problem.php?pid=727" target="_blank" rel="external">戳这里</a></p>
+<h2 id="Description">Description</h2><p>W 教授正在为国家航天中心计划一系列的太空飞行。每次太空飞行可进行一系列商业性实验而获取利润。现已确定了一个可供选择的实验集合E={E1,E2,…,Em}，和进行这些实验需要使用的全部仪器的集合I={ I1, I2,…,In }。实验Ej 需要用到的仪器是I的子集Rj∈I。配置仪器Ik 的费用为ck 美元。实验Ej 的赞助商已同意为该实验结果支付pj 美元。W教授的任务是找出一个有效算法，确定在一次太空飞行中要进行哪些实验并因此而配置哪些仪器才能使太空飞行的净收益最大。这里净收益是指进行实验所获得的全部收入与配置仪器的全部费用的差额。</p>
+<h2 id="Solution">Solution</h2><p>一开始根本不会做，看了论文才发现这其实是一种最小割的经典模型。。叫做最大权闭合图。稍微解释下模型的转换方法，严谨证明以及各种定义可以参见胡伯涛论文<a href="http://wenku.baidu.com/link?url=lfPkq0BOD2L6zby2PSRW48XNjfTmj9Xwyf-gTh2igRs2txeOWq8FPpx43Bd7I9j-j628LlPJPOoCu8cBRdOypSTal_A-6IGs-1aZtqzNMcq" target="_blank" rel="external">最小割模型在信息学竞赛中的应用</a><br>初步思考：将各个试验向他所需要的各个器材连边，这张图的最大权闭合图的权值就是所求的答案。（表示器材的点应该为负值）<br>先来看一下为什么这道题是求最大权闭合图</p>
+<ul>
+<li>因为每个试验要求所有需要器材缺一不可，所以选择的每个试验所连出去的边都会被选择入被选子图，即该子图一定为闭合图</li>
+<li>题目要求最大收益，即最大的所有的试验所得－器材开支，刚好为所有所选合法子图中点权值和的最大值。<br>具体方法是将试验-器材边的容量设为INF,并且从源点S向所有试验点连边，容量为试验收益，相同的，器材点和汇点T连边，容量为器材开支的绝对值（⚠注意），在此基础上跑最小割，最终答案为与S相连未被割去的边和与T相连被割去的边的容量和。。。</li>
+</ul>
+<h2 id="Code">Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxn <span class="number">20000</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> INF <span class="number">1000000007</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">struct</span> edge&#123;</span><br><span class="line">    <span class="keyword">int</span> cap,to,op,flow;</span><br><span class="line">&#125;e[maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> cur[maxn],nex[maxn],fir[maxn];</span><br><span class="line"><span class="keyword">int</span> c[maxn],p[maxn];</span><br><span class="line"><span class="keyword">int</span> ans1[maxn],d[maxn],ans2[maxn];</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];</span><br><span class="line"><span class="keyword">int</span> n,m,s,t,size,sum;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> cap)</span></span>&#123;</span><br><span class="line">    e[++size].to=y; e[size].cap=cap; e[size].op=size+<span class="number">1</span>; nex[size]=fir[x]; fir[x]=size;</span><br><span class="line">    e[++size].to=x; e[size].cap=<span class="number">0</span>; e[size].op=size-<span class="number">1</span>; nex[size]=fir[y]; fir[y]=size;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;p[x]); add(s,x,p[x]);</span><br><span class="line">    <span class="keyword">int</span> k=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">if</span> (x==<span class="number">1</span>) ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch!=<span class="string">'\r'</span>&amp;&amp;ch!=<span class="string">'\n'</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span> ((ch&gt;<span class="string">'9'</span> || ch&lt;<span class="string">'0'</span>) &amp;&amp; k!=<span class="number">0</span>)&#123;</span><br><span class="line">            add(x,k+n,INF); k=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>) k=k*<span class="number">10</span>+ch-<span class="string">'0'</span>;</span><br><span class="line">        ch=getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (k&gt;<span class="number">0</span>) add(x,k+n,INF);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">bfs</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; Q;</span><br><span class="line">    vis[s]=<span class="number">1</span>; Q.push(s); d[s]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (!Q.empty())&#123;</span><br><span class="line">        <span class="keyword">int</span> x=Q.front(); Q.pop();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> u=fir[x]; u; u=nex[u])&#123;</span><br><span class="line">            <span class="keyword">int</span> v=e[u].to;</span><br><span class="line">            <span class="keyword">if</span> (!vis[v]&amp;&amp;e[u].cap&gt;e[u].flow)&#123;</span><br><span class="line">                vis[v]=<span class="number">1</span>; Q.push(v); d[v]=d[x]+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (vis[t]) <span class="keyword">return</span> <span class="literal">true</span>; <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x==t||a==<span class="number">0</span>) <span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">int</span> flow=<span class="number">0</span>,f;</span><br><span class="line">    <span class="keyword">while</span> (cur[x]!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">int</span> u=cur[x];</span><br><span class="line">        <span class="keyword">if</span> (d[x]+<span class="number">1</span>==d[e[u].to] &amp;&amp; (f=dfs(e[u].to,min(a,e[u].cap-e[u].flow))) &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            e[u].flow+=f; e[e[u].op].flow-=f;</span><br><span class="line">            flow+=f;</span><br><span class="line">            a-=f;</span><br><span class="line">            <span class="keyword">if</span> (a==<span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cur[x]=nex[cur[x]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flow;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dinic</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> flow=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (bfs())&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=n+m+<span class="number">1</span>; i++) cur[i]=fir[i];</span><br><span class="line">        flow += dfs(s,INF);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flow;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    vis[x]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> u=fir[x]; u; u=nex[u])&#123;</span><br><span class="line">        <span class="keyword">int</span> v=e[u].to;</span><br><span class="line">        <span class="keyword">if</span> (!vis[v]&amp;&amp;e[u].cap&gt;e[u].flow) Dfs(v);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span>(vis));</span><br><span class="line">    Dfs(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=size; i++) </span><br><span class="line">    <span class="keyword">if</span> (e[i].cap&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">int</span> y=e[i].to,x=e[e[i].op].to;</span><br><span class="line">        <span class="keyword">if</span> ((vis[x]^vis[y])==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span> (y==t) &#123;sum-=e[i].cap, ans2[++ans2[<span class="number">0</span>]]=x;&#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (x==s) &#123;sum+=e[i].cap, ans1[++ans1[<span class="number">0</span>]]=y;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(ans1+<span class="number">1</span>,ans1+<span class="number">1</span>+ans1[<span class="number">0</span>]); sort(ans2+<span class="number">1</span>,ans2+<span class="number">1</span>+ans2[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=ans1[<span class="number">0</span>]; i++) <span class="built_in">printf</span>(<span class="string">"%d "</span>, ans1[i]); <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=ans2[<span class="number">0</span>]; i++) <span class="built_in">printf</span>(<span class="string">"%d "</span>, ans2[i]-n); <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sum);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    s=<span class="number">0</span>; t=n+m+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        read(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;c[i]);</span><br><span class="line">        add(i+n,t,c[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    dinic();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.fractal128.tk/2015/09/03/networkflow2/" data-id="cie4ezsti0012d345uq7d3mc9" class="article-share-link">Share</a>
+      
+        <a href="http://blog.fractal128.tk/2015/09/03/networkflow2/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最大流/">最大流</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最小割/">最小割</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络流/">网络流</a></li></ul>
+    </footer>
+  </div>
+  
+    <nav id="article-nav">
+  
+  
+    <a href="/2015/09/03/network-flow1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"> [网络流24题] 搭配飞行员</div>
+    </a>
+  
+</nav>
+  
+</article>
+
+
+<section id="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'fractal128sblog';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section></section>
+      
+        <aside id="sidebar">
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">recents</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/09/03/networkflow2/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/网络流/">网络流</a></p>
+              <p class="item-title"><a href="/2015/09/03/networkflow2/" class="title">[网络流24题] 太空飞行计划</a></p>
+              <p class="item-date"><time datetime="2015-09-03T15:44:07.000Z" itemprop="datePublished">2015-09-03</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/09/03/network-flow1/" class="thumbnail">
+  
+    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/plane.jpeg)" alt=" [网络流24题] 搭配飞行员" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/网络流/">网络流</a></p>
+              <p class="item-title"><a href="/2015/09/03/network-flow1/" class="title"> [网络流24题] 搭配飞行员</a></p>
+              <p class="item-date"><time datetime="2015-09-03T06:10:55.000Z" itemprop="datePublished">2015-09-03</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/09/03/bzoj3110/" class="thumbnail">
+  
+    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/tree.jpg)" alt="BZOJ3110:[Zjoi2013]K大数查询" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/数据结构/">数据结构</a></p>
+              <p class="item-title"><a href="/2015/09/03/bzoj3110/" class="title">BZOJ3110:[Zjoi2013]K大数查询</a></p>
+              <p class="item-date"><time datetime="2015-09-02T17:42:48.000Z" itemprop="datePublished">2015-09-03</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/08/30/记暑假之颓/" class="thumbnail">
+  
+    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/star.jpg)" alt="记暑假之颓" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/随记/">随记</a></p>
+              <p class="item-title"><a href="/2015/08/30/记暑假之颓/" class="title">记暑假之颓</a></p>
+              <p class="item-date"><time datetime="2015-08-29T19:19:46.000Z" itemprop="datePublished">2015-08-30</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/08/21/bzoj1004-［HNOI2008］Cards/" class="thumbnail">
+  
+    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/egoist01.jpg-normal)" alt="BZOJ1004:[HNOI2008]Cards" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/群论/">群论</a></p>
+              <p class="item-title"><a href="/2015/08/21/bzoj1004-［HNOI2008］Cards/" class="title">BZOJ1004:[HNOI2008]Cards</a></p>
+              <p class="item-date"><time datetime="2015-08-21T05:52:40.000Z" itemprop="datePublished">2015-08-21</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OI/">OI</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OI/二分图/">二分图</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/网络流/">网络流</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/群论/">群论</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随记/">随记</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">tag cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BZOJ/" style="font-size: 20px">BZOJ</a> <a href="/tags/HNOI/" style="font-size: 10px">HNOI</a> <a href="/tags/ZJOI/" style="font-size: 10px">ZJOI</a> <a href="/tags/burnside引理/" style="font-size: 10px">burnside引理</a> <a href="/tags/ctsc/" style="font-size: 10px">ctsc</a> <a href="/tags/dilworth定理/" style="font-size: 10px">dilworth定理</a> <a href="/tags/dinic/" style="font-size: 10px">dinic</a> <a href="/tags/polya/" style="font-size: 10px">pólya</a> <a href="/tags/test/" style="font-size: 10px">test</a> <a href="/tags/一般递推/" style="font-size: 10px">一般递推</a> <a href="/tags/东野圭吾/" style="font-size: 10px">东野圭吾</a> <a href="/tags/二分图/" style="font-size: 10px">二分图</a> <a href="/tags/数据结构/" style="font-size: 10px">数据结构</a> <a href="/tags/最大流/" style="font-size: 10px">最大流</a> <a href="/tags/最小割/" style="font-size: 10px">最小割</a> <a href="/tags/网络流/" style="font-size: 15px">网络流</a> <a href="/tags/面壁反省/" style="font-size: 10px">面壁反省</a>
+    </div>
+  </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+  
+    <div class="widget-wrap widget-list">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io/">Hexo</a>
+          </li>
+        
+          <li>
+            <a href="http://i301void.gitcafe.io">i301void</a>
+          </li>
+        
+          <li>
+            <a href="http://blog.acmicpc.info">FlowForACMers</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 fractal128 <br> 
+      
+      <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+		</script>
+		<span id="busuanzi_container_site_uv">
+  		您是本站第<span id="busuanzi_value_site_uv"></span>位访客
+		</span><br>
+
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    <script>
+  var disqus_shortname = 'fractal128';
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.useso.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+messageStyle: "none"
+    }); 
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
