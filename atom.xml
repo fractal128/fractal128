@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Fractal128 | We are OIers]]></title>
+  <title><![CDATA[Fractal128 ： We are OIers]]></title>
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.fractal128.tk/"/>
-  <updated>2015-09-03T16:21:54.000Z</updated>
+  <updated>2015-09-04T04:01:19.000Z</updated>
   <id>http://blog.fractal128.tk/</id>
   
   <author>
@@ -13,6 +13,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ [网络流24题] 最小路径覆盖问题]]></title>
+    <link href="http://blog.fractal128.tk/2015/09/04/networkflow3/"/>
+    <id>http://blog.fractal128.tk/2015/09/04/networkflow3/</id>
+    <published>2015-09-04T03:45:06.000Z</published>
+    <updated>2015-09-04T04:01:19.000Z</updated>
+    <content type="html"><![CDATA[<p>突然发现今天是我生日，并没有什么感觉，只觉得越大越不中用了。。。<br><a id="more"></a><br>进度条：＃＃＃－－－－－－－－－－－－－－－－－－－－－ 3/24  </p>
+<p>题目链接<a href="http://cojs.tk/cogs/problem/problem.php?pid=728" target="_blank" rel="external">🔗</a></p>
+<h2 id="Description">Description</h2><p>给定有向图G=(V,E)。设P是G的一个简单路（顶点不相交）的集合。如果V中每个<br>顶点恰好在P的一条路上，则称P是G的一个路径覆盖。P中路径可以从V的任何一个顶<br>点开始，长度也是任意的，特别地，可以为0。G的最小路径覆盖是G的所含路径条数最少<br>的路径覆盖。<br>设计一个有效算法求一个有向无环图G的最小路径覆盖。</p>
+<h2 id="Solution">Solution</h2><p>其实是做过类似的题目的，这题只是<a href="http://blog.fractal128.tk/2015/08/16/river祭祀/">祭祀</a>的子问题而已。。。<br>将每个拆点，对于边(u,v)，只需要连接二分图中的(u,v’)，然后直接做最大匹配即可得到答案。  </p>
+<h2 id="Code">Code</h2><p>ps.这题使用网络流和匈牙利其实都可以［我就用了更短的匈牙利<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &#60;iostream&#62;&#10;#include &#60;cstdio&#62;&#10;#include &#60;cstring&#62;&#10;#define maxn 14000&#10;using namespace std;&#10;int n,m,ans,size;&#10;int p[maxn],fir[maxn],nex[maxn],b[maxn],q[maxn];&#10;bool vis[maxn];&#10;int read()&#123;&#10;    int x=0; char ch=getchar();&#10;    while (ch&#62;&#39;9&#39;||ch&#60;&#39;0&#39;) &#123;ch=getchar();&#125;&#10;    while (ch&#60;=&#39;9&#39;&#38;&#38;ch&#62;=&#39;0&#39;) &#123; x=x*10+ch-&#39;0&#39;; ch=getchar();&#125;&#10;    return x;&#10;&#125;&#10;void add(int x, int y)&#123;&#10;    b[++size]=y; nex[size]=fir[x]; fir[x]=size;&#10;&#125;&#10;bool hungray(int x)&#123;&#10;    for (int u=fir[x]; u; u=nex[u])&#123;&#10;        int v=b[u];&#10;        if (!vis[v])&#123;&#10;            vis[v]=1;&#10;            if (p[v]==0||hungray(p[v]))&#123;&#10;                p[v]=x; q[x]=v; return true;&#10;            &#125;&#10;        &#125;&#10;    &#125;&#10;    return false;&#10;&#125;&#10;int main()&#123;&#10;    n=read(); m=read();&#10;    for (int i=1; i&#60;=m; i++)&#123;&#10;        int x,y;&#10;        x=read(); y=read();&#10;        add(x,y);&#10;    &#125;&#10;    for (int i=1; i&#60;=n; i++)&#123;&#10;        memset(vis,0,sizeof(vis));&#10;        if (hungray(i)) ans++;&#10;    &#125;&#10;    int sum=0;&#10;    for (int i=1; i&#60;=n; i++)&#123;&#10;        if (p[i]==0) printf(&#34;%d&#34;, i); else continue;&#10;        int k=i; &#10;        while (q[k]!=0)&#123;&#10;            printf(&#34; %d&#34;, q[k]);&#10;            k=q[k];&#10;        &#125;&#10;        printf(&#34;\n&#34;);&#10;        sum++;&#10;    &#125;&#10;    printf(&#34;%d\n&#34;, sum);&#10;    return 0;&#10;&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    <summary type="html">
+    <![CDATA[<p>突然发现今天是我生日，并没有什么感觉，只觉得越大越不中用了。。。<br>]]>
+    
+    </summary>
+    
+      <category term="二分图" scheme="http://blog.fractal128.tk/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
+    
+      <category term="OI" scheme="http://blog.fractal128.tk/categories/OI/"/>
+    
+      <category term="网络流" scheme="http://blog.fractal128.tk/categories/OI/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[[网络流24题] 太空飞行计划]]></title>
