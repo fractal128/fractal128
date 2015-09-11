@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.fractal128.tk/2015/09/11/bzoj1054/</loc>
+    <lastmod>2015-09-11T12:45:20.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog.fractal128.tk/2015/09/04/networkflow3/</loc>
     <lastmod>2015-09-04T14:55:18.000Z</lastmod>
   </url>
