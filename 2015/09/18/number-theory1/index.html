@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: 网络流 | Fractal128 ： We are OIers</title>
+  <title>初等数论（一） | Fractal128 ： We are OIers</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-  <meta name="description" content="Being rather cleverer than most men,my mistakes tend to be correspondingly huger.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Fractal128 ： We are OIers">
-<meta property="og:url" content="http://blog.fractal128.tk/tags/网络流/index.html">
+  <meta name="description" content="周四听了一个高一小爷讲了一堆听不懂的数论，虐得体无完肤，我会告诉你我紧张得一下课就跑了吗，真是搞笑了。特此打上自我反省的tag以警醒。找到了暑假上课时QY神犇的课件，好好学。。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初等数论（一）">
+<meta property="og:url" content="http://blog.fractal128.tk/2015/09/18/number-theory1/index.html">
 <meta property="og:site_name" content="Fractal128 ： We are OIers">
-<meta property="og:description" content="Being rather cleverer than most men,my mistakes tend to be correspondingly huger.">
+<meta property="og:description" content="周四听了一个高一小爷讲了一堆听不懂的数论，虐得体无完肤，我会告诉你我紧张得一下课就跑了吗，真是搞笑了。特此打上自我反省的tag以警醒。找到了暑假上课时QY神犇的课件，好好学。。。">
+<meta property="og:image" content="http://7xl5lt.com1.z0.glb.clouddn.com/图片1.png">
+<meta property="og:updated_time" content="2015-09-18T14:05:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fractal128 ： We are OIers">
-<meta name="twitter:description" content="Being rather cleverer than most men,my mistakes tend to be correspondingly huger.">
+<meta name="twitter:title" content="初等数论（一）">
+<meta name="twitter:description" content="周四听了一个高一小爷讲了一堆听不懂的数论，虐得体无完肤，我会告诉你我紧张得一下课就跑了吗，真是搞笑了。特此打上自我反省的tag以警醒。找到了暑假上课时QY神犇的课件，好好学。。。">
   
   
     <link rel="icon" href="css/images/f1.ico">
@@ -136,94 +138,94 @@ ga('send', 'pageview');
     
 </aside>
       
-      <section id="main"><section class="archives-wrap">
-    <div class="archive-tag-wrap">
-      <span class="archive-tag">#网络流</span>
-    </div>
-    <div class="archives">
+      <section id="main"><article id="post-number-theory1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
     
-    <div class="archive-article-thumbnail">
-      <a href="/2015/09/18/bzoj2127/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/20120208031333_CBrdX.thumb.600_0.jpg)" alt="BZOJ2127:happiness" class="thumbnail-image"></span>
-  
-</a>
-    </div>
     
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/18/bzoj2127/">BZOJ2127:happiness</a>
+      <header class="article-header">
+        <h1 class="article-title" itemprop="name">
+      初等数论（一）
     </h1>
-      
-        <div class="archive-article-date">
+        <div class="article-meta">
+          <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/09/18/bzoj2127/">
-      <time datetime="2015-09-18T10:39:07.000Z" itemprop="datePublished">2015 Sep 18</time>
+    <a href="/2015/09/18/number-theory1/">
+      <time datetime="2015-09-18T11:51:32.000Z" itemprop="datePublished">2015-09-18</time>
     </a>
   </div>
-      
-    </header>
+          <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/数论/">数论</a>
   </div>
-</article>
+        </div>
+      </header>
     
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    
-    <div class="archive-article-thumbnail">
-      <a href="/2015/09/03/networkflow2/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/97I58PICiEM.jpg)" alt="[网络流24题] 太空飞行计划" class="thumbnail-image"></span>
-  
-</a>
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <div id="toc" class="toc-article">
+        <!--<strong class="toc-title">Catalogue</strong>-->
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#初等数论"><span class="toc-number">1.</span> <span class="toc-text">初等数论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数论常识"><span class="toc-number">1.1.</span> <span class="toc-text">数论常识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#欧几里德算法"><span class="toc-number">1.2.</span> <span class="toc-text">欧几里德算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#辗转相除法"><span class="toc-number">1.2.1.</span> <span class="toc-text">辗转相除法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更相减损数"><span class="toc-number">1.2.2.</span> <span class="toc-text">更相减损数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展欧几里德exgcd"><span class="toc-number">1.2.3.</span> <span class="toc-text">扩展欧几里德exgcd</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#裴蜀定理"><span class="toc-number">1.3.</span> <span class="toc-text">裴蜀定理</span></a></li></ol></li></ol>
     </div>
     
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/03/networkflow2/">[网络流24题] 太空飞行计划</a>
-    </h1>
-      
-        <div class="archive-article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/09/03/networkflow2/">
-      <time datetime="2015-09-03T15:44:07.000Z" itemprop="datePublished">2015 Sep 3</time>
-    </a>
-  </div>
-      
-    </header>
-  </div>
-</article>
+        <p>周四听了一个高一小爷讲了一堆听不懂的数论，虐得体无完肤，我会告诉你我紧张得一下课就跑了吗，真是搞笑了。特此打上自我反省的tag以警醒。找到了暑假上课时QY神犇的课件，好好学。。。<br><a id="more"></a></p>
+<h1 id="初等数论">初等数论</h1><h2 id="数论常识">数论常识</h2><ol>
+<li>整数／整除／约数</li>
+<li>素数／合数</li>
+<li>算数基本定理：任何一个大于1的自然数 N,如果N不为质数，那么N可以唯一分解成有限个质数的乘积 N=P1^a1<em>P2^a2\</em>P3^a3……*Pn^an，这里P1&lt;P2&lt;P3……&lt;Pn均为质数，其中指数ai是正整数。</li>
+<li>除法／同余</li>
+<li>最大公因数／最小公倍数</li>
+<li>素数无限定理：证明可采用构造法，将所有已知质数相乘＋1得到不被其他质数所整除的新质数。</li>
+<li>互素</li>
+<li>进制位</li>
+</ol>
+<h2 id="欧几里德算法">欧几里德算法</h2><h3 id="辗转相除法">辗转相除法</h3><p>$$ gcd(a,b)=gcd(b,a\%b)$$<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;<span class="keyword">return</span> b?gcd(b,a % b):a;&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="更相减损数">更相减损数</h3><p>$$ 1.gcd(a,b)=gcd(a,a-b)$$$$ 2.gcd(2a,2b)=2gcd(a,b)$$$$3.gcd(2a,b)=gcd(a,b)$$<br>我也不知道有什么用，不过我们可以百度一下嘛。。。<br>查到了！BZOJ1876，求高精度gcd,<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1876" target="_blank" rel="external">传送门</a></p>
+<h3 id="扩展欧几里德exgcd">扩展欧几里德exgcd</h3><p>使用Qy的一张图便说明问题。<br><img src="http://7xl5lt.com1.z0.glb.clouddn.com/图片1.png" alt="ORZ(QY)"><br>还有一发神牛的讲课手写代码。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">exgcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> &amp;x,<span class="keyword">int</span> &amp;y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x=<span class="number">1</span>;y=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> re=exgcd(b,a%b,x,y);</span><br><span class="line">        <span class="keyword">int</span> tmp=x;</span><br><span class="line">        x=y;</span><br><span class="line">        y=tmp-a/b*y;</span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,x,y;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;exgcd(a,b,x,y)&lt;&lt;<span class="string">' '</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;x&lt;&lt;<span class="string">' '</span>&lt;&lt;y&lt;&lt;endl;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="裴蜀定理">裴蜀定理</h2><p>裴蜀定理（Bézout’s identity）得名于法国数学家艾蒂安·裴蜀，说明了对任何整数a、b和它们的最大公约数d，关于未知数x和y的线性丢番图方程（称为裴蜀等式）：若a,b是整数,且（a,b)=d，那么对于任意的整数x,y,ax+by都一定是d的倍数，特别地，一定存在整数x,y，使ax+by=d成立。</p>
+<p>它的一个重要推论是：a,b互质的充要条件是存在整数x,y使ax+by=1.</p>
+<p>它的一个重要推论是：设a1,a2,a3……an为n个整数，d是它们的最大公约数，那么存在整数x1……xn使得x1*a1+x2*a2+…xn*an=d。</p>
+<p>证明可由扩展的欧几里得算法直观得到TAT!~[近距离膜拜大爷卖萌]</p>
     
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    
-    <div class="archive-article-thumbnail">
-      <a href="/2015/09/03/network-flow1/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/plane.jpeg)" alt=" [网络流24题] 搭配飞行员" class="thumbnail-image"></span>
-  
-</a>
     </div>
-    
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/03/network-flow1/"> [网络流24题] 搭配飞行员</a>
-    </h1>
+    <footer class="article-footer">
+      <a data-url="http://blog.fractal128.tk/2015/09/18/number-theory1/" data-id="cieplq2fm0012kc45glvjqs4v" class="article-share-link">Share</a>
       
-        <div class="archive-article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/09/03/network-flow1/">
-      <time datetime="2015-09-03T06:10:55.000Z" itemprop="datePublished">2015 Sep 3</time>
+        <a href="http://blog.fractal128.tk/2015/09/18/number-theory1/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数论/">数论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自我反省/">自我反省</a></li></ul>
+    </footer>
+  </div>
+  
+    <nav id="article-nav">
+  
+  
+    <a href="/2015/09/18/bzoj2127/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">BZOJ2127:happiness</div>
     </a>
-  </div>
-      
-    </header>
-  </div>
+  
+</nav>
+  
 </article>
+
+
+<section id="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'fractal128sblog';
     
-    </div></section></section>
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section></section>
       
         <aside id="sidebar">
 
@@ -396,7 +398,7 @@ ga('send', 'pageview');
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
@@ -411,6 +413,24 @@ ga('send', 'pageview');
 
 <script src="/js/script.js" type="text/javascript"></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+messageStyle: "none"
+    }); 
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 
