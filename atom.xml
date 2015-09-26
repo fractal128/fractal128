@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.fractal128.tk/"/>
-  <updated>2015-09-26T05:26:06.000Z</updated>
+  <updated>2015-09-26T17:37:28.000Z</updated>
   <id>http://blog.fractal128.tk/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[BZOJ2882: 工艺]]></title>
+    <link href="http://blog.fractal128.tk/2015/09/27/bzoj2882/"/>
+    <id>http://blog.fractal128.tk/2015/09/27/bzoj2882/</id>
+    <published>2015-09-26T17:18:59.000Z</published>
+    <updated>2015-09-26T17:37:28.000Z</updated>
+    <content type="html"><![CDATA[<p>第一道权限题。<br><a id="more"></a><br>题目链接<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=2882" target="_blank" rel="external">戳</a></p>
+<h2 id="Description">Description</h2><p>小敏和小燕是一对好朋友。<br>他们正在玩一种神奇的游戏，叫Minecraft。<br>他们现在要做一个由方块构成的长条工艺品。但是方块现在是乱的，而且由于机器的要求，他们只能做到把这个工艺品最左边的方块放到最右边。<br>他们想，在仅这一个操作下，最漂亮的工艺品能多漂亮。<br>两个工艺品美观的比较方法是，从头开始比较，如果第i个位置上方块不一样那么谁的瑕疵度小，那么谁就更漂亮，如果一样那么继续比较第i+1个方块。如果全都一样，那么这两个工艺品就一样漂亮。</p>
+<h2 id="Solution">Solution</h2><p>学了一下最小表示法，主要作用是找出循环同构的数据的最小表示。<br>一开始直接看代码有点不懂，后来稍微想了想，差不多明白了［其实这么短，一下就背出来了。。<br>大概思想就是用两个指针选取首位进行比较，如果相同就一直往下比较，当达到了len的长度就说明已经得到了答案。具体请参看代码。</p>
+<h2 id="Code">Code</h2><p>ps.这题对presentation有要求，末尾不能有空格。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,p,t;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1000000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">minR</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">1</span>,k=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i&lt;n&amp;&amp;j&lt;n&amp;&amp;k&lt;n)&#123;</span><br><span class="line">        t=a[(i+k)%n]-a[(j+k)%n];</span><br><span class="line">        <span class="keyword">if</span> (t==<span class="number">0</span>)&#123;</span><br><span class="line">            k++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (t&gt;<span class="number">0</span>) i+=k+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (t&lt;<span class="number">0</span>) j+=k+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i==j) i++;</span><br><span class="line">            k=<span class="number">0</span>; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> min(i,j);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    p=minR();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n-<span class="number">1</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[(i+p)%n]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,a[(n-<span class="number">1</span>+p)%n]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    <summary type="html">
+    <![CDATA[<p>第一道权限题。<br>]]>
+    
+    </summary>
+    
+      <category term="BZOJ" scheme="http://blog.fractal128.tk/tags/BZOJ/"/>
+    
+      <category term="最小表示法" scheme="http://blog.fractal128.tk/tags/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/"/>
+    
+      <category term="OI" scheme="http://blog.fractal128.tk/categories/OI/"/>
+    
+      <category term="最小表示法" scheme="http://blog.fractal128.tk/categories/OI/%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[uva10635:Prince and Princess]]></title>

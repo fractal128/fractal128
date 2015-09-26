@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: OI | Fractal128 ： We are OIers</title>
+  <title>BZOJ2882: 工艺 | Fractal128 ： We are OIers</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-  <meta name="description" content="Being rather cleverer than most men,my mistakes tend to be correspondingly huger.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Fractal128 ： We are OIers">
-<meta property="og:url" content="http://blog.fractal128.tk/categories/OI/page/2/index.html">
+  <meta name="description" content="第一道权限题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BZOJ2882: 工艺">
+<meta property="og:url" content="http://blog.fractal128.tk/2015/09/27/bzoj2882/index.html">
 <meta property="og:site_name" content="Fractal128 ： We are OIers">
-<meta property="og:description" content="Being rather cleverer than most men,my mistakes tend to be correspondingly huger.">
+<meta property="og:description" content="第一道权限题。">
+<meta property="og:updated_time" content="2015-09-26T17:37:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fractal128 ： We are OIers">
-<meta name="twitter:description" content="Being rather cleverer than most men,my mistakes tend to be correspondingly huger.">
+<meta name="twitter:title" content="BZOJ2882: 工艺">
+<meta name="twitter:description" content="第一道权限题。">
   
   
     <link rel="icon" href="css/images/f1.ico">
@@ -136,179 +137,77 @@ ga('send', 'pageview');
     
 </aside>
       
-      <section id="main"><section class="archives-wrap">
-    <div class="archive-category-wrap">
-      <span class="archive-category">OI</span>
-    </div>
-    <div class="archives">
+      <section id="main"><article id="post-bzoj2882" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
+      <img src="http://7xl5lt.com1.z0.glb.clouddn.com/forest.jpg" class="article-banner">
     
-    <div class="archive-article-thumbnail">
-      <a href="/2015/09/04/networkflow3/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/503899f68ec00.jpg)" alt=" [网络流24题] 最小路径覆盖问题" class="thumbnail-image"></span>
-  
-</a>
-    </div>
     
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/04/networkflow3/"> [网络流24题] 最小路径覆盖问题</a>
+    
+      <header class="article-header">
+        <h1 class="article-title" itemprop="name">
+      BZOJ2882: 工艺
     </h1>
-      
-        <div class="archive-article-date">
+        <div class="article-meta">
+          <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/09/04/networkflow3/">
-      <time datetime="2015-09-04T03:45:06.000Z" itemprop="datePublished">2015 Sep 4</time>
+    <a href="/2015/09/27/bzoj2882/">
+      <time datetime="2015-09-26T17:18:59.000Z" itemprop="datePublished">2015-09-27</time>
     </a>
   </div>
-      
-    </header>
+          <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/最小表示法/">最小表示法</a>
   </div>
-</article>
+        </div>
+      </header>
     
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <p>第一道权限题。<br><a id="more"></a><br>题目链接<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=2882" target="_blank" rel="external">戳</a></p>
+<h2 id="Description">Description</h2><p>小敏和小燕是一对好朋友。<br>他们正在玩一种神奇的游戏，叫Minecraft。<br>他们现在要做一个由方块构成的长条工艺品。但是方块现在是乱的，而且由于机器的要求，他们只能做到把这个工艺品最左边的方块放到最右边。<br>他们想，在仅这一个操作下，最漂亮的工艺品能多漂亮。<br>两个工艺品美观的比较方法是，从头开始比较，如果第i个位置上方块不一样那么谁的瑕疵度小，那么谁就更漂亮，如果一样那么继续比较第i+1个方块。如果全都一样，那么这两个工艺品就一样漂亮。</p>
+<h2 id="Solution">Solution</h2><p>学了一下最小表示法，主要作用是找出循环同构的数据的最小表示。<br>一开始直接看代码有点不懂，后来稍微想了想，差不多明白了［其实这么短，一下就背出来了。。<br>大概思想就是用两个指针选取首位进行比较，如果相同就一直往下比较，当达到了len的长度就说明已经得到了答案。具体请参看代码。</p>
+<h2 id="Code">Code</h2><p>ps.这题对presentation有要求，末尾不能有空格。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,p,t;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1000000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">minR</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">1</span>,k=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i&lt;n&amp;&amp;j&lt;n&amp;&amp;k&lt;n)&#123;</span><br><span class="line">        t=a[(i+k)%n]-a[(j+k)%n];</span><br><span class="line">        <span class="keyword">if</span> (t==<span class="number">0</span>)&#123;</span><br><span class="line">            k++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (t&gt;<span class="number">0</span>) i+=k+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (t&lt;<span class="number">0</span>) j+=k+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i==j) i++;</span><br><span class="line">            k=<span class="number">0</span>; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> min(i,j);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    p=minR();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n-<span class="number">1</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[(i+p)%n]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,a[(n-<span class="number">1</span>+p)%n]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
     
-    <div class="archive-article-thumbnail">
-      <a href="/2015/09/03/networkflow2/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/97I58PICiEM.jpg)" alt="[网络流24题] 太空飞行计划" class="thumbnail-image"></span>
-  
-</a>
     </div>
-    
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/03/networkflow2/">[网络流24题] 太空飞行计划</a>
-    </h1>
+    <footer class="article-footer">
+      <a data-url="http://blog.fractal128.tk/2015/09/27/bzoj2882/" data-id="cif1ct4w4002dl845wyr7rtv9" class="article-share-link">Share</a>
       
-        <div class="archive-article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/09/03/networkflow2/">
-      <time datetime="2015-09-03T15:44:07.000Z" itemprop="datePublished">2015 Sep 3</time>
+        <a href="http://blog.fractal128.tk/2015/09/27/bzoj2882/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BZOJ/">BZOJ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最小表示法/">最小表示法</a></li></ul>
+    </footer>
+  </div>
+  
+    <nav id="article-nav">
+  
+  
+    <a href="/2015/09/26/uva10635/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">uva10635:Prince and Princess</div>
     </a>
-  </div>
-      
-    </header>
-  </div>
+  
+</nav>
+  
 </article>
+
+
+<section id="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'fractal128sblog';
     
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    
-    <div class="archive-article-thumbnail">
-      <a href="/2015/09/03/network-flow1/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/plane.jpeg)" alt=" [网络流24题] 搭配飞行员" class="thumbnail-image"></span>
-  
-</a>
-    </div>
-    
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/03/network-flow1/"> [网络流24题] 搭配飞行员</a>
-    </h1>
-      
-        <div class="archive-article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/09/03/network-flow1/">
-      <time datetime="2015-09-03T06:10:55.000Z" itemprop="datePublished">2015 Sep 3</time>
-    </a>
-  </div>
-      
-    </header>
-  </div>
-</article>
-    
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    
-    <div class="archive-article-thumbnail">
-      <a href="/2015/09/03/bzoj3110/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/tree.jpg)" alt="BZOJ3110:[Zjoi2013]K大数查询" class="thumbnail-image"></span>
-  
-</a>
-    </div>
-    
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/03/bzoj3110/">BZOJ3110:[Zjoi2013]K大数查询</a>
-    </h1>
-      
-        <div class="archive-article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/09/03/bzoj3110/">
-      <time datetime="2015-09-02T17:42:48.000Z" itemprop="datePublished">2015 Sep 3</time>
-    </a>
-  </div>
-      
-    </header>
-  </div>
-</article>
-    
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    
-    <div class="archive-article-thumbnail">
-      <a href="/2015/08/21/bzoj1004-［HNOI2008］Cards/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/egoist01.jpg-normal)" alt="BZOJ1004:[HNOI2008]Cards" class="thumbnail-image"></span>
-  
-</a>
-    </div>
-    
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/21/bzoj1004-［HNOI2008］Cards/">BZOJ1004:[HNOI2008]Cards</a>
-    </h1>
-      
-        <div class="archive-article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/08/21/bzoj1004-［HNOI2008］Cards/">
-      <time datetime="2015-08-21T05:52:40.000Z" itemprop="datePublished">2015 Aug 21</time>
-    </a>
-  </div>
-      
-    </header>
-  </div>
-</article>
-    
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    
-    <div class="archive-article-thumbnail">
-      <a href="/2015/08/16/river祭祀/" class="thumbnail">
-  
-    <span style="background-image:url(/css/images/crown.jpg)" alt="BZOJ1143: [CTSC2008]祭祀river" class="thumbnail-image"></span>
-  
-</a>
-    </div>
-    
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/16/river祭祀/">BZOJ1143: [CTSC2008]祭祀river</a>
-    </h1>
-      
-        <div class="archive-article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/08/16/river祭祀/">
-      <time datetime="2015-08-15T23:09:34.000Z" itemprop="datePublished">2015 Aug 16</time>
-    </a>
-  </div>
-      
-    </header>
-  </div>
-</article>
-    
-    </div></section>
-    
-      <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/categories/OI/">&laquo; Prev</a><a class="page-number" href="/categories/OI/">1</a><span class="page-number current">2</span>
-      </nav></section>
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section></section>
       
         <aside id="sidebar">
 
@@ -480,7 +379,7 @@ ga('send', 'pageview');
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
@@ -495,6 +394,24 @@ ga('send', 'pageview');
 
 <script src="/js/script.js" type="text/javascript"></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+messageStyle: "none"
+    }); 
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 
