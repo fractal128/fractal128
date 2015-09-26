@@ -916,6 +916,7 @@ a.article-title:hover {
   font-size: 1em;
   margin: 1.6em 170px;
   text-align: left;
+  background: #f6f6f6;
 }
 .article-entry blockquote footer {
   font-size: 18px;
@@ -1252,24 +1253,17 @@ ol.toc {
 #toc .toc-child {
   padding-left: 0em;
 }
-#toc.toc-aside {
-  display: none;
-  width: 13%;
-  position: fixed;
-  right: 2%;
-  top: 320px;
-  overflow: hidden;
-  line-height: 1.5em;
-  font-size: 1em;
-  color: color-heading;
-  opacity: 0.6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-  -webkit-transition: opacity 1s ease-out;
-  -moz-transition: opacity 1s ease-out;
-  -ms-transition: opacity 1s ease-out;
-  transition: opacity 1s ease-out;
-}
+#toc.toc-aside display none,
+#toc.toc-aside width 13%,
+#toc.toc-aside position fixed,
+#toc.toc-aside right 2%,
+#toc.toc-aside top 320px,
+#toc.toc-aside overflow hidden,
+#toc.toc-aside line-height 1.5em,
+#toc.toc-aside font-size 1em,
+#toc.toc-aside color color-heading,
+#toc.toc-aside opacity .6,
+#toc.toc-aside transition opacity 1s ease-out,
 #toc.toc-aside strong {
   padding: 0.3em 0;
   color: color-font;
