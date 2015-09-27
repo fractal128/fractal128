@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>初等数论（二） | Fractal128 ： We are OIers</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="description" content="继续填坑喽。。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初等数论（二）">
+<meta property="og:url" content="http://blog.fractal128.tk/2015/09/27/number-theory2/index.html">
+<meta property="og:site_name" content="Fractal128 ： We are OIers">
+<meta property="og:description" content="继续填坑喽。。。">
+<meta property="og:updated_time" content="2015-09-27T08:59:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初等数论（二）">
+<meta name="twitter:description" content="继续填坑喽。。。">
+  
+  
+    <link rel="icon" href="css/images/f1.ico">
+  
+  <link href="//fonts.useso.com/css?family=Open+Sans:400italic,400,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  <!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-66886955-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+  
+</head></html>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo" style="background-image: url(/css/images/f2.jpg)"></i><span class="site-title">Fractal128 ： We are OIers</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/.">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/1.jpg"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+      
+      <div id="search-form-wrap">
+        <form action="//Google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search..."><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://blog.fractal128.tk"></form>
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+        
+          <td><a class="main-nav-link" href="/.">Home</a></td>
+        
+          <td><a class="main-nav-link" href="/archives">Archives</a></td>
+        
+          <td><a class="main-nav-link" href="/categories">Categories</a></td>
+        
+          <td><a class="main-nav-link" href="/tags">Tags</a></td>
+        
+          <td><a class="main-nav-link" href="/about">About</a></td>
+        
+        <td>
+          <form action="//Google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search..."><input type="hidden" name="sitesearch" value="http://blog.fractal128.tk"></form>
+        </td>
+      </tr>
+    </table>
+  </div>
+</header>
+    <div class="outer">
+      
+        <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="/css/images/1.jpg">
+      <h2 id="name">fractal128</h2>
+      <h3 id="title">if not me, who, if not now, when.</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>HangZhou, China</span>
+      <a id="follow" href="https://gitcafe.com/fractal128/">FOLLOW</a>
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        17
+        <span>posts</span>
+      </div>
+      <div class="article-info-block">
+        22
+        <span>tags</span>
+      </div>
+    </div>
+
+    <div class="article-info profile-block">
+    	  <script type="text/javascript" src="http://www.xiami.com/widget/player-multi?uid=55528284&sid=1771977511,2073511,1770182616,1770554728,1770776542,1769876919,2051509,&width=260&height=346&mainColor=40B6E8&backColor=ffffff&autoplay=0&mode=js"></script>
+    </div>
+    
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+          
+          <td><a href="https://github.com/fractal128" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+          
+          <td><a href="/#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+          
+          <td><a href="https://www.facebook.com/profile.php?id=100008201833794" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+          
+          <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+          
+        </tr>
+      </table>
+    </div>
+    
+    
+  </div>
+
+    
+</aside>
+      
+      <section id="main"><article id="post-number-theory2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        <h1 class="article-title" itemprop="name">
+      初等数论（二）
+    </h1>
+        <div class="article-meta">
+          <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/09/27/number-theory2/">
+      <time datetime="2015-09-27T07:11:45.000Z" itemprop="datePublished">2015-09-27</time>
+    </a>
+  </div>
+          <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/数论/">数论</a>
+  </div>
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <div id="toc" class="toc-article">
+        <!--<strong class="toc-title">Catalogue</strong>-->
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#初等数论"><span class="toc-number">1.</span> <span class="toc-text">初等数论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数论筛法"><span class="toc-number">1.1.</span> <span class="toc-text">数论筛法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Eraosthens筛法"><span class="toc-number">1.1.1.</span> <span class="toc-text">Eraosthens筛法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性筛法(奇性函数)"><span class="toc-number">1.1.2.</span> <span class="toc-text">线性筛法(奇性函数)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用性质"><span class="toc-number">1.1.3.</span> <span class="toc-text">常用性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#素数测试"><span class="toc-number">1.2.</span> <span class="toc-text">素数测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fermat素数测试"><span class="toc-number">1.2.1.</span> <span class="toc-text">Fermat素数测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#费马小定理"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">费马小定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#限制与伪素数"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">限制与伪素数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Miller-Rabin_素性测试与二次探测"><span class="toc-number">1.2.2.</span> <span class="toc-text">Miller-Rabin 素性测试与二次探测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实践"><span class="toc-number">1.2.3.</span> <span class="toc-text">实践</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#质因数分解法"><span class="toc-number">1.3.</span> <span class="toc-text">质因数分解法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#O(sqrt(n))暴力分解"><span class="toc-number">1.3.1.</span> <span class="toc-text">O(sqrt(n))暴力分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pollard-Rho椭圆曲线分解法"><span class="toc-number">1.3.2.</span> <span class="toc-text">Pollard-Rho椭圆曲线分解法</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+        <p>继续填坑喽。。。<br><a id="more"></a></p>
+<h1 id="初等数论">初等数论</h1><h2 id="数论筛法">数论筛法</h2><h3 id="Eraosthens筛法">Eraosthens筛法</h3><p>基本筛法，一般情况下都不会被卡，时间复杂度Θ(nlogn)[我不会算。。。</p>
+<h3 id="线性筛法(奇性函数)">线性筛法(奇性函数)</h3><p>时间复杂度Θ(n)[还是不会算。。。<br>直接放代码。。。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=i;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(!mindiv[i])prime[++tot]=mindiv[i]=i;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=tot&amp;&amp;prime[j]&lt;=mindiv[i]&amp;&amp;(k=prime[j]*i)&lt;=n;j++)</span><br><span class="line">    mindiv[k]=prime[j];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//mindiv[k]表示k的最小质因数，这样保证了每一个数只会被他的最小质因数筛掉一遍。</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="常用性质">常用性质</h3><p>n以内素数个数O(n/ln(n))</p>
+<h2 id="素数测试">素数测试</h2><h3 id="Fermat素数测试">Fermat素数测试</h3><h4 id="费马小定理">费马小定理</h4><blockquote>
+<p>对于素数p与任意与p互素的整数a满足a(p-1) ≡1(mod p)</p>
+</blockquote>
+<h4 id="证明">证明</h4><blockquote><p>这个证明就有点麻烦了。<br>    首先我们证明这样一个结论：如果p是一个素数的话，那么对任意一个小于p的正整数a，a, 2a, 3a, …, (p-1)a除以p的余数正好是一个1到p-1的排列。例如，5是素数，3, 6, 9, 12除以5的余数分别为3, 1, 4, 2，正好就是1到4这四个数。<br>    反证法，假如结论不成立的话，那么就是说有两个小于p的正整数m和n使得na和ma除以p的余数相同。不妨假设n&gt;m，则p可以整除a(n-m)。但p是素数，那么a和n-m中至少有一个含有因子p。这显然是不可能的，因为a和n-m都比p小。<br>    用同余式表述，我们证明了：<br>(p-1)! ≡ a * 2a * 3a * … * (p-1)a (mod p)<br>    也即：<br>(p-1)! ≡ (p-1)! * a^(p-1) (mod p)<br>    两边同时除以(p-1)!，就得到了我们的最终结论：<br>1 ≡ a^(p-1) (mod p)</p><footer><strong>Matrix67</strong><cite><a href="http://www.matrix67.com/blog/archives/234" target="_blank" rel="external">数论部分第一节：素数与素性测试</a></cite></footer></blockquote>
+<h4 id="限制与伪素数">限制与伪素数</h4><blockquote><p>谈到Fermat小定理，数学历史上有很多误解。很长一段时间里，人们都认为Fermat小定理的逆命题是正确的，并且有人亲自验证了a=2, p&lt;300的所有情况。国外甚至流传着一种说法，认为中国在孔子时代就证明了这样的定理：如果n整除2^(n-1)-1，则n就是素数。后来某个英国学者进行考证后才发现那是因为他们翻译中国古文时出了错。1819年有人发现了Fermat小定理逆命题的第一个反例：虽然2的340次方除以341余1，但341=11*31。后来，人们又发现了561, 645, 1105等数都表明a=2时Fermat小定理的逆命题不成立。虽然这样的数不多，但不能忽视它们的存在。于是，人们把所有能整除2^(n-1)-1的合数n叫做伪素数(pseudoprime)，意思就是告诉人们这个素数是假的。</p>
+<p>不满足2^(n-1) mod n = 1的n一定不是素数；如果满足的话则多半是素数。这样，一个比试除法效率更高的素性判断方法出现了：制作一张伪素数表，记录某个范围内的所有伪素数，那么所有满足2^(n-1) mod n = 1且不在伪素数表中的n就是素数。之所以这种方法更快，是因为我们可以使用二分法快速计算2^(n-1) mod n 的值，这在计算机的帮助下变得非常容易；在计算机中也可以用二分查找有序数列、Hash表开散列、构建Trie树等方法使得查找伪素数表效率更高。</p>
+<p>有人自然会关心这样一个问题：伪素数的个数到底有多少？换句话说，如果我只计算2^(n-1) mod n的值，事先不准备伪素数表，那么素性判断出错的概率有多少？研究这个问题是很有价值的，毕竟我们是OIer，不可能背一个长度上千的常量数组带上考场。统计表明，在前10亿个自然数中共有50847534个素数，而满足2^(n-1) mod n = 1的合数n有5597个。这样算下来，算法出错的可能性约为0.00011。这个概率太高了，如果想免去建立伪素数表的工作，我们需要改进素性判断的算法。  </p>
+<p>最简单的想法就是，我们刚才只考虑了a=2的情况。对于式子a^(n-1) mod n，取不同的a可能导致不同的结果。一个合数可能在a=2时通过了测试，但a=3时的计算结果却排除了素数的可能。于是，人们扩展了伪素数的定义，称满足a^(n-1) mod n = 1的合数n叫做以a为底的伪素数(pseudoprime to base a)。前10亿个自然数中同时以2和3为底的伪素数只有1272个，这个数目不到刚才的1/4。这告诉我们如果同时验证a=2和a=3两种情况，算法出错的概率降到了0.000025。容易想到，选择用来测试的a越多，算法越准确。通常我们的做法是，随机选择若干个小于待测数的正整数作为底数a进行若干次测试，只要有一次没有通过测试就立即把这个数扔回合数的世界。这就是Fermat素性测试。</p>
+<p>人们自然会想，如果考虑了所有小于n的底数a，出错的概率是否就可以降到0呢？没想到的是，居然就有这样的合数，它可以通过所有a的测试（这个说法不准确，详见我在地核楼层的回复）。Carmichael第一个发现这样极端的伪素数，他把它们称作Carmichael数。你一定会以为这样的数一定很大。错。第一个Carmichael数小得惊人，仅仅是一个三位数，561。前10亿个自然数中Carmichael数也有600个之多。Carmichael数的存在说明，我们还需要继续加强素性判断的算法。</p><footer><strong>Matrix67</strong><cite><a href="http://www.matrix67.com/blog/archives/234" target="_blank" rel="external">数论部分第一节：素数与素性测试</a></cite></footer></blockquote>
+<h3 id="Miller-Rabin_素性测试与二次探测">Miller-Rabin 素性测试与二次探测</h3><blockquote>
+<p>Miller-Rabin算法是目前主流的基于概率的素数测试算法，在构建密码安全体系中占有重要的地位。通过比较各种素数测试算法和对Miller-Rabin算法进行的仔细研究，证明在计算机中构建密码安全体系时， Miller-Rain算法是完成素数测试的最佳选择。通过对Miller-Rabin 算法底层运算的优化，可以取得较以往实现更好的性能。</p>
+</blockquote>
+<p>以上基本没用。。下面是该算法的一些引理</p>
+<blockquote>
+<p>二次探测引理：若p为奇素数，方程x^2≡1(mod p)的解只有±1<br>long long 范围内的所有整数均能用前9个素数进行准确的二次探测</p>
+</blockquote>
+<h3 id="实践">实践</h3><p><a href="http://codevs.cn/problem/1702/" target="_blank" rel="external">codevs1702</a><br>一个数，他是素数么？<br>设他为P满足(P&lt;=2^63-1)</p>
+<p>Code<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> n=<span class="number">16</span>;</span><br><span class="line"><span class="keyword">const</span> ll p[<span class="number">17</span>]=&#123;<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">11</span>,<span class="number">13</span>,<span class="number">17</span>,<span class="number">19</span>,<span class="number">23</span>,<span class="number">29</span>,<span class="number">31</span>,<span class="number">37</span>,<span class="number">41</span>,<span class="number">43</span>,<span class="number">47</span>,<span class="number">53</span>&#125;;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">ll x;</span><br><span class="line"><span class="function">ll <span class="title">mul</span><span class="params">(ll a,ll b,ll MOD)</span></span>&#123;</span><br><span class="line">    ll ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (b&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span> ((b &amp; <span class="number">1</span>)==<span class="number">1</span>)&#123;</span><br><span class="line">            ans+=a; ans%=MOD;</span><br><span class="line">        &#125;</span><br><span class="line">        a=(a+a)%MOD;</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">power</span><span class="params">(ll a,ll b,ll MOD)</span></span>&#123;</span><br><span class="line">    ll ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (b&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span> ((b &amp; <span class="number">1</span>)==<span class="number">1</span>) ans=mul(ans,a,MOD);</span><br><span class="line">        a=mul(a,a,MOD);</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Isprime</span><span class="params">(ll a, ll b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (b==<span class="number">2</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> ((b==<span class="number">1</span>)||((b &amp; <span class="number">1</span>)==<span class="number">0</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    ll t=b-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> ((t &amp; <span class="number">1</span>)==<span class="number">0</span>) t&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    ll tmp=power(a,t,b);</span><br><span class="line">    <span class="keyword">while</span> ((t!=b-<span class="number">1</span>)&amp;&amp;(tmp!=<span class="number">1</span>)&amp;&amp;(tmp!=b-<span class="number">1</span>))&#123;</span><br><span class="line">        tmp=mul(tmp,tmp,b);</span><br><span class="line">        t&lt;&lt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ((tmp==b-<span class="number">1</span>)||((t &amp; <span class="number">1</span>)==<span class="number">1</span>)) <span class="keyword">return</span> <span class="number">1</span>; <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;x);</span><br><span class="line">    <span class="keyword">int</span> flag=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (p[i]==x)&#123;</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">"Yes"</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            flag=<span class="function">flag &amp; <span class="title">Isprime</span><span class="params">(p[i],x)</span></span>;</span><br><span class="line">            <span class="keyword">if</span> (flag==<span class="number">0</span>) &#123;<span class="keyword">break</span>;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (flag==<span class="number">1</span>) <span class="built_in">puts</span>(<span class="string">"Yes"</span>); <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"No"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="质因数分解法">质因数分解法</h2><h3 id="O(sqrt(n))暴力分解">O(sqrt(n))暴力分解</h3><h3 id="Pollard-Rho椭圆曲线分解法">Pollard-Rho椭圆曲线分解法</h3><p>这坑太大了，有点填不动该怎么办。。。</p>
+    
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.fractal128.tk/2015/09/27/number-theory2/" data-id="cif26k0iz001i6d45wv80xnab" class="article-share-link">Share</a>
+      
+        <a href="http://blog.fractal128.tk/2015/09/27/number-theory2/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数论/">数论</a></li></ul>
+    </footer>
+  </div>
+  
+    <nav id="article-nav">
+  
+  
+    <a href="/2015/09/27/vijos1382/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Vijos1382：寻找主人</div>
+    </a>
+  
+</nav>
+  
+</article>
+
+
+<section id="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'fractal128sblog';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section></section>
+      
+        <aside id="sidebar">
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">recents</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/09/27/number-theory2/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/数论/">数论</a></p>
+              <p class="item-title"><a href="/2015/09/27/number-theory2/" class="title">初等数论（二）</a></p>
+              <p class="item-date"><time datetime="2015-09-27T07:11:45.000Z" itemprop="datePublished">2015-09-27</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/09/27/vijos1382/" class="thumbnail">
+  
+    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/Dream.jpg)" alt="Vijos1382：寻找主人" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/最小表示法/">最小表示法</a></p>
+              <p class="item-title"><a href="/2015/09/27/vijos1382/" class="title">Vijos1382：寻找主人</a></p>
+              <p class="item-date"><time datetime="2015-09-26T17:59:53.000Z" itemprop="datePublished">2015-09-27</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/09/27/bzoj2882/" class="thumbnail">
+  
+    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/jj.jpeg)" alt="BZOJ2882: 工艺" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/最小表示法/">最小表示法</a></p>
+              <p class="item-title"><a href="/2015/09/27/bzoj2882/" class="title">BZOJ2882: 工艺</a></p>
+              <p class="item-date"><time datetime="2015-09-26T17:18:59.000Z" itemprop="datePublished">2015-09-27</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/09/26/uva10635/" class="thumbnail">
+  
+    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/1.jpg)" alt="uva10635:Prince and Princess" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/动态规划/">动态规划</a></p>
+              <p class="item-title"><a href="/2015/09/26/uva10635/" class="title">uva10635:Prince and Princess</a></p>
+              <p class="item-date"><time datetime="2015-09-25T18:38:10.000Z" itemprop="datePublished">2015-09-26</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/09/26/bzoj1876/" class="thumbnail">
+  
+    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/_50448840339553232263768406969771509687.jpg)" alt="BZOJ1876: [SDOI2009]SuperGCD" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/数论/">数论</a></p>
+              <p class="item-title"><a href="/2015/09/26/bzoj1876/" class="title">BZOJ1876: [SDOI2009]SuperGCD</a></p>
+              <p class="item-date"><time datetime="2015-09-25T18:27:32.000Z" itemprop="datePublished">2015-09-26</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OI/">OI</a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OI/二分图/">二分图</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/动态规划/">动态规划</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/搜索/">搜索</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/数论/">数论</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/最小表示法/">最小表示法</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/网络流/">网络流</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/群论/">群论</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随记/">随记</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">tag cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BZOJ/" style="font-size: 20px">BZOJ</a> <a href="/tags/HNOI/" style="font-size: 10px">HNOI</a> <a href="/tags/ZJOI/" style="font-size: 10px">ZJOI</a> <a href="/tags/burnside引理/" style="font-size: 10px">burnside引理</a> <a href="/tags/ctsc/" style="font-size: 10px">ctsc</a> <a href="/tags/dilworth定理/" style="font-size: 10px">dilworth定理</a> <a href="/tags/polya/" style="font-size: 10px">pólya</a> <a href="/tags/test/" style="font-size: 10px">test</a> <a href="/tags/uva/" style="font-size: 10px">uva</a> <a href="/tags/vijos/" style="font-size: 10px">vijos</a> <a href="/tags/一般递推/" style="font-size: 10px">一般递推</a> <a href="/tags/东野圭吾/" style="font-size: 10px">东野圭吾</a> <a href="/tags/二分图/" style="font-size: 13.33px">二分图</a> <a href="/tags/动态规划/" style="font-size: 10px">动态规划</a> <a href="/tags/搜索/" style="font-size: 10px">搜索</a> <a href="/tags/数据结构/" style="font-size: 10px">数据结构</a> <a href="/tags/数论/" style="font-size: 16.67px">数论</a> <a href="/tags/最大流/" style="font-size: 13.33px">最大流</a> <a href="/tags/最小割/" style="font-size: 13.33px">最小割</a> <a href="/tags/最小表示法/" style="font-size: 13.33px">最小表示法</a> <a href="/tags/网络流/" style="font-size: 16.67px">网络流</a> <a href="/tags/面壁反省/" style="font-size: 13.33px">面壁反省</a>
+    </div>
+  </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+  
+    <div class="widget-wrap widget-list">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io/">Hexo</a>
+          </li>
+        
+          <li>
+            <a href="http://i301void.gitcafe.io">i301void</a>
+          </li>
+        
+          <li>
+            <a href="http://blog.acmicpc.info">FlowForACMers</a>
+          </li>
+        
+          <li>
+            <a href="http://patina27.aliapp.com/">Patina27</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 fractal128 <br> 
+      
+      <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+		</script>
+		<span id="busuanzi_container_site_uv">
+  		您是本站第<span id="busuanzi_value_site_uv"></span>位访客
+		</span><br>
+
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    <script>
+  var disqus_shortname = 'fractal128';
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.useso.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+messageStyle: "none"
+    }); 
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
