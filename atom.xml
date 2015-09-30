@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.fractal128.tk/"/>
-  <updated>2015-09-30T14:00:52.000Z</updated>
+  <updated>2015-09-30T17:48:58.000Z</updated>
   <id>http://blog.fractal128.tk/</id>
   
   <author>
@@ -13,6 +13,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[初等数论（三）]]></title>
+    <link href="http://blog.fractal128.tk/2015/10/01/number-theory3/"/>
+    <id>http://blog.fractal128.tk/2015/10/01/number-theory3/</id>
+    <published>2015-09-30T17:16:35.000Z</published>
+    <updated>2015-09-30T17:48:58.000Z</updated>
+    <content type="html"><![CDATA[<p>数论好难啊。。。<br><a id="more"></a></p>
+<h1 id="初等数论">初等数论</h1><h2 id="积性函数">积性函数</h2><p>在非数论的领域，积性函数指所有对于任何a,b都有性质f(ab)=f(a)f(b)的函数。<br>在数论中的积性函数：对于正整数n的一个算术函数 f(n)，若f(1)=1，且当a,b互质时f(ab)=f(a)f(b)，在数论上就称它为积性函数。若对于某积性函数 f(n) ，就算a, b不互质，也有f(ab)=f(a)f(b)，则称它为完全积性的。</p>
+<p>列了一堆奇怪的函数。。。</p>
+<blockquote>
+<ul>
+<li>φ(n) －欧拉函数，计算与n互质的正整数之数目</li>
+<li>μ(n) －莫比乌斯函数，关于非平方数的质因子数目</li>
+<li>gcd(n,k) －最大公因子，当k固定的情况</li>
+<li>d(n) －n的正因子数目</li>
+<li>σ(n) －n的所有正因子之和</li>
+<li>σk(n) － 因子函数，n的所有正因子的k次幂之和，当中k可为任何复数。</li>
+<li>1(n) －不变的函数，定义为 1(n) = 1 （完全积性）</li>
+<li>Id(n) －单位函数，定义为 Id(n) = n（完全积性）</li>
+<li>Idk(n) －幂函数，对于任何复数、实数k，定义为Idk(n) = n^k （完全积性）</li>
+<li>ε(n) －定义为：若n = 1，ε(n)=1；若 n &gt; 1，ε(n)=0。别称为“对于狄利克雷卷积的乘法单位”（完全积性）</li>
+<li>λ(n) －刘维尔函数，关于能整除n的质因子的数目</li>
+<li>γ(n)，定义为γ(n)=(-1)^ω(n)，在此加性函数ω(n)是不同能整除n的质数的数目</li>
+</ul>
+</blockquote>
+<p>另外，所有狄利克雷特征均是完全积性的</p>
+<h2 id="欧拉函数">欧拉函数</h2><p>在数论，对正整数n，欧拉函数是少于或等于n的数中与n互质的数的数目。此函数以其首名研究者欧拉命名，它又称为Euler’s totient function、φ函数、欧拉商数等。 例如φ(8)=4，因为1,3,5,7均和8互质。 从欧拉函数引伸出来在环论方面的事实和拉格朗日定理构成了欧拉定理的证明。</p>
+<h3 id="公式">公式</h3><p>$$ φ(x)=x\cdot\prod( 1-{1\over{p_i}}) $$</p>
+<h3 id="实现">实现</h3><p>由于其积性函数的性质，可以很好的在线性筛中实现。</p>
+<h2 id="乘法逆元">乘法逆元</h2><p>aa’=a’a=e</p>
+<p>质数：费马小定理+快速幂<br>任意数：Exgcd</p>
+<h2 id="中国剩余定理">中国剩余定理</h2><p>已知X除以若干数的余数，求X的解集</p>
+<p>构造法:<br>x≡A (mod N)  且  x≡B (mod M)<br>若A%gcd(N,M)≠B%gcd(N,M)无解<br>否则<br>ans=(A*M*ni(M,N)+B*N*ni(N,M))+k*lcm(N,M)</p>
+<p>模非质数P时先做质因数分解，在各个模下求解在中国剩余定理合并</p>
+<h2 id="阶">阶</h2><p>设a，p是整数，有：a^n≡1 (mod p)<br>可以使上式成立的最小正整数n叫做a模p的阶。</p>
+<h2 id="原根与指标">原根与指标</h2><p>xk mod n 对于k&lt;φ(n)互不相同，x是模n的原根<br>离散对数：ab≡c (mod n)  →  indac=b (mod φ(n))<br>ab≡c (mod n)  →  b*indpa=indpc (mod φ(n))<br>存在原根的数：2,4,pa,2pa(p是素数)  </p>]]></content>
+    <summary type="html">
+    <![CDATA[<p>数论好难啊。。。<br>]]>
+    
+    </summary>
+    
+      <category term="数论" scheme="http://blog.fractal128.tk/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="OI" scheme="http://blog.fractal128.tk/categories/OI/"/>
+    
+      <category term="数论" scheme="http://blog.fractal128.tk/categories/OI/%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[摇曳的九月。]]></title>
@@ -47,10 +96,10 @@
     <link href="http://blog.fractal128.tk/2015/09/27/number-theory2/"/>
     <id>http://blog.fractal128.tk/2015/09/27/number-theory2/</id>
     <published>2015-09-27T07:11:45.000Z</published>
-    <updated>2015-09-30T11:32:47.000Z</updated>
+    <updated>2015-09-30T17:19:37.000Z</updated>
     <content type="html"><![CDATA[<p>中秋快乐！<br>继续填坑喽。。。<br><a id="more"></a></p>
 <h1 id="初等数论">初等数论</h1><h2 id="数论筛法">数论筛法</h2><h3 id="Eraosthens筛法">Eraosthens筛法</h3><p>基本筛法，一般情况下都不会被卡，时间复杂度Θ(nlogn)[我不会算。。。</p>
-<h3 id="线性筛法(奇性函数)">线性筛法(奇性函数)</h3><p>时间复杂度Θ(n)[还是不会算。。。<br>直接放代码。。。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=i;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(!mindiv[i])prime[++tot]=mindiv[i]=i;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=tot&amp;&amp;prime[j]&lt;=mindiv[i]&amp;&amp;(k=prime[j]*i)&lt;=n;j++)</span><br><span class="line">    mindiv[k]=prime[j];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//mindiv[k]表示k的最小质因数，这样保证了每一个数只会被他的最小质因数筛掉一遍。</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="线性筛法(积性函数)">线性筛法(积性函数)</h3><p>时间复杂度Θ(n)[还是不会算。。。<br>直接放代码。。。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=i;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(!mindiv[i])prime[++tot]=mindiv[i]=i;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=tot&amp;&amp;prime[j]&lt;=mindiv[i]&amp;&amp;(k=prime[j]*i)&lt;=n;j++)</span><br><span class="line">    mindiv[k]=prime[j];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//mindiv[k]表示k的最小质因数，这样保证了每一个数只会被他的最小质因数筛掉一遍。</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="常用性质">常用性质</h3><p>n以内素数个数O(n/ln(n))</p>
 <h2 id="素数测试">素数测试</h2><h3 id="Fermat素数测试">Fermat素数测试</h3><h4 id="费马小定理">费马小定理</h4><blockquote>
 <p>对于素数p与任意与p互素的整数a满足a(p-1) ≡1(mod p)</p>
