@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.fractal128.tk/"/>
-  <updated>2015-09-30T17:48:58.000Z</updated>
+  <updated>2015-10-01T07:54:22.000Z</updated>
   <id>http://blog.fractal128.tk/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[BZOJ2190: [SDOI2008]仪仗队]]></title>
+    <link href="http://blog.fractal128.tk/2015/10/01/bzoj2190/"/>
+    <id>http://blog.fractal128.tk/2015/10/01/bzoj2190/</id>
+    <published>2015-10-01T07:42:09.000Z</published>
+    <updated>2015-10-01T07:54:22.000Z</updated>
+    <content type="html"><![CDATA[<p>线性筛计算欧拉函数模板。<br><a id="more"></a></p>
+<p>题目链接<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=2190" target="_blank" rel="external">在此</a></p>
+<h2 id="Description">Description</h2><p>作为体育委员，C君负责这次运动会仪仗队的训练。仪仗队是由学生组成的N * N的方阵，为了保证队伍在行进中整齐划一，C君会跟在仪仗队的左后方，根据其视线所及的学生人数来判断队伍是否整齐。<br>现在，C君希望你告诉他队伍整齐时能看到的学生人数。<br><img src="http://7xl5lt.com1.z0.glb.clouddn.com/2190.jpg.gif" alt="2190"></p>
+<h2 id="Solution">Solution</h2><p>将图沿对角线分开，可以得到答案公式:<br>$$ ans=2\cdot\sum^{i=2}_{i&lt;n}{φ(i)}+3$$<br>用线性筛求各数的欧拉函数即可。</p>
+<h2 id="Code">Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxn <span class="number">1000000</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">ll vis[maxn],phi[maxn],p[maxn];</span><br><span class="line"><span class="keyword">int</span> tot,n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">0</span>; <span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;<span class="string">'0'</span>||ch&gt;<span class="string">'9'</span>) ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>) &#123; x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_phi</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (vis[i] == <span class="number">0</span>)&#123;</span><br><span class="line">            vis[i] = <span class="number">1</span>; p[++tot] = i;</span><br><span class="line">            phi[i] = i-<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j &lt;= tot; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (i*p[j]&gt;n) <span class="keyword">break</span>;</span><br><span class="line">            vis[i*p[j]]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % p[j] == <span class="number">0</span>)&#123;</span><br><span class="line">                phi[i * p[j]] = phi[i] * p[j];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                phi[i * p[j]] = phi[i] * (p[j]-<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n = read();</span><br><span class="line">    get_phi();</span><br><span class="line">    ll sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n-<span class="number">1</span>; i ++)&#123;</span><br><span class="line">        sum+=phi[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld"</span>,sum * <span class="number">2</span> + <span class="number">3</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p>线性筛计算欧拉函数模板。<br>]]>
+    
+    </summary>
+    
+      <category term="BZOJ" scheme="http://blog.fractal128.tk/tags/BZOJ/"/>
+    
+      <category term="SDOI" scheme="http://blog.fractal128.tk/tags/SDOI/"/>
+    
+      <category term="数论" scheme="http://blog.fractal128.tk/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="OI" scheme="http://blog.fractal128.tk/categories/OI/"/>
+    
+      <category term="数论" scheme="http://blog.fractal128.tk/categories/OI/%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[初等数论（三）]]></title>
