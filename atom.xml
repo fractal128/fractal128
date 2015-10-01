@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.fractal128.tk/"/>
-  <updated>2015-10-01T14:44:44.000Z</updated>
+  <updated>2015-10-01T18:15:26.000Z</updated>
   <id>http://blog.fractal128.tk/</id>
   
   <author>
@@ -13,6 +13,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[BZOJ3098: Hash Killer II]]></title>
+    <link href="http://blog.fractal128.tk/2015/10/02/bzoj3098/"/>
+    <id>http://blog.fractal128.tk/2015/10/02/bzoj3098/</id>
+    <published>2015-10-01T18:01:17.000Z</published>
+    <updated>2015-10-01T18:15:26.000Z</updated>
+    <content type="html"><![CDATA[<p>神奇的题目，膜膜膜。<br>一道高手一看就会，而我看了题解也没什么想法的题。<br><a id="more"></a></p>
+<h2 id="Description">Description</h2><p>这天天气不错，hzhwcmhf神犇给VFleaKing出了一道题：<br>给你一个长度为N的字符串S，求有多少个不同的长度为L的子串。<br>子串的定义是S[l]、S[l + 1]、… S[r]这样连续的一段。<br>两个字符串被认为是不同的当且仅当某个位置上的字符不同。</p>
+<p>VFleaKing一看觉得这不是Hash的裸题么！于是果断写了哈希 + 排序。<br>而hzhwcmhf神犇心里自然知道，这题就是后缀数组的height中 &lt; L的个数 + 1，就是后缀自动机上代表的长度区间包含L的结点个数，就是后缀树深度为L的结点的数量。<br>但是hzhwcmhf神犇看了看VFleaKing的做法表示非常汗。于是想卡掉他。</p>
+<p>VFleaKing使用的是字典序哈希，其代码大致如下：<br>u64 val = 0;<br>for (int i = 0; i &lt; l; i++)<br> val = (val * base + s[i] - ‘a’) % Mod;<br>u64是无符号int64，范围是[0, 2^64)。<br>base是一个常量，VFleaKing会根据心情决定其值。<br>Mod等于1000000007。<br>VFleaKing还求出来了base ^ l % Mod，即base的l次方除以Mod的余数，这样就能方便地求出所有长度为L的子串的哈希值。<br>然后VFleaKing给哈希值排序，去重，求出有多少个不同的哈希值，把这个数作为结果。<br>其算法的C++代码如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> u64;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MaxN = <span class="number">100000</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">hash_handle</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *s, <span class="keyword">const</span> <span class="keyword">int</span> &amp;n, <span class="keyword">const</span> <span class="keyword">int</span> &amp;l, <span class="keyword">const</span> <span class="keyword">int</span> &amp;base)</span></span><br><span class="line"></span>&#123;</span><br><span class="line"> <span class="keyword">const</span> <span class="keyword">int</span> Mod = <span class="number">1000000007</span>;</span><br><span class="line"></span><br><span class="line"> u64 hash_pow_l = <span class="number">1</span>;</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= l; i++)</span><br><span class="line">  hash_pow_l = (hash_pow_l * base) % Mod;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">int</span> li_n = <span class="number">0</span>;</span><br><span class="line"> <span class="keyword">static</span> <span class="keyword">int</span> li[MaxN];</span><br><span class="line"></span><br><span class="line"> u64 val = <span class="number">0</span>;</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l; i++)</span><br><span class="line">  val = (val * base + s[i] - <span class="string">'a'</span>) % Mod;</span><br><span class="line"> li[li_n++] = val;</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt; n; i++)</span><br><span class="line"> &#123;</span><br><span class="line">  val = (val * base + s[i] - <span class="string">'a'</span>) % Mod;</span><br><span class="line">  val = (val + Mod - ((s[i - l] - <span class="string">'a'</span>) * hash_pow_l) % Mod) % Mod;</span><br><span class="line">  li[li_n++] = val;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> sort(li, li + li_n);</span><br><span class="line"> li_n = unique(li, li + li_n) - li;</span><br><span class="line"> <span class="keyword">return</span> li_n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>hzhwcmhf当然知道怎么卡啦！但是他想考考你。</p>
+<h2 id="Solution">Solution</h2><p>看了很久才稍微有点明白。<br>把每一次计算hash当成是随机数，然后就可以使用生日悖论的性质（在pollard-rho中也是这个性质），所以大概就是把n去到个100000，然后乱搞就行了。<br>注意l要稍微去大一点，不然的话算出的hash值就不是那么随机了。。。</p>
+<h2 id="Code">Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n=<span class="number">100000</span>,l=<span class="number">30</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;n&lt;&lt;<span class="string">' '</span>&lt;&lt;l&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="keyword">char</span>(rand()%<span class="number">26</span>+<span class="string">'a'</span>);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p>神奇的题目，膜膜膜。<br>一道高手一看就会，而我看了题解也没什么想法的题。<br>]]>
+    
+    </summary>
+    
+      <category term="BZOJ" scheme="http://blog.fractal128.tk/tags/BZOJ/"/>
+    
+      <category term="OI" scheme="http://blog.fractal128.tk/categories/OI/"/>
+    
+      <category term="数论" scheme="http://blog.fractal128.tk/categories/OI/%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[BZOJ4291: [PA2015]Kieszonkowe]]></title>
@@ -609,73 +635,6 @@
       <category term="东野圭吾" scheme="http://blog.fractal128.tk/tags/%E4%B8%9C%E9%87%8E%E5%9C%AD%E5%90%BE/"/>
     
       <category term="随记" scheme="http://blog.fractal128.tk/categories/%E9%9A%8F%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[BZOJ1143: [CTSC2008]祭祀river]]></title>
-    <link href="http://blog.fractal128.tk/2015/08/16/river%E7%A5%AD%E7%A5%80/"/>
-    <id>http://blog.fractal128.tk/2015/08/16/river祭祀/</id>
-    <published>2015-08-15T23:09:34.000Z</published>
-    <updated>2015-09-26T16:32:10.000Z</updated>
-    <content type="html"><![CDATA[<p>前些日子WCMG给我（蒟蒻）们上过二分图，也讲了这道题，然而课上晕头转向，并没有搞清楚什么，这次认真学习了然而并没有什么用<br><a id="more"></a><br>题目链接：<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1143" target="_blank" rel="external">http://www.lydsy.com/JudgeOnline/problem.php?id=1143</a></p>
-<h2 id="题目大意:">题目大意:</h2><p>给出一个DAG，求出其最大点独立集（集合间任意两点不联通）</p>
-<h2 id="Solution&amp;Story:">Solution&amp;Story:</h2><p>根据foreseeable大爷的课件，此问题可以转化为求改图的最小可相交路径覆盖。（下文会解释为什么）</p>
-<p>我们可以先讨论一下如何求出改图的最小不可相交路径覆盖，可以讲图上的点u拆为(u,u’)，对于任意边(u,v),则连接(u,v’)，形成一个二分图，在上面跑二分图匹配，可得，</p>
-<blockquote>
-<p>  最小路径覆盖数＝G的点数－最小路径覆盖中的边数。</p>
-</blockquote>
-<p>应该使得最小路径覆盖中的边数尽量多，但是又不能让两条边在同一个顶点相交。</p>
-<p>所以又可以得到最小路径覆盖数＝G的点数－二分图最大匹配数。而如果如果要求的是可相交路径覆盖，只需要预处理时用floyd得到两点间联通性然后手动加边即可。</p>
-<p>下面再来填一下一开始的坑，为什么此问题可以转化为求改图的最小可相交路径覆盖。foreseeable大爷的课件上明明白白地写着dilworth定理，并写了一些介绍： 偏序集最大独立集（最长反链）＝最小链覆盖大小，然而这个公式我却根本看不懂，什么偏序集，什么反链，是该科普一下。</p>
-<ul>
-<li>偏序集：（可自行参看wikipedia）。而foreseeable大爷对其进行了简单说 明：什么是偏序关系:具有自反性，反对称性，传递性的一种关系。(更严谨定义请看组合数学类的书)</li>
-<li>链:一个集合,集合中的任意数可比。</li>
-<li>反链：一个集合，集合中任意的两数均不可以比较。</li>
-</ul>
-<p>接下来就是dilworth定理的严谨证明，foreseeable因课件空间太小不能完美地写下而留作了回家作业（费马既视感＝ ＝），下面便是交作业的时候了其实根本不会</p>
-<blockquote>
-<p>dilworth定理:最长反链＝最小链覆盖的大小（其对偶定理：最长链＝最小反链覆盖的大小</p>
-</blockquote>
-<ol>
-<li><ul>
-<li>首先，我们假设偏序集X最长反链长度为p,最小链覆盖为r。</li>
-<li>因为反链内的任意两点不可比，所以它们肯定出现于不同的链中，所以r≤p。</li>
-</ul>
-</li>
-<li><p>接下来我们分为两种情况进行考虑</p>
-<ul>
-<li>最长反链为最小元的集合或是最大元的集合或两者都是，那么我们可以取出一个最小元x和一个对应最大元y，然后通过归纳假设，可得偏序集X-{x,y}的最小链覆盖为r-1,加上x,y所形成的边覆盖，形成共有r条边的覆盖  </li>
-<li>最长链既不为最小元的集合也不为最大元的集合，此时设这个最长链为A，并定义一下两个集合：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> P = &#123;x | x对于A中的某个a,有a≤x&#125;</span><br><span class="line"><span class="built_in">set</span> Q = &#123;x | x对于A中的某个a,有x≤a&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<p>有性质如下</p>
-<ol>
-<li>由于存在一个不在A中的极小元，故 P ≠ X;</li>
-<li>由于存在一个不在A中的最大元，故 Q ≠ X;</li>
-<li>P ∩ Q = A, 这是因为假如存在一个元素 x, 在 P ∩ Q中但不在A中, 那么我们就会对A中的某元素a1和a2有a1&lt;x&lt;a2, 这与A是反链矛盾。</li>
-<li>P ∪ Q = X, 这是因为加入存在一个元素 x不在P ∪ Q 中，那么A ∪ {x}就是一个大小比A还要大的反链。</li>
-</ol>
-<p>然后我们可以使用归纳假设法，得到A+和A-都可以被划分为r个链，并且这些链的起点和终点分别都在A上，所以可以将A+和A-中的不同的链经过共同点而相连，最终形成覆盖的r条链。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxn <span class="number">110</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> n,m,ind,ans,tot;</span><br><span class="line"><span class="keyword">bool</span> f[maxn][maxn];</span><br><span class="line"><span class="keyword">int</span> state[maxn],p[maxn],fir[maxn];</span><br><span class="line"><span class="keyword">int</span> b[maxn*maxn],nex[maxn*maxn];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>; <span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123; <span class="keyword">if</span> (ch==<span class="string">'-'</span>) f=-<span class="number">1</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123; x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    b[++tot]=y; nex[tot]=fir[x]; fir[x]=tot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">hungray</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> u=fir[x]; u; u=nex[u])&#123;</span><br><span class="line">        <span class="keyword">if</span> (state[b[u]]!=ind)&#123;</span><br><span class="line">            state[b[u]]=ind;</span><br><span class="line">            <span class="keyword">if</span> (p[b[u]]==<span class="number">0</span>||hungray(p[b[u]]))&#123;</span><br><span class="line">                p[b[u]]=x;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n=read(); m=read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> x=read(); <span class="keyword">int</span> y=read();</span><br><span class="line">        f[x][y]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k=<span class="number">1</span>; k&lt;=n; k++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++)</span><br><span class="line">            f[i][j]|=f[i][k]&amp;f[k][j];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++)</span><br><span class="line">            <span class="keyword">if</span> (f[i][j]) add(i,j);</span><br><span class="line">    &#125;</span><br><span class="line">    ans=<span class="number">0</span>; ind=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        ind++;</span><br><span class="line">        <span class="keyword">if</span> (hungray(i)) ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,n-ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    <summary type="html">
-    <![CDATA[<p>前些日子WCMG给我（蒟蒻）们上过二分图，也讲了这道题，然而课上晕头转向，并没有搞清楚什么，这次认真学习了然而并没有什么用<br>]]>
-    
-    </summary>
-    
-      <category term="BZOJ" scheme="http://blog.fractal128.tk/tags/BZOJ/"/>
-    
-      <category term="ctsc" scheme="http://blog.fractal128.tk/tags/ctsc/"/>
-    
-      <category term="dilworth定理" scheme="http://blog.fractal128.tk/tags/dilworth%E5%AE%9A%E7%90%86/"/>
-    
-      <category term="二分图" scheme="http://blog.fractal128.tk/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
-    
-      <category term="OI" scheme="http://blog.fractal128.tk/categories/OI/"/>
-    
-      <category term="二分图" scheme="http://blog.fractal128.tk/categories/OI/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
     
   </entry>
   
