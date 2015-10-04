@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: 搜索 | Fractal128 ： We are OIers</title>
+  <title>NOIP2015模拟题集 | Fractal128 ： We are OIers</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-  <meta name="description" content="Being rather cleverer than most men,my mistakes tend to be correspondingly huger.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Fractal128 ： We are OIers">
-<meta property="og:url" content="http://blog.fractal128.tk/tags/搜索/index.html">
+  <meta name="description" content="收录模拟赛中一些我不会做的或是我侥幸做出的题。。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NOIP2015模拟题集">
+<meta property="og:url" content="http://blog.fractal128.tk/2015/10/04/mock_noip2015/index.html">
 <meta property="og:site_name" content="Fractal128 ： We are OIers">
-<meta property="og:description" content="Being rather cleverer than most men,my mistakes tend to be correspondingly huger.">
+<meta property="og:description" content="收录模拟赛中一些我不会做的或是我侥幸做出的题。。。">
+<meta property="og:updated_time" content="2015-10-04T16:16:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fractal128 ： We are OIers">
-<meta name="twitter:description" content="Being rather cleverer than most men,my mistakes tend to be correspondingly huger.">
+<meta name="twitter:title" content="NOIP2015模拟题集">
+<meta name="twitter:description" content="收录模拟赛中一些我不会做的或是我侥幸做出的题。。。">
   
   
     <link rel="icon" href="http://blog.fractal128.tk/css/images/f1.ico">
@@ -136,40 +137,78 @@ ga('send', 'pageview');
     
 </aside>
       
-      <section id="main"><section class="archives-wrap">
-    <div class="archive-tag-wrap">
-      <span class="archive-tag">#搜索</span>
-    </div>
-    <div class="archives">
+      <section id="main"><article id="post-mock_noip2015" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
+      <img src="http://7xl5lt.com1.z0.glb.clouddn.com/banner17.jpg" class="article-banner">
     
-    <div class="archive-article-thumbnail">
-      <a href="/2015/09/11/bzoj1054/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/minions2.jpg)" alt="BZOJ1054: [HAOI2008]移动玩具" class="thumbnail-image"></span>
-  
-</a>
-    </div>
     
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/11/bzoj1054/">BZOJ1054: [HAOI2008]移动玩具</a>
+    
+      <header class="article-header">
+        <h1 class="article-title" itemprop="name">
+      NOIP2015模拟题集
     </h1>
-      
-        <div class="archive-article-date">
+        <div class="article-meta">
+          <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/09/11/bzoj1054/">
-      <time datetime="2015-09-11T12:15:20.000Z" itemprop="datePublished">2015 Sep 11</time>
+    <a href="/2015/10/04/mock_noip2015/">
+      <time datetime="2015-10-04T14:39:49.000Z" itemprop="datePublished">2015-10-04</time>
     </a>
   </div>
-      
-    </header>
+          <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/比赛/">比赛</a>
   </div>
-</article>
+        </div>
+      </header>
     
-    </div></section></section>
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <p>收录模拟赛中一些我不会做的或是我侥幸做出的题。。。<br><a id="more"></a></p>
+<h2 id="Problem:A">Problem:A</h2><h3 id="Description">Description</h3><p>给出一张n个点m条边的<em>带边权</em>无向图，询问从0到n-1这两点间是否有长度为T的路径。其中 2 &lt;= n &lt;= 50 , 1 &lt;= m &lt;= 100 , 1 &lt;=  &lt;= 10000 , 1 &lt;= T &lt;= 10^18 , Case &lt;= 5.</p>
+<h3 id="Solution">Solution</h3><p>这么难，根本不会做。<a href="http://i301void.gitcafe.io" target="_blank" rel="external">I301void</a>在UOJ上问了一发，被瞬秒，还是太弱了。。。不过北大爷rzy没做出来我的心情还是愉悦得很啊。<br>30%：<br>当T&lt;= 10000的时候，可以设 vis[i][j] 代表到达第i个点时间为j是否合法。 这样是O(T*m)，可以拿到小数据。<br>另外的那30%：各种奇怪的骗分方法。选手自行考虑。<br>100%：<br>当T很大的时候，我们考虑 如果0 -&gt; x -&gt; n - 1路径时间为T，且 从x出发有一个时间为d的环，则 一定存在一个K满足 K + p*d = T（至少T满足条件），这样我们就能绕着环走p次就能构成一条时间为T的路径。<br>显然要求的路径一定经过 0，而且在合法情况下从0号点出发一定存在一条边，否则0号点和n - 1号就是不联通的。随便取一条边时间为d, 则能构成从0号点出发的一个时间为2d的环。这样原题就化为最短路问题了，dis[i][j] 代表到达i号点，时间为 j + p <em> 2d，最小的 j+p\</em>2d，<br>最后判断dis[n -1][T % 2d] 是否小于等于T即可。<br>实际上就是在30%的基础上缩减状态。<br>时间复杂度为O(m*d)。</p>
+<p>其实，还是并不十分深刻理解，主要还是T的大小和做法的界限问题，并且也没能力证明该方法的正确性，希望明白真相的神犇们可以指点一下。</p>
+<p>写了一下T很大时的部分：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxn <span class="number">300</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxlen <span class="number">30000</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> inf <span class="number">1000000000</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dis[maxn][maxlen], fir[maxn], nex[maxn], c[maxn], b[maxn];</span><br><span class="line"><span class="keyword">bool</span> inq[maxn];</span><br><span class="line"><span class="keyword">int</span> sum, n, m, T, d;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ((x == <span class="number">0</span>) &amp;&amp; (d == <span class="number">0</span>))&#123;</span><br><span class="line">        d = <span class="number">2</span> * z;</span><br><span class="line">    &#125;</span><br><span class="line">    b[++sum] = y; c[sum] = z; nex[sum] = fir[x]; fir[x] = sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">spfa</span><span class="params">()</span></span>&#123;</span><br><span class="line">    dis[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    inq[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; Q;</span><br><span class="line">    Q.push(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span> (!Q.empty())&#123;</span><br><span class="line">        <span class="keyword">int</span> x = Q.front();</span><br><span class="line">        Q.pop(); inq[x] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> u = fir[x]; u; u = nex[u])&#123;</span><br><span class="line">            <span class="keyword">int</span> v = b[u], len = c[u];</span><br><span class="line">            <span class="keyword">bool</span> flag = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; d; j++)</span><br><span class="line">            <span class="keyword">if</span> (dis[x][j] != inf &amp;&amp; dis[x][j] + len &lt; dis[v][(j + len) % d])&#123;</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line">                dis[v][(j + len) % d] = dis[x][j] + len;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (flag &amp; !inq[v])&#123;</span><br><span class="line">                Q.push(v); inq[v] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cas;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; cas;</span><br><span class="line">    <span class="keyword">while</span> (cas--)&#123;</span><br><span class="line">        sum = d = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">memset</span>(fir, <span class="number">0</span>, <span class="keyword">sizeof</span>(fir));</span><br><span class="line">        <span class="built_in">memset</span>(nex, <span class="number">0</span>, <span class="keyword">sizeof</span>(nex));</span><br><span class="line">        <span class="built_in">memset</span>(b, <span class="number">0</span>, <span class="keyword">sizeof</span>(b));</span><br><span class="line">        <span class="built_in">memset</span>(c, <span class="number">0</span>, <span class="keyword">sizeof</span>(c));</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; T;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> x, y, z;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y &gt;&gt; z;</span><br><span class="line">            add(x, y, z); add(y, x, z);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; d; j++) dis[i][j] = inf;</span><br><span class="line"></span><br><span class="line">        spfa();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (dis[n - <span class="number">1</span>][T % d] &lt;= T) <span class="built_in">cout</span> &lt;&lt; <span class="string">"Possible"</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; <span class="string">"Impossible"</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+    
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.fractal128.tk/2015/10/04/mock_noip2015/" data-id="cifcn152o0026su45zk6k2gr1" class="article-share-link">Share</a>
+      
+        <a href="http://blog.fractal128.tk/2015/10/04/mock_noip2015/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NOIP2015/">NOIP2015</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最短路/">最短路</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面壁反省/">面壁反省</a></li></ul>
+    </footer>
+  </div>
+  
+    <nav id="article-nav">
+  
+  
+    <a href="/2015/10/03/bcRound58/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">BestCoder Round #58 (div.2)</div>
+    </a>
+  
+</nav>
+  
+</article>
+
+
+<section id="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'fractal128sblog';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section></section>
       
         <aside id="sidebar">
 
@@ -341,7 +380,7 @@ ga('send', 'pageview');
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
@@ -356,6 +395,24 @@ ga('send', 'pageview');
 
 <script src="/js/script.js" type="text/javascript"></script>
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+messageStyle: "none"
+    }); 
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 
