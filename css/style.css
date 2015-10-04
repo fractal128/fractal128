@@ -918,11 +918,12 @@ a.article-title:hover {
   margin-top: 10px;
   border-left: 5px solid #657b83;
   background: #f6f6f6;
+  font-family: "Cochin", "Times New Roman", "Weibei SC", "FangSong";
 }
 .article-entry blockquote footer {
   font-size: 18px;
   margin: 1.6em 0;
-  font-family: "Comic Sans MS", "HanziPen SC", STkaiti, KaiTi;
+  font-family: "Cochin", "Times New Roman", "Weibei SC", "FangSong";
 }
 .article-entry blockquote footer cite:before {
   content: "—";
@@ -1556,7 +1557,7 @@ ol.toc {
 }
 .article-entry pre,
 .article-entry code {
-  font-family: "Source Code Pro", KaiTi;
+  font-family: "Monaco", KaiTi;
 }
 .article-entry code {
   background: #f5f8f9;
@@ -1616,7 +1617,7 @@ ol.toc {
 }
 .article-entry .gist .gist-file {
   border: none;
-  font-family: "Source Code Pro", KaiTi;
+  font-family: "Monaco", KaiTi;
   margin: 0;
 }
 .article-entry .gist .gist-file .gist-data {
