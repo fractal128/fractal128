@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://blog.fractal128.tk/2015/10/05/bzoj3043/index.html">
 <meta property="og:site_name" content="Fractal128 ： We are OIers">
 <meta property="og:description" content="每天水一发。。。颓得不行啊刚又花了2小时看了碟中谍5，假期余额已不足。">
-<meta property="og:updated_time" content="2015-10-04T19:53:10.000Z">
+<meta property="og:updated_time" content="2015-10-05T16:52:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BZOJ3043: IncDec Sequence">
 <meta name="twitter:description" content="每天水一发。。。颓得不行啊刚又花了2小时看了碟中谍5，假期余额已不足。">
@@ -19,8 +19,7 @@
   
     <link rel="icon" href="http://blog.fractal128.tk/css/images/f1.ico">
   
-  <link href="//fonts.useso.com/css?family=Open+Sans:400italic,400,600" rel="stylesheet" type="text/css">
-  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
   <!-- Google Analytics -->
@@ -35,6 +34,7 @@ ga('send', 'pageview');
 
 </script>
 <!-- End Google Analytics -->
+  
   
 </head></html>
 <body>
@@ -165,14 +165,14 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
       
-        <p>每天水一发。。。颓得不行啊刚又花了2小时看了碟中谍5，假期余额已不足。<br><a id="more"></a></p>
+        <p>每天水一发。。。颓得不行啊刚又花了2小时看了<a href="http://www.missionimpossible.com" target="_blank" rel="external">碟中谍5</a>，假期余额已不足。<br><a id="more"></a></p>
 <h2 id="Description">Description</h2><p>给定一个长度为n的数列{a1,a2…an}，每次可以选择一个区间[l,r]，使这个区间内的数都加一或者都减一。<br>问至少需要多少次操作才能使数列中的所有数都一样,并求出在保证最少次数的前提下,最终得到的数列有多少种。</p>
 <h2 id="Solution">Solution</h2><p>求出数列的差分序列。<br>考虑每次对于一个字串[L,R]加1，等价于d[L]加1，d[R + 1]减1，反之则反之。那么我们可以采用正负数同时消去的方法得到最少的操作次数，设d[i](i ∈ [2,n])中正值的和为pos,负值为neg,那么第一问的ans就是max(pos, -neg)。<br>第二问则考虑，在正负消去都完成的情况下，还剩下abs(pos+neg)未消去，它可以选择和d[1]进行配对消去（修改[1,i]整一段的值），或是自己消去（增加或减少自己的值）。由此，a[1]既d[1]的取值则为ans2 = abs(pos+neg) + 1。</p>
 <h2 id="Code">Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxn <span class="number">500000</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">ll n, pos = <span class="number">0</span>, neg = <span class="number">0</span>;</span><br><span class="line">ll a[maxn], d[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll x = <span class="number">0</span>, f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch &gt; <span class="string">'9'</span> || ch &lt; <span class="string">'0'</span>)&#123; <span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = -<span class="number">1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch &lt;= <span class="string">'9'</span> &amp;&amp; ch &gt;= <span class="string">'0'</span>)&#123; x = x * <span class="number">10</span> + ch -<span class="string">'0'</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n = read();</span><br><span class="line">    a[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">        a[i] = read(); d[i] = a[i] - a[i - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (i &gt; <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span> (d[i] &gt; <span class="number">0</span>) pos += d[i]; <span class="keyword">else</span> neg += d[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    neg *= -<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n%lld"</span>, max(pos, neg), <span class="built_in">abs</span>(pos - neg) + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.fractal128.tk/2015/10/05/bzoj3043/" data-id="cifdugdrs0031x845hzgnwj04" class="article-share-link">Share</a>
+      <a data-url="http://blog.fractal128.tk/2015/10/05/bzoj3043/" data-id="cife7luxr0031mj45ohytd27n" class="article-share-link">Share</a>
       
         <a href="http://blog.fractal128.tk/2015/10/05/bzoj3043/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -394,7 +394,7 @@ ga('send', 'pageview');
 </script>
 
 
-<script src="//ajax.useso.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
 
 
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
@@ -421,8 +421,5 @@ messageStyle: "none"
 </script>
 <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-
-
-
   </div>
 </body>
