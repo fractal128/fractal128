@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.fractal128.tk/chinese/index.html</loc>
+    <lastmod>2015-10-05T08:21:14.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog.fractal128.tk/2015/10/05/bzoj3043/</loc>
     <lastmod>2015-10-04T19:53:10.000Z</lastmod>
   </url>
@@ -39,11 +44,6 @@
   <url>
     <loc>http://blog.fractal128.tk/2015/10/01/bzoj4291/</loc>
     <lastmod>2015-10-01T18:19:48.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://blog.fractal128.tk/chinese/index.html</loc>
-    <lastmod>2015-10-01T11:25:21.000Z</lastmod>
   </url>
   
   <url>
