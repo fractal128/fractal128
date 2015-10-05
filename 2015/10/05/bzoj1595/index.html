@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>BZOJ2882: 工艺 | Fractal128 ： We are OIers</title>
+  <title>BZOJ1595: [Usaco2008 Jan]人工湖 | Fractal128 ： We are OIers</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-  <meta name="description" content="第一道权限题。">
+  <meta name="description" content="2年前就写了，佩服我当时的勇气。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BZOJ2882: 工艺">
-<meta property="og:url" content="http://blog.fractal128.tk/2015/09/27/bzoj2882/index.html">
+<meta property="og:title" content="BZOJ1595: [Usaco2008 Jan]人工湖">
+<meta property="og:url" content="http://blog.fractal128.tk/2015/10/05/bzoj1595/index.html">
 <meta property="og:site_name" content="Fractal128 ： We are OIers">
-<meta property="og:description" content="第一道权限题。">
-<meta property="og:updated_time" content="2015-09-26T17:37:28.000Z">
+<meta property="og:description" content="2年前就写了，佩服我当时的勇气。">
+<meta property="og:image" content="http://7xl5lt.com1.z0.glb.clouddn.com/1.png">
+<meta property="og:image" content="http://7xl5lt.com1.z0.glb.clouddn.com/2213.jpg.gif">
+<meta property="og:updated_time" content="2015-10-05T11:26:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BZOJ2882: 工艺">
-<meta name="twitter:description" content="第一道权限题。">
+<meta name="twitter:title" content="BZOJ1595: [Usaco2008 Jan]人工湖">
+<meta name="twitter:description" content="2年前就写了，佩服我当时的勇气。">
   
   
     <link rel="icon" href="http://blog.fractal128.tk/css/images/f1.ico">
@@ -137,27 +139,27 @@ ga('send', 'pageview');
     
 </aside>
       
-      <section id="main"><article id="post-bzoj2882" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-bzoj1595" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <img src="http://7xl5lt.com1.z0.glb.clouddn.com/forest.jpg" class="article-banner">
+      <img src="http://7xl5lt.com1.z0.glb.clouddn.com/nail06.jpg" class="article-banner">
     
     
     
       <header class="article-header">
         <h1 class="article-title" itemprop="name">
-      BZOJ2882: 工艺
+      BZOJ1595: [Usaco2008 Jan]人工湖
     </h1>
         <div class="article-meta">
           <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/09/27/bzoj2882/">
-      <time datetime="2015-09-26T17:18:59.000Z" itemprop="datePublished">2015-09-27</time>
+    <a href="/2015/10/05/bzoj1595/">
+      <time datetime="2015-10-05T11:14:48.000Z" itemprop="datePublished">2015-10-05</time>
     </a>
   </div>
           <div class="article-category">
   	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/最小表示法/">最小表示法</a>
+    <a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/水题/">水题</a>
   </div>
         </div>
       </header>
@@ -165,36 +167,27 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
       
-        <p>第一道权限题。<br><a id="more"></a><br>题目链接<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=2882" target="_blank" rel="external">戳</a></p>
-<h2 id="Description">Description</h2><p>小敏和小燕是一对好朋友。<br>他们正在玩一种神奇的游戏，叫Minecraft。<br>他们现在要做一个由方块构成的长条工艺品。但是方块现在是乱的，而且由于机器的要求，他们只能做到把这个工艺品最左边的方块放到最右边。<br>他们想，在仅这一个操作下，最漂亮的工艺品能多漂亮。<br>两个工艺品美观的比较方法是，从头开始比较，如果第i个位置上方块不一样那么谁的瑕疵度小，那么谁就更漂亮，如果一样那么继续比较第i+1个方块。如果全都一样，那么这两个工艺品就一样漂亮。</p>
-<h2 id="Solution">Solution</h2><p>学了一下最小表示法，主要作用是找出循环同构的数据的最小表示。<br>一开始直接看代码有点不懂，后来稍微想了想，差不多明白了［其实这么短，一下就背出来了。。<br>大概思想就是用两个指针选取首位进行比较，如果相同就一直往下比较，当达到了len的长度就说明已经得到了答案。具体请参看代码。</p>
-<h2 id="Code">Code</h2><p>ps.这题对presentation有要求，末尾不能有空格。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,p,t;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1000000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">minR</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">1</span>,k=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i&lt;n&amp;&amp;j&lt;n&amp;&amp;k&lt;n)&#123;</span><br><span class="line">        t=a[(i+k)%n]-a[(j+k)%n];</span><br><span class="line">        <span class="keyword">if</span> (t==<span class="number">0</span>)&#123;</span><br><span class="line">            k++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (t&gt;<span class="number">0</span>) i+=k+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (t&lt;<span class="number">0</span>) j+=k+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i==j) i++;</span><br><span class="line">            k=<span class="number">0</span>; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> min(i,j);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    p=minR();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n-<span class="number">1</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[(i+p)%n]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,a[(n-<span class="number">1</span>+p)%n]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>2年前就写了，佩服我当时的勇气。<br><img src="http://7xl5lt.com1.z0.glb.clouddn.com/1.png" alt=""><br><a id="more"></a></p>
+<h2 id="Description">Description</h2><p>夏日那让人喘不过气的酷热将奶牛们的烦躁情绪推到了最高点．最终，约翰决定建一个人工湖供奶牛消暑之用．为了使湖看起来更加真实，约翰决定将湖的横截面建成N(1≤N≤105)个连续的平台高低错落的组合状，所有的平台从左到右按1到N依次编号．当然咯，在湖中注入水后，这些平台都将被淹没．    平台i在设计图上用它的宽度wi(l≤wi≤1000)和高度（你可以理解为该平台顶离约翰挖的地基的高度）Hi.（1≤Hi≤1000000）来描述的．所有平台的高度都是独一无二的．湖的边缘可以视为无限高的平台．下面给出了一张约翰的设计图：<br><img src="http://7xl5lt.com1.z0.glb.clouddn.com/2213.jpg.gif" alt=""><br>    按约翰的设想，在坑挖好后，他会以1单位每分钟的速度往最低的那个平台上注水．水在离开水管后立即下落，直到撞到平台顶或是更早些时候注入的水然后，与所有常温下的水一样，它会迅速地流动、扩散．简单起见，你可以认为这些都是在瞬间完成的．约翰想知道，对于每一个平台，它的顶部是从哪个时刻开始，与水面的距离至少为1单位长度．</p>
+<h2 id="Solution">Solution</h2><p>双向链表加上模拟。<br>当时的变量名也是真醉了。。</p>
+<h2 id="Code">Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">var pre,nex:<span class="built_in">array</span>[<span class="number">0.</span><span class="number">.100001</span>] of int64;</span><br><span class="line">    a,w,h:<span class="built_in">array</span>[<span class="number">0.</span><span class="number">.100001</span>] of int64;</span><br><span class="line">    tot,all,min,now:int64;</span><br><span class="line">    i,n,s,x,qjc:longint;</span><br><span class="line"><span class="function">function <span class="title">find</span><span class="params">(x,y:longint)</span>:longint</span>;</span><br><span class="line">var min,u:longint;</span><br><span class="line">begin</span><br><span class="line">  <span class="keyword">if</span> y=<span class="number">0</span> then</span><br><span class="line">  begin</span><br><span class="line">    u:=pre[x];</span><br><span class="line">    <span class="keyword">while</span> u&lt;&gt;<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    begin</span><br><span class="line">      <span class="keyword">if</span> h[u]&gt;h[x] then <span class="keyword">break</span>;</span><br><span class="line">      x:=u;</span><br><span class="line">      u:=pre[u];</span><br><span class="line">    end;</span><br><span class="line">  end</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  begin</span><br><span class="line">    u:=nex[x];</span><br><span class="line">    <span class="keyword">while</span> u&lt;&gt;<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    begin</span><br><span class="line">      <span class="keyword">if</span> h[u]&gt;h[x] then <span class="keyword">break</span>;</span><br><span class="line">      x:=u;</span><br><span class="line">      u:=nex[u];</span><br><span class="line">    end;</span><br><span class="line">  end;</span><br><span class="line">  <span class="built_in">exit</span>(x);</span><br><span class="line">end;</span><br><span class="line"><span class="function">begin</span><br><span class="line"></span><br><span class="line">  <span class="title">read</span><span class="params">(n)</span></span>;</span><br><span class="line">  min:=maxlongint;</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="function">to n <span class="keyword">do</span></span><br><span class="line">  begin</span><br><span class="line">    <span class="title">read</span><span class="params">(w[i],h[i])</span></span>;</span><br><span class="line">    pre[i+<span class="number">1</span>]:=i;</span><br><span class="line">    nex[i-<span class="number">1</span>]:=i;</span><br><span class="line">    <span class="keyword">if</span> min&gt;h[i] then begin min:=h[i]; now:=i; end;</span><br><span class="line">  end;</span><br><span class="line">  pre[<span class="number">1</span>]:=<span class="number">0</span>;   all:=<span class="number">0</span>; tot:=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> tot&lt;&gt;n <span class="keyword">do</span></span><br><span class="line">  begin</span><br><span class="line">    <span class="keyword">if</span> tot&lt;&gt;<span class="number">0</span> then now:=find(s,qjc);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    a[now]:=all+w[now];</span><br><span class="line">    inc(tot);</span><br><span class="line">    <span class="keyword">if</span> tot=n then <span class="keyword">break</span>;</span><br><span class="line">    x:=pre[now];</span><br><span class="line">    min:=maxlongint;</span><br><span class="line">    <span class="keyword">if</span> x&lt;&gt;<span class="number">0</span> then begin min:=h[x]; s:=x;  qjc:=<span class="number">0</span>; end;</span><br><span class="line">    x:=nex[now];</span><br><span class="line">    <span class="keyword">if</span> (x&lt;&gt;<span class="number">0</span>)and(min&gt;h[x]) then begin min:=h[x]; s:=x;  qjc:=<span class="number">1</span>; end;</span><br><span class="line"></span><br><span class="line">    inc(all,(min-h[now])*w[now]);</span><br><span class="line"></span><br><span class="line">    w[s]:=w[s]+w[now];</span><br><span class="line">    nex[pre[now]]:=nex[now];</span><br><span class="line">    pre[nex[now]]:=pre[now];</span><br><span class="line">  end;</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="function">to n <span class="keyword">do</span> <span class="title">writeln</span><span class="params">(a[i])</span></span>;</span><br><span class="line">end.</span><br></pre></td></tr></table></figure>
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.fractal128.tk/2015/09/27/bzoj2882/" data-id="cifdugdrv0037x8451u1m2w3b" class="article-share-link">Share</a>
+      <a data-url="http://blog.fractal128.tk/2015/10/05/bzoj1595/" data-id="cifdugdsm0048x845dc8xhp3n" class="article-share-link">Share</a>
       
-        <a href="http://blog.fractal128.tk/2015/09/27/bzoj2882/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://blog.fractal128.tk/2015/10/05/bzoj1595/#disqus_thread" class="article-comment-link">Comments</a>
       
-      <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BZOJ/">BZOJ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最小表示法/">最小表示法</a></li></ul>
+      <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BZOJ/">BZOJ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/USACO/">USACO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模拟/">模拟</a></li></ul>
     </footer>
   </div>
   
     <nav id="article-nav">
   
-    <a href="/2015/09/27/vijos1382/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Vijos1382：寻找主人
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/09/26/uva10635/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/10/05/bzoj3043/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">uva10635:Prince and Princess</div>
+      <div class="article-nav-title">BZOJ3043: IncDec Sequence</div>
     </a>
   
 </nav>
