@@ -160,9 +160,9 @@ a:visited {
   clear: both;
 }
 .logo {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: 2em;
+  -moz-background-size: 2em;
+  background-size: 2em;
 }
 #container {
   position: relative;
@@ -218,10 +218,10 @@ a:visited {
 .archive-article,
 #toTop {
   background: #fff;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
 }
 .article-entry h1,
 .widget h1 {
@@ -229,7 +229,7 @@ a:visited {
 }
 .article-entry h2,
 .widget h2 {
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
 .article-entry h3,
 .widget h3 {
@@ -363,7 +363,7 @@ a:visited {
 .header-inner #logo .logo {
   display: inline-block;
   width: 40px;
-  height: 40px;
+  height: 52px;
   margin-right: 5px;
 }
 .header-inner #logo .site-title {
