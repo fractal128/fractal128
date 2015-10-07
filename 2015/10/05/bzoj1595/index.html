@@ -104,7 +104,8 @@ ga('send', 'pageview');
 </header>
     <div class="outer">
       
-        <aside id="profile">
+        <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+<aside id="profile">
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       <img id="avatar" src="/css/images/1.jpg">
@@ -146,7 +147,6 @@ ga('send', 'pageview');
     
     
   </div>
-
     
 </aside>
       
@@ -175,6 +175,7 @@ ga('send', 'pageview');
         </div>
       </header>
     
+
     <div class="article-entry" itemprop="articleBody">
       
       
@@ -183,7 +184,8 @@ ga('send', 'pageview');
 <h2 id="Solution">Solution</h2><p>双向链表加上模拟。<br>当时的变量名也是真醉了。。</p>
 <h2 id="Code">Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">var pre,nex:<span class="built_in">array</span>[<span class="number">0.</span><span class="number">.100001</span>] of int64;</span><br><span class="line">    a,w,h:<span class="built_in">array</span>[<span class="number">0.</span><span class="number">.100001</span>] of int64;</span><br><span class="line">    tot,all,min,now:int64;</span><br><span class="line">    i,n,s,x,qjc:longint;</span><br><span class="line"><span class="function">function <span class="title">find</span><span class="params">(x,y:longint)</span>:longint</span>;</span><br><span class="line">var min,u:longint;</span><br><span class="line">begin</span><br><span class="line">  <span class="keyword">if</span> y=<span class="number">0</span> then</span><br><span class="line">  begin</span><br><span class="line">    u:=pre[x];</span><br><span class="line">    <span class="keyword">while</span> u&lt;&gt;<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    begin</span><br><span class="line">      <span class="keyword">if</span> h[u]&gt;h[x] then <span class="keyword">break</span>;</span><br><span class="line">      x:=u;</span><br><span class="line">      u:=pre[u];</span><br><span class="line">    end;</span><br><span class="line">  end</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  begin</span><br><span class="line">    u:=nex[x];</span><br><span class="line">    <span class="keyword">while</span> u&lt;&gt;<span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">    begin</span><br><span class="line">      <span class="keyword">if</span> h[u]&gt;h[x] then <span class="keyword">break</span>;</span><br><span class="line">      x:=u;</span><br><span class="line">      u:=nex[u];</span><br><span class="line">    end;</span><br><span class="line">  end;</span><br><span class="line">  <span class="built_in">exit</span>(x);</span><br><span class="line">end;</span><br><span class="line"><span class="function">begin</span><br><span class="line"></span><br><span class="line">  <span class="title">read</span><span class="params">(n)</span></span>;</span><br><span class="line">  min:=maxlongint;</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="function">to n <span class="keyword">do</span></span><br><span class="line">  begin</span><br><span class="line">    <span class="title">read</span><span class="params">(w[i],h[i])</span></span>;</span><br><span class="line">    pre[i+<span class="number">1</span>]:=i;</span><br><span class="line">    nex[i-<span class="number">1</span>]:=i;</span><br><span class="line">    <span class="keyword">if</span> min&gt;h[i] then begin min:=h[i]; now:=i; end;</span><br><span class="line">  end;</span><br><span class="line">  pre[<span class="number">1</span>]:=<span class="number">0</span>;   all:=<span class="number">0</span>; tot:=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> tot&lt;&gt;n <span class="keyword">do</span></span><br><span class="line">  begin</span><br><span class="line">    <span class="keyword">if</span> tot&lt;&gt;<span class="number">0</span> then now:=find(s,qjc);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    a[now]:=all+w[now];</span><br><span class="line">    inc(tot);</span><br><span class="line">    <span class="keyword">if</span> tot=n then <span class="keyword">break</span>;</span><br><span class="line">    x:=pre[now];</span><br><span class="line">    min:=maxlongint;</span><br><span class="line">    <span class="keyword">if</span> x&lt;&gt;<span class="number">0</span> then begin min:=h[x]; s:=x;  qjc:=<span class="number">0</span>; end;</span><br><span class="line">    x:=nex[now];</span><br><span class="line">    <span class="keyword">if</span> (x&lt;&gt;<span class="number">0</span>)and(min&gt;h[x]) then begin min:=h[x]; s:=x;  qjc:=<span class="number">1</span>; end;</span><br><span class="line"></span><br><span class="line">    inc(all,(min-h[now])*w[now]);</span><br><span class="line"></span><br><span class="line">    w[s]:=w[s]+w[now];</span><br><span class="line">    nex[pre[now]]:=nex[now];</span><br><span class="line">    pre[nex[now]]:=pre[now];</span><br><span class="line">  end;</span><br><span class="line">  <span class="keyword">for</span> i:=<span class="number">1</span> <span class="function">to n <span class="keyword">do</span> <span class="title">writeln</span><span class="params">(a[i])</span></span>;</span><br><span class="line">end.</span><br></pre></td></tr></table></figure>
     
-    </div>
+
+
     <footer class="article-footer">
       <a data-url="http://blog.fractal128.tk/2015/10/05/bzoj1595/" data-id="ciffgp4fl0048as45tw236dq5" class="article-share-link">Share</a>
       
@@ -191,6 +193,7 @@ ga('send', 'pageview');
       
       <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BZOJ/">BZOJ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/USACO/">USACO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模拟/">模拟</a></li></ul>
     </footer>
+    </div>
   </div>
   
     <nav id="article-nav">
@@ -204,6 +207,7 @@ ga('send', 'pageview');
 </nav>
   
 </article>
+
 
 
 <section id="comments">

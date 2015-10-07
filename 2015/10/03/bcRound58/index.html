@@ -102,7 +102,8 @@ ga('send', 'pageview');
 </header>
     <div class="outer">
       
-        <aside id="profile">
+        <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+<aside id="profile">
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       <img id="avatar" src="/css/images/1.jpg">
@@ -144,7 +145,6 @@ ga('send', 'pageview');
     
     
   </div>
-
     
 </aside>
       
@@ -173,6 +173,7 @@ ga('send', 'pageview');
         </div>
       </header>
     
+
     <div class="article-entry" itemprop="articleBody">
       
       
@@ -192,7 +193,8 @@ ga('send', 'pageview');
 <h3 id="1004:Inversion">1004:Inversion</h3><h4 id="Description-3">Description</h4><p>You have a sequence {a1,a2,…,an} and you can delete a contiguous subsequence of length m. So what is the minimum number of inversions after the deletion.</p>
 <h4 id="Solution-3">Solution</h4><p>没来得及看。。。<br>但是看了题解觉得很有道理。<br>官方题解：令gi表示在i前面比ai大的数的个数,fi表示在i后面比ai小的数的个数, 这两个都可以用树状数组轻松求出来. 那么对于一个长度L的连续子序列, 删掉它之后逆序对减少的个数就是这段区间中gi的和 + 这段区间fi的和 - 这段区间的逆序对个数. 求区间逆序对个数只要用一个树状数组维护就好了, 每次只是删除最左端的一个数和加入最右端的一个数, 分别统计下贡献.</p>
     
-    </div>
+
+
     <footer class="article-footer">
       <a data-url="http://blog.fractal128.tk/2015/10/03/bcRound58/" data-id="ciffgp4fv0051as45p7kmm9dc" class="article-share-link">Share</a>
       
@@ -200,6 +202,7 @@ ga('send', 'pageview');
       
       <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BestCoder/">BestCoder</a></li></ul>
     </footer>
+    </div>
   </div>
   
     <nav id="article-nav">
@@ -222,6 +225,7 @@ ga('send', 'pageview');
 </nav>
   
 </article>
+
 
 
 <section id="comments">

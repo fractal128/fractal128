@@ -102,7 +102,8 @@ ga('send', 'pageview');
 </header>
     <div class="outer">
       
-        <aside id="profile">
+        <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+<aside id="profile">
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       <img id="avatar" src="/css/images/1.jpg">
@@ -144,7 +145,6 @@ ga('send', 'pageview');
     
     
   </div>
-
     
 </aside>
       
@@ -173,6 +173,7 @@ ga('send', 'pageview');
         </div>
       </header>
     
+
     <div class="article-entry" itemprop="articleBody">
       
       
@@ -184,7 +185,8 @@ ga('send', 'pageview');
 <h2 id="Solution">Solution</h2><p>看了很久才稍微有点明白。<br>把每一次计算hash当成是随机数，然后就可以使用生日悖论的性质（在pollard-rho中也是这个性质），所以大概就是把n取到100000，然后乱搞就行了。<br>注意l要稍微去大一点，不然的话算出的hash值就不是那么随机了。。。</p>
 <h2 id="Code">Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n=<span class="number">100000</span>,l=<span class="number">30</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;n&lt;&lt;<span class="string">' '</span>&lt;&lt;l&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="keyword">char</span>(rand()%<span class="number">26</span>+<span class="string">'a'</span>);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
-    </div>
+
+
     <footer class="article-footer">
       <a data-url="http://blog.fractal128.tk/2015/10/02/bzoj3098/" data-id="ciffgp4eu002xas45t29mt4bx" class="article-share-link">Share</a>
       
@@ -192,6 +194,7 @@ ga('send', 'pageview');
       
       <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BZOJ/">BZOJ</a></li></ul>
     </footer>
+    </div>
   </div>
   
     <nav id="article-nav">
@@ -214,6 +217,7 @@ ga('send', 'pageview');
 </nav>
   
 </article>
+
 
 
 <section id="comments">

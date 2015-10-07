@@ -103,7 +103,8 @@ ga('send', 'pageview');
 </header>
     <div class="outer">
       
-        <aside id="profile">
+        <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+<aside id="profile">
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       <img id="avatar" src="/css/images/1.jpg">
@@ -145,7 +146,6 @@ ga('send', 'pageview');
     
     
   </div>
-
     
 </aside>
       
@@ -174,6 +174,7 @@ ga('send', 'pageview');
         </div>
       </header>
     
+
     <div class="article-entry" itemprop="articleBody">
       
       
@@ -183,7 +184,8 @@ ga('send', 'pageview');
 <h2 id="Solution">Solution</h2><p>将图沿对角线分开，可以得到答案公式:<br>$$ ans=2\cdot\sum^{i=2}_{i&lt;n}{φ(i)}+3$$<br>用线性筛求各数的欧拉函数即可。</p>
 <h2 id="Code">Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxn <span class="number">1000000</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">ll vis[maxn],phi[maxn],p[maxn];</span><br><span class="line"><span class="keyword">int</span> tot,n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">0</span>; <span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;<span class="string">'0'</span>||ch&gt;<span class="string">'9'</span>) ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>) &#123; x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_phi</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (vis[i] == <span class="number">0</span>)&#123;</span><br><span class="line">            vis[i] = <span class="number">1</span>; p[++tot] = i;</span><br><span class="line">            phi[i] = i-<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j &lt;= tot; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (i*p[j]&gt;n) <span class="keyword">break</span>;</span><br><span class="line">            vis[i*p[j]]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % p[j] == <span class="number">0</span>)&#123;</span><br><span class="line">                phi[i * p[j]] = phi[i] * p[j];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                phi[i * p[j]] = phi[i] * (p[j]-<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n = read();</span><br><span class="line">    get_phi();</span><br><span class="line">    ll sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n-<span class="number">1</span>; i ++)&#123;</span><br><span class="line">        sum+=phi[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld"</span>,sum * <span class="number">2</span> + <span class="number">3</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
-    </div>
+
+
     <footer class="article-footer">
       <a data-url="http://blog.fractal128.tk/2015/10/01/bzoj2190/" data-id="ciffgp4f8003jas45uwyphgb4" class="article-share-link">Share</a>
       
@@ -191,6 +193,7 @@ ga('send', 'pageview');
       
       <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BZOJ/">BZOJ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SDOI/">SDOI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数论/">数论</a></li></ul>
     </footer>
+    </div>
   </div>
   
     <nav id="article-nav">
@@ -213,6 +216,7 @@ ga('send', 'pageview');
 </nav>
   
 </article>
+
 
 
 <section id="comments">

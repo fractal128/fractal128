@@ -48,7 +48,7 @@
     <link href="http://blog.fractal128.tk/2015/10/05/bzoj3043/"/>
     <id>http://blog.fractal128.tk/2015/10/05/bzoj3043/</id>
     <published>2015-10-04T19:30:24.000Z</published>
-    <updated>2015-10-05T16:52:17.000Z</updated>
+    <updated>2015-10-07T06:01:49.000Z</updated>
     <content type="html"><![CDATA[<p>每天水一发。。。颓得不行啊刚又花了2小时看了<a href="http://www.missionimpossible.com" target="_blank" rel="external">碟中谍5</a>，假期余额已不足。<br><a id="more"></a></p>
 <h2 id="Description">Description</h2><p>给定一个长度为n的数列{a1,a2…an}，每次可以选择一个区间[l,r]，使这个区间内的数都加一或者都减一。<br>问至少需要多少次操作才能使数列中的所有数都一样,并求出在保证最少次数的前提下,最终得到的数列有多少种。</p>
 <h2 id="Solution">Solution</h2><p>求出数列的差分序列。<br>考虑每次对于一个字串[L,R]加1，等价于d[L]加1，d[R + 1]减1，反之则反之。那么我们可以采用正负数同时消去的方法得到最少的操作次数，设d[i](i ∈ [2,n])中正值的和为pos,负值为neg,那么第一问的ans就是max(pos, -neg)。<br>第二问则考虑，在正负消去都完成的情况下，还剩下abs(pos+neg)未消去，它可以选择和d[1]进行配对消去（修改[1,i]整一段的值），或是自己消去（增加或减少自己的值）。由此，a[1]既d[1]的取值则为ans2 = abs(pos+neg) + 1。</p>

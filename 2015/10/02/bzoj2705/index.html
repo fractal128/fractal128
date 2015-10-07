@@ -102,7 +102,8 @@ ga('send', 'pageview');
 </header>
     <div class="outer">
       
-        <aside id="profile">
+        <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+<aside id="profile">
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       <img id="avatar" src="/css/images/1.jpg">
@@ -144,7 +145,6 @@ ga('send', 'pageview');
     
     
   </div>
-
     
 </aside>
       
@@ -173,6 +173,7 @@ ga('send', 'pageview');
         </div>
       </header>
     
+
     <div class="article-entry" itemprop="articleBody">
       
       
@@ -181,7 +182,8 @@ ga('send', 'pageview');
 <h2 id="Solution">Solution</h2><p>O(√n)欧拉函数<br>$$ ans=\sum^{d=1}_{d&lt;=n\&amp;d|n}φ(d)*{n\over{d}}$$</p>
 <h2 id="Code">Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> inf <span class="number">100001</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">ll n,ans=<span class="number">0</span>;</span><br><span class="line"><span class="function">ll <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll x=<span class="number">0</span>; <span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>) ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>) &#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">phi</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">    ll t=x,ret=x;</span><br><span class="line">    <span class="keyword">for</span> (ll i=<span class="number">2</span>; i*i&lt;=x; i++)</span><br><span class="line">    <span class="keyword">if</span> (t % i==<span class="number">0</span>)&#123;</span><br><span class="line">        ret=ret/i*(i-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">while</span> (t % i==<span class="number">0</span>) t/=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t&gt;<span class="number">1</span>) ret=ret/t*(t-<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n = read();</span><br><span class="line">    <span class="keyword">for</span> (ll i = <span class="number">2</span>; i*i&lt;=n; i++)</span><br><span class="line">    <span class="keyword">if</span> (n % i == <span class="number">0</span>)&#123;</span><br><span class="line">            ans += <span class="function">i * <span class="title">phi</span><span class="params">(n/i)</span></span>;</span><br><span class="line">            <span class="keyword">if</span> (i*i&lt;n) ans += (ll)(n/i) * phi(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans+phi(n)+n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
-    </div>
+
+
     <footer class="article-footer">
       <a data-url="http://blog.fractal128.tk/2015/10/02/bzoj2705/" data-id="ciffgp4f5003cas45hkxj5na4" class="article-share-link">Share</a>
       
@@ -189,6 +191,7 @@ ga('send', 'pageview');
       
       <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BZOJ/">BZOJ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SDOI/">SDOI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数论/">数论</a></li></ul>
     </footer>
+    </div>
   </div>
   
     <nav id="article-nav">
@@ -211,6 +214,7 @@ ga('send', 'pageview');
 </nav>
   
 </article>
+
 
 
 <section id="comments">
