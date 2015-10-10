@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.fractal128.tk/"/>
-  <updated>2015-10-10T17:02:46.000Z</updated>
+  <updated>2015-10-10T17:04:42.000Z</updated>
   <id>http://blog.fractal128.tk/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://blog.fractal128.tk/2015/10/11/bzoj1430/"/>
     <id>http://blog.fractal128.tk/2015/10/11/bzoj1430/</id>
     <published>2015-10-10T16:41:43.000Z</published>
-    <updated>2015-10-10T17:02:46.000Z</updated>
+    <updated>2015-10-10T17:04:42.000Z</updated>
     <content type="html"><![CDATA[<p>想起今天（其实是昨天）做初赛的时候看到一道算prufer编码的题目居然发现自己不会做了，赶紧学一发。。。<br><a id="more"></a></p>
 <h2 id="Prufer编码">Prufer编码</h2><p><a href="http://www.cnblogs.com/zhj5chengfeng/archive/2013/08/23/3278557.html" target="_blank" rel="external">大神的博客</a><br>看了这个学会的。。。图文并茂，深入浅出，反正让我写肯定是一团浆糊。</p>
 <h2 id="Description">Description</h2><p>一开始森林里面有N只互不相识的小猴子，它们经常打架，但打架的双方都必须不是好朋友。每次打完架后，打架的双方以及它们的好朋友就会互相认识，成为好朋友。经过N-1次打架之后，整个森林的小猴都会成为好朋友。 现在的问题是，总共有多少种不同的打架过程。 比如当N=3时，就有{1-2,1-3}{1-2,2-3}{1-3,1-2}{1-3,2-3}{2-3,1-2}{2-3,1-3}六种不同的打架过程。</p>
@@ -29,6 +29,8 @@
     <![CDATA[<p>想起今天（其实是昨天）做初赛的时候看到一道算prufer编码的题目居然发现自己不会做了，赶紧学一发。。。<br>]]>
     
     </summary>
+    
+      <category term="BZOJ" scheme="http://blog.fractal128.tk/tags/BZOJ/"/>
     
       <category term="prufer编码" scheme="http://blog.fractal128.tk/tags/prufer%E7%BC%96%E7%A0%81/"/>
     
