@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>NOIP2015模拟题集 | Fractal128 ： We are OIers</title>
+  <title>BZOJ1430: 小猴打架 | Fractal128 ： We are OIers</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-  <meta name="description" content="收录模拟赛中一些我不会做的或是我侥幸做出的题。。。">
+  <meta name="description" content="想起今天（其实是昨天）做初赛的时候看到一道算prufer编码的题目居然发现自己不会做了，赶紧学一发。。。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NOIP2015模拟题集">
-<meta property="og:url" content="http://blog.fractal128.tk/2015/10/04/mock_noip2015/index.html">
+<meta property="og:title" content="BZOJ1430: 小猴打架">
+<meta property="og:url" content="http://blog.fractal128.tk/2015/10/11/bzoj1430/index.html">
 <meta property="og:site_name" content="Fractal128 ： We are OIers">
-<meta property="og:description" content="收录模拟赛中一些我不会做的或是我侥幸做出的题。。。">
-<meta property="og:updated_time" content="2015-10-04T16:16:48.000Z">
+<meta property="og:description" content="想起今天（其实是昨天）做初赛的时候看到一道算prufer编码的题目居然发现自己不会做了，赶紧学一发。。。">
+<meta property="og:updated_time" content="2015-10-10T17:02:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NOIP2015模拟题集">
-<meta name="twitter:description" content="收录模拟赛中一些我不会做的或是我侥幸做出的题。。。">
+<meta name="twitter:title" content="BZOJ1430: 小猴打架">
+<meta name="twitter:description" content="想起今天（其实是昨天）做初赛的时候看到一道算prufer编码的题目居然发现自己不会做了，赶紧学一发。。。">
   
   
     <link rel="icon" href="http://blog.fractal128.tk/css/images/f1.ico">
@@ -148,27 +148,27 @@ ga('send', 'pageview');
     
 </aside>
       
-      <section id="main"><article id="post-mock_noip2015" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-bzoj1430" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <img src="http://7xl5lt.com1.z0.glb.clouddn.com/banner17.jpg" class="article-banner">
+      <img src="http://7xl5lt.com1.z0.glb.clouddn.com/banner21.jpg" class="article-banner">
     
     
     
       <header class="article-header">
         <h1 class="article-title" itemprop="name">
-      NOIP2015模拟题集
+      BZOJ1430: 小猴打架
     </h1>
         <div class="article-meta">
           <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/10/04/mock_noip2015/">
-      <time datetime="2015-10-04T14:39:49.000Z" itemprop="datePublished">2015-10-04</time>
+    <a href="/2015/10/11/bzoj1430/">
+      <time datetime="2015-10-10T16:41:43.000Z" itemprop="datePublished">2015-10-11</time>
     </a>
   </div>
           <div class="article-category">
   	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/比赛/">比赛</a>
+    <a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/prufer编码/">prufer编码</a>
   </div>
         </div>
       </header>
@@ -177,38 +177,29 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
       
-        <p>收录模拟赛中一些我不会做的或是我侥幸做出的题。。。<br><a id="more"></a></p>
-<h2 id="Problem:A">Problem:A</h2><h3 id="Description">Description</h3><p>给出一张n个点m条边的<em>带边权</em>无向图，询问从0到n-1这两点间是否有长度为T的路径。其中 2 &lt;= n &lt;= 50 , 1 &lt;= m &lt;= 100 , 1 &lt;=  &lt;= 10000 , 1 &lt;= T &lt;= 10^18 , Case &lt;= 5.</p>
-<h3 id="Solution">Solution</h3><p>这么难，根本不会做。<a href="http://i301void.gitcafe.io" target="_blank" rel="external">I301void</a>在UOJ上问了一发，被瞬秒，还是太弱了。。。不过北大爷rzy没做出来我的心情还是愉悦得很啊。<br>30%：<br>当T&lt;= 10000的时候，可以设 vis[i][j] 代表到达第i个点时间为j是否合法。 这样是O(T*m)，可以拿到小数据。<br>另外的那30%：各种奇怪的骗分方法。选手自行考虑。<br>100%：<br>当T很大的时候，我们考虑 如果0 -&gt; x -&gt; n - 1路径时间为T，且 从x出发有一个时间为d的环，则 一定存在一个K满足 K + p*d = T（至少T满足条件），这样我们就能绕着环走p次就能构成一条时间为T的路径。<br>显然要求的路径一定经过 0，而且在合法情况下从0号点出发一定存在一条边，否则0号点和n - 1号就是不联通的。随便取一条边时间为d, 则能构成从0号点出发的一个时间为2d的环。这样原题就化为最短路问题了，dis[i][j] 代表到达i号点，时间为 j + p <em> 2d，最小的 j+p\</em>2d，<br>最后判断dis[n -1][T % 2d] 是否小于等于T即可。<br>实际上就是在30%的基础上缩减状态。<br>时间复杂度为O(m*d)。</p>
-<p>其实，还是并不十分深刻理解，主要还是T的大小和做法的界限问题，并且也没能力证明该方法的正确性，希望明白真相的神犇们可以指点一下。</p>
-<p>写了一下T很大时的部分：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxn <span class="number">300</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxlen <span class="number">30000</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> inf <span class="number">1000000000</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dis[maxn][maxlen], fir[maxn], nex[maxn], c[maxn], b[maxn];</span><br><span class="line"><span class="keyword">bool</span> inq[maxn];</span><br><span class="line"><span class="keyword">int</span> sum, n, m, T, d;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ((x == <span class="number">0</span>) &amp;&amp; (d == <span class="number">0</span>))&#123;</span><br><span class="line">        d = <span class="number">2</span> * z;</span><br><span class="line">    &#125;</span><br><span class="line">    b[++sum] = y; c[sum] = z; nex[sum] = fir[x]; fir[x] = sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">spfa</span><span class="params">()</span></span>&#123;</span><br><span class="line">    dis[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    inq[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; Q;</span><br><span class="line">    Q.push(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span> (!Q.empty())&#123;</span><br><span class="line">        <span class="keyword">int</span> x = Q.front();</span><br><span class="line">        Q.pop(); inq[x] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> u = fir[x]; u; u = nex[u])&#123;</span><br><span class="line">            <span class="keyword">int</span> v = b[u], len = c[u];</span><br><span class="line">            <span class="keyword">bool</span> flag = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; d; j++)</span><br><span class="line">            <span class="keyword">if</span> (dis[x][j] != inf &amp;&amp; dis[x][j] + len &lt; dis[v][(j + len) % d])&#123;</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line">                dis[v][(j + len) % d] = dis[x][j] + len;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (flag &amp; !inq[v])&#123;</span><br><span class="line">                Q.push(v); inq[v] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cas;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; cas;</span><br><span class="line">    <span class="keyword">while</span> (cas--)&#123;</span><br><span class="line">        sum = d = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">memset</span>(fir, <span class="number">0</span>, <span class="keyword">sizeof</span>(fir));</span><br><span class="line">        <span class="built_in">memset</span>(nex, <span class="number">0</span>, <span class="keyword">sizeof</span>(nex));</span><br><span class="line">        <span class="built_in">memset</span>(b, <span class="number">0</span>, <span class="keyword">sizeof</span>(b));</span><br><span class="line">        <span class="built_in">memset</span>(c, <span class="number">0</span>, <span class="keyword">sizeof</span>(c));</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; T;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> x, y, z;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y &gt;&gt; z;</span><br><span class="line">            add(x, y, z); add(y, x, z);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; d; j++) dis[i][j] = inf;</span><br><span class="line"></span><br><span class="line">        spfa();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (dis[n - <span class="number">1</span>][T % d] &lt;= T) <span class="built_in">cout</span> &lt;&lt; <span class="string">"Possible"</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; <span class="string">"Impossible"</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>想起今天（其实是昨天）做初赛的时候看到一道算prufer编码的题目居然发现自己不会做了，赶紧学一发。。。<br><a id="more"></a></p>
+<h2 id="Prufer编码">Prufer编码</h2><p><a href="http://www.cnblogs.com/zhj5chengfeng/archive/2013/08/23/3278557.html" target="_blank" rel="external">大神的博客</a><br>看了这个学会的。。。图文并茂，深入浅出，反正让我写肯定是一团浆糊。</p>
+<h2 id="Description">Description</h2><p>一开始森林里面有N只互不相识的小猴子，它们经常打架，但打架的双方都必须不是好朋友。每次打完架后，打架的双方以及它们的好朋友就会互相认识，成为好朋友。经过N-1次打架之后，整个森林的小猴都会成为好朋友。 现在的问题是，总共有多少种不同的打架过程。 比如当N=3时，就有{1-2,1-3}{1-2,2-3}{1-3,1-2}{1-3,2-3}{2-3,1-2}{2-3,1-3}六种不同的打架过程。</p>
+<h2 id="Solution">Solution</h2><p>唯一的一题不需要高精度的prufer裸题，可得<br>$$ ans=n^{n-2}*(n-1)!$$</p>
+<h2 id="Code">Code</h2><p>没写ll跪了两发WA。。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MOD <span class="number">9999991</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll x = <span class="number">0</span>, f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch &gt; <span class="string">'9'</span> || ch &lt; <span class="string">'0'</span>)&#123; <span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = -<span class="number">1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch &lt;= <span class="string">'9'</span> &amp;&amp; ch &gt;= <span class="string">'0'</span>)&#123; x = x * <span class="number">10</span> + ch -<span class="string">'0'</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">pow</span><span class="params">(ll a, ll b, ll p)</span></span>&#123;</span><br><span class="line">    ll ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; b; b &gt;&gt;= <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span> ((b &amp; <span class="number">1</span>) == <span class="number">1</span>)&#123;ans *= a, ans %= MOD;&#125;</span><br><span class="line">        a *= a; a %= MOD;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line">ll n,ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n = read();</span><br><span class="line">    ans = <span class="built_in">pow</span>(n, n - <span class="number">2</span>, MOD);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n - <span class="number">1</span>; i++)&#123;</span><br><span class="line">        ans *= i; ans %=MOD;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
     
 
     <footer class="article-footer">
-      <a data-url="http://blog.fractal128.tk/2015/10/04/mock_noip2015/" data-id="ciflbir780026v64571aobzni" class="article-share-link">Share</a>
+      <a data-url="http://blog.fractal128.tk/2015/10/11/bzoj1430/" data-id="ciflbir8d004ov645j0zb2eja" class="article-share-link">Share</a>
       
-        <a href="http://blog.fractal128.tk/2015/10/04/mock_noip2015/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://blog.fractal128.tk/2015/10/11/bzoj1430/#disqus_thread" class="article-comment-link">Comments</a>
       
-      <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NOIP2015/">NOIP2015</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最短路/">最短路</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面壁反省/">面壁反省</a></li></ul>
+      <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/prufer编码/">prufer编码</a></li></ul>
     </footer>
     </div>
   </div>
   
     <nav id="article-nav">
   
-    <a href="/2015/10/05/bzoj3043/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          BZOJ3043: IncDec Sequence
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/10/03/bcRound58/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/10/10/bzoj2442/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">BestCoder Round #58 (div.2)</div>
+      <div class="article-nav-title">BZOJ2442: [Usaco2011 Open]修剪草坪</div>
     </a>
   
 </nav>
