@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | Fractal128 ： We are OIers</title>
+  <title>BZOJ2442: [Usaco2011 Open]修剪草坪 | Fractal128 ： We are OIers</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-  <meta name="description" content="Being rather cleverer than most men,my mistakes tend to be correspondingly huger.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Fractal128 ： We are OIers">
-<meta property="og:url" content="http://blog.fractal128.tk/archives/page/5/index.html">
+  <meta name="description" content="水题保平安。。。初赛求过，RP++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BZOJ2442: [Usaco2011 Open]修剪草坪">
+<meta property="og:url" content="http://blog.fractal128.tk/2015/10/10/bzoj2442/index.html">
 <meta property="og:site_name" content="Fractal128 ： We are OIers">
-<meta property="og:description" content="Being rather cleverer than most men,my mistakes tend to be correspondingly huger.">
+<meta property="og:description" content="水题保平安。。。初赛求过，RP++">
+<meta property="og:updated_time" content="2015-10-10T13:09:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fractal128 ： We are OIers">
-<meta name="twitter:description" content="Being rather cleverer than most men,my mistakes tend to be correspondingly huger.">
+<meta name="twitter:title" content="BZOJ2442: [Usaco2011 Open]修剪草坪">
+<meta name="twitter:description" content="水题保平安。。。初赛求过，RP++">
   
   
     <link rel="icon" href="http://blog.fractal128.tk/css/images/f1.ico">
@@ -147,152 +148,81 @@ ga('send', 'pageview');
     
 </aside>
       
-      <section id="main"><div class="archive-year-wrap">
-        <a href="/archives/2015" class="archive-year">2015</a>
-      </div>
-      <section class="archives-wrap">
-        <div class="archives">
+      <section id="main"><article id="post-bzoj2442" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
+      <img src="http://7xl5lt.com1.z0.glb.clouddn.com/banner15.jpg" class="article-banner">
     
-    <div class="archive-article-thumbnail">
-      <a href="/2015/08/30/记暑假之颓/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/star.jpg)" alt="记暑假之颓" class="thumbnail-image"></span>
-  
-</a>
-    </div>
     
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/30/记暑假之颓/">记暑假之颓</a>
+    
+      <header class="article-header">
+        <h1 class="article-title" itemprop="name">
+      BZOJ2442: [Usaco2011 Open]修剪草坪
     </h1>
-      
-        <div class="archive-article-date">
+        <div class="article-meta">
+          <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/08/30/记暑假之颓/">
-      <time datetime="2015-08-29T19:19:46.000Z" itemprop="datePublished">Aug 30</time>
+    <a href="/2015/10/10/bzoj2442/">
+      <time datetime="2015-10-10T12:18:58.000Z" itemprop="datePublished">2015-10-10</time>
     </a>
   </div>
-      
-    </header>
+          <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/动态规划/">动态规划</a>
   </div>
-</article>
-  
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
+        </div>
+      </header>
     
-    <div class="archive-article-thumbnail">
-      <a href="/2015/08/21/bzoj1004-［HNOI2008］Cards/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/egoist01.jpg-normal)" alt="BZOJ1004:[HNOI2008]Cards" class="thumbnail-image"></span>
-  
-</a>
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <p>水题保平安。。。初赛求过，RP++<br><a id="more"></a><br>link:click <a href="http://www.lydsy.com/JudgeOnline/problem.php?id=2442" target="_blank" rel="external">here</a></p>
+<h2 id="Description">Description</h2><p>在一年前赢得了小镇的最佳草坪比赛后，FJ变得很懒，再也没有修剪过草坪。现在，<br>新一轮的最佳草坪比赛又开始了，FJ希望能够再次夺冠。</p>
+<p>然而，FJ的草坪非常脏乱，因此，FJ只能够让他的奶牛来完成这项工作。FJ有N<br>(1 &lt;= N &lt;= 100,000)只排成一排的奶牛，编号为1…N。每只奶牛的效率是不同的，<br>奶牛i的效率为E_i(0 &lt;= E_i &lt;= 1,000,000,000)。</p>
+<p>靠近的奶牛们很熟悉，因此，如果FJ安排超过K只连续的奶牛，那么，这些奶牛就会罢工<br>去开派对:)。因此，现在FJ需要你的帮助，计算FJ可以得到的最大效率，并且该方案中<br>没有连续的超过K只奶牛。</p>
+<h2 id="Solution">Solution</h2><p>问题等价于在数列中取出一些数，这些数之间的距离不能超过K，求这些数的和的最小值T。那么问题答案变为SUM－T。<br>其中求T的时候可以使用DP＋单调数列。f[i]表示选了a[i]的前i个数的选取最小值，T=min{f[n-k],…,f[n-1],f[n]}</p>
+<h2 id="Code">Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxn <span class="number">100010</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll x = <span class="number">0</span>, f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch &gt; <span class="string">'9'</span> || ch &lt; <span class="string">'0'</span>)&#123; <span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = -<span class="number">1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch &lt;= <span class="string">'9'</span> &amp;&amp; ch &gt;= <span class="string">'0'</span>)&#123; x = x * <span class="number">10</span> + ch -<span class="string">'0'</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line">ll n, k, h, t;</span><br><span class="line">ll sum = <span class="number">0</span>, ans = <span class="number">10000000000000</span>;</span><br><span class="line">ll q[maxn], a[maxn], f[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    freopen(<span class="string">"1.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">"1.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line"></span><br><span class="line">    n = read(); k = read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">        a[i] = read(); sum += a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    f[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    h = t = <span class="number">1</span>;</span><br><span class="line">    q[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">        <span class="keyword">while</span> (i - k - <span class="number">1</span> &gt; q[h]) h++;</span><br><span class="line">        f[i] = f[q[h]] + a[i];</span><br><span class="line">        <span class="keyword">while</span> (f[q[t]] &gt;= f[i]) t--;</span><br><span class="line">        q[++t] = i;</span><br><span class="line">        <span class="keyword">if</span> (i + k &gt;= n) ans = min(ans, f[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld"</span>, sum - ans);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+
+    <footer class="article-footer">
+      <a data-url="http://blog.fractal128.tk/2015/10/10/bzoj2442/" data-id="cifl3ki9o003jkd451e09zcwd" class="article-share-link">Share</a>
+      
+        <a href="http://blog.fractal128.tk/2015/10/10/bzoj2442/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BZOJ/">BZOJ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/USACO/">USACO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/单调队列/">单调队列</a></li></ul>
+    </footer>
     </div>
-    
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/21/bzoj1004-［HNOI2008］Cards/">BZOJ1004:[HNOI2008]Cards</a>
-    </h1>
-      
-        <div class="archive-article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/08/21/bzoj1004-［HNOI2008］Cards/">
-      <time datetime="2015-08-21T05:52:40.000Z" itemprop="datePublished">Aug 21</time>
+  </div>
+  
+    <nav id="article-nav">
+  
+  
+    <a href="/2015/10/05/bzoj1595/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">BZOJ1595: [Usaco2008 Jan]人工湖</div>
     </a>
-  </div>
-      
-    </header>
-  </div>
+  
+</nav>
+  
 </article>
-  
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
+
+
+<section id="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'fractal128sblog';
     
-    <div class="archive-article-thumbnail">
-      <a href="/2015/08/17/读东野圭吾《解忧杂货店》的感受/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/jieyou.jpg-normal)" alt="读东野圭吾《解忧杂货店》的感受" class="thumbnail-image"></span>
-  
-</a>
-    </div>
-    
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/17/读东野圭吾《解忧杂货店》的感受/">读东野圭吾《解忧杂货店》的感受</a>
-    </h1>
-      
-        <div class="archive-article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/08/17/读东野圭吾《解忧杂货店》的感受/">
-      <time datetime="2015-08-16T20:09:34.000Z" itemprop="datePublished">Aug 17</time>
-    </a>
-  </div>
-      
-    </header>
-  </div>
-</article>
-  
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    
-    <div class="archive-article-thumbnail">
-      <a href="/2015/08/16/river祭祀/" class="thumbnail">
-  
-    <span style="background-image:url(/css/images/crown.jpg)" alt="BZOJ1143: [CTSC2008]祭祀river" class="thumbnail-image"></span>
-  
-</a>
-    </div>
-    
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/16/river祭祀/">BZOJ1143: [CTSC2008]祭祀river</a>
-    </h1>
-      
-        <div class="archive-article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/08/16/river祭祀/">
-      <time datetime="2015-08-15T23:09:34.000Z" itemprop="datePublished">Aug 16</time>
-    </a>
-  </div>
-      
-    </header>
-  </div>
-</article>
-  
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    
-    <div class="archive-article-thumbnail">
-      <a href="/2015/08/15/hello-world/" class="thumbnail">
-  
-    <span style="background-image:url(/css/images/hello-world.jpg)" alt="Hello World!" class="thumbnail-image"></span>
-  
-</a>
-    </div>
-    
-    <header class="archive-article-header">
-      <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/15/hello-world/">Hello World!</a>
-    </h1>
-      
-        <div class="archive-article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2015/08/15/hello-world/">
-      <time datetime="2015-08-15T06:09:34.000Z" itemprop="datePublished">Aug 15</time>
-    </a>
-  </div>
-      
-    </header>
-  </div>
-</article>
-  
-    </div></section>
-  
-      <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/4/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span>
-      </nav></section>
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section></section>
       
         <aside id="sidebar">
 
@@ -464,7 +394,7 @@ ga('send', 'pageview');
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
@@ -478,5 +408,24 @@ ga('send', 'pageview');
 
 
 <script src="/js/script.js" type="text/javascript"></script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+messageStyle: "none"
+    }); 
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   </div>
 </body>
