@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://blog.fractal128.tk/2015/10/17/bzoj1600/index.html">
 <meta property="og:site_name" content="Fractal128 ： We are OIers">
 <meta property="og:description" content="OTL.">
-<meta property="og:updated_time" content="2015-10-17T08:34:33.000Z">
+<meta property="og:updated_time" content="2015-10-17T12:39:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BZOJ1600: [Usaco2008 Oct]建造栅栏">
 <meta name="twitter:description" content="OTL.">
@@ -114,11 +114,11 @@ ga('send', 'pageview');
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        34
+        35
         <span>posts</span>
       </div>
       <div class="article-info-block">
-        37
+        39
         <span>tags</span>
       </div>
     </div>
@@ -178,13 +178,13 @@ ga('send', 'pageview');
       
       
         <p>OTL.<br><a id="more"></a><br>link: <a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1600" target="_blank" rel="external">here</a></p>
-<h2 id="Description">Description</h2><p>勤奋的Farmer John想要建造一个四面的栅栏来关住牛们。他有一块长为n（4&lt;=n&lt;=2500）的木板，他想把这块本板切成4块。这四块小木板可以是任何一个长度只要Farmer John能够把它们围成一个合理的四边形。他能够切出多少种不同的合理方案。注意： <em>只要大木板的切割点不同就当成是不同的方案（像全排列那样），不要担心另外的特殊情况，go ahead。 </em>栅栏的面积要大于0. <em>输出保证答案在longint范围内。 </em>整块木板都要用完。</p>
+<h2 id="Description">Description</h2><p>勤奋的Farmer John想要建造一个四面的栅栏来关住牛们。他有一块长为n（4&lt;=n&lt;=2500）的木板，他想把这块本板切成4块。这四块小木板可以是任何一个长度只要Farmer John能够把它们围成一个合理的四边形。他能够切出多少种不同的合理方案。注意： *只要大木板的切割点不同就当成是不同的方案（像全排列那样），不要担心另外的特殊情况，go ahead。 *栅栏的面积要大于0. *输出保证答案在longint范围内。 *整块木板都要用完。</p>
 <h2 id="Solution">Solution</h2><p>只要保证任意一边小于其余三边之和，就可以保证四边形合法性。<br>f[i][j]表示前i条边何为j的情况，暴力转移即可。</p>
 <h2 id="Code">Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> maxn <span class="number">3000</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a, b, n, m, ans, T;</span><br><span class="line"><span class="keyword">int</span> f[<span class="number">5</span>][maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    a = (n+<span class="number">1</span>) / <span class="number">2</span> - <span class="number">1</span>;</span><br><span class="line">    f[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">4</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= min(j, a); k++)</span><br><span class="line">            f[i][j] += f[i - <span class="number">1</span>][j - k];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f[<span class="number">4</span>][n];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
 
     <footer class="article-footer">
-      <a data-url="http://blog.fractal128.tk/2015/10/17/bzoj1600/" data-id="cifurtmf9004hmd45x7357zk1" class="article-share-link">Share</a>
+      <a data-url="http://blog.fractal128.tk/2015/10/17/bzoj1600/" data-id="cifvdtxxv004opr45v2bfnb13" class="article-share-link">Share</a>
       
         <a href="http://blog.fractal128.tk/2015/10/17/bzoj1600/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -238,6 +238,23 @@ ga('send', 'pageview');
     <h3 class="widget-title">recents</h3>
     <div class="widget">
       <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/10/18/uva11774/" class="thumbnail">
+  
+    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/y0504pixx30s.jpg)" alt="UVa11774:Doom‘s Day" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/其他/">其他</a></p>
+              <p class="item-title"><a href="/2015/10/18/uva11774/" class="title">UVa11774:Doom‘s Day</a></p>
+              <p class="item-date"><time datetime="2015-10-17T17:05:51.000Z" itemprop="datePublished">2015-10-18</time></p>
+            </div>
+          </li>
         
           <li>
             
@@ -307,23 +324,6 @@ ga('send', 'pageview');
             </div>
           </li>
         
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/10/11/bzoj1430/" class="thumbnail">
-  
-    <span style="background-image:url(http://7xl5lt.com1.z0.glb.clouddn.com/banner21.jpg)" alt="BZOJ1430: 小猴打架" class="thumbnail-image"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/OI/">OI</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/OI/prufer编码/">prufer编码</a></p>
-              <p class="item-title"><a href="/2015/10/11/bzoj1430/" class="title">BZOJ1430: 小猴打架</a></p>
-              <p class="item-date"><time datetime="2015-10-10T16:41:43.000Z" itemprop="datePublished">2015-10-11</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -331,21 +331,21 @@ ga('send', 'pageview');
     <div class="widget-wrap">
     <h3 class="widget-title">categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OI/">OI</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OI/KMP算法/">KMP算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/prufer编码/">prufer编码</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/二分图/">二分图</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/动态规划/">动态规划</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/搜索/">搜索</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/数据结构/">数据结构</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/数论/">数论</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/最小表示法/">最小表示法</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/比赛/">比赛</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/水题/">水题</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/网络流/">网络流</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/群论/">群论</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随记/">随记</a><span class="category-list-count">4</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OI/">OI</a><span class="category-list-count">31</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OI/KMP算法/">KMP算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/prufer编码/">prufer编码</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/二分图/">二分图</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/其他/">其他</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/动态规划/">动态规划</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/搜索/">搜索</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/数据结构/">数据结构</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/数论/">数论</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/最小表示法/">最小表示法</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/比赛/">比赛</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/水题/">水题</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/网络流/">网络流</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OI/群论/">群论</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随记/">随记</a><span class="category-list-count">4</span></li></ul>
     </div>
   </div>
   
     <div class="widget-wrap">
     <h3 class="widget-title">tag cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/BZOJ/" style="font-size: 20px">BZOJ</a> <a href="/tags/BestCoder/" style="font-size: 10px">BestCoder</a> <a href="/tags/HNOI/" style="font-size: 10px">HNOI</a> <a href="/tags/KMP/" style="font-size: 10px">KMP</a> <a href="/tags/NOIP2015/" style="font-size: 10px">NOIP2015</a> <a href="/tags/SDOI/" style="font-size: 12px">SDOI</a> <a href="/tags/USACO/" style="font-size: 16px">USACO</a> <a href="/tags/ZJOI/" style="font-size: 10px">ZJOI</a> <a href="/tags/burnside引理/" style="font-size: 10px">burnside引理</a> <a href="/tags/ctsc/" style="font-size: 10px">ctsc</a> <a href="/tags/dilworth定理/" style="font-size: 10px">dilworth定理</a> <a href="/tags/prufer编码/" style="font-size: 10px">prufer编码</a> <a href="/tags/polya/" style="font-size: 10px">pólya</a> <a href="/tags/test/" style="font-size: 10px">test</a> <a href="/tags/uva/" style="font-size: 10px">uva</a> <a href="/tags/vijos/" style="font-size: 10px">vijos</a> <a href="/tags/一般递推/" style="font-size: 12px">一般递推</a> <a href="/tags/东野圭吾/" style="font-size: 10px">东野圭吾</a> <a href="/tags/中国剩余定理/" style="font-size: 10px">中国剩余定理</a> <a href="/tags/乘法逆元/" style="font-size: 12px">乘法逆元</a> <a href="/tags/二分图/" style="font-size: 12px">二分图</a> <a href="/tags/动态规划/" style="font-size: 12px">动态规划</a> <a href="/tags/单调队列/" style="font-size: 10px">单调队列</a> <a href="/tags/字符串/" style="font-size: 10px">字符串</a> <a href="/tags/搜索/" style="font-size: 10px">搜索</a> <a href="/tags/数列差分/" style="font-size: 10px">数列差分</a> <a href="/tags/数据结构/" style="font-size: 12px">数据结构</a> <a href="/tags/数论/" style="font-size: 18px">数论</a> <a href="/tags/最大流/" style="font-size: 12px">最大流</a> <a href="/tags/最小割/" style="font-size: 12px">最小割</a> <a href="/tags/最小表示法/" style="font-size: 12px">最小表示法</a> <a href="/tags/最短路/" style="font-size: 10px">最短路</a> <a href="/tags/模拟/" style="font-size: 10px">模拟</a> <a href="/tags/欧拉函数/" style="font-size: 10px">欧拉函数</a> <a href="/tags/线段树/" style="font-size: 10px">线段树</a> <a href="/tags/网络流/" style="font-size: 14px">网络流</a> <a href="/tags/面壁反省/" style="font-size: 14px">面壁反省</a>
+      <a href="/tags/BZOJ/" style="font-size: 20px">BZOJ</a> <a href="/tags/BestCoder/" style="font-size: 10px">BestCoder</a> <a href="/tags/HNOI/" style="font-size: 10px">HNOI</a> <a href="/tags/KMP/" style="font-size: 10px">KMP</a> <a href="/tags/NOIP2015/" style="font-size: 10px">NOIP2015</a> <a href="/tags/SDOI/" style="font-size: 12px">SDOI</a> <a href="/tags/USACO/" style="font-size: 16px">USACO</a> <a href="/tags/ZJOI/" style="font-size: 10px">ZJOI</a> <a href="/tags/burnside引理/" style="font-size: 10px">burnside引理</a> <a href="/tags/ctsc/" style="font-size: 10px">ctsc</a> <a href="/tags/dilworth定理/" style="font-size: 10px">dilworth定理</a> <a href="/tags/prufer编码/" style="font-size: 10px">prufer编码</a> <a href="/tags/polya/" style="font-size: 10px">pólya</a> <a href="/tags/test/" style="font-size: 10px">test</a> <a href="/tags/uva/" style="font-size: 12px">uva</a> <a href="/tags/vijos/" style="font-size: 10px">vijos</a> <a href="/tags/一般递推/" style="font-size: 12px">一般递推</a> <a href="/tags/东野圭吾/" style="font-size: 10px">东野圭吾</a> <a href="/tags/中国剩余定理/" style="font-size: 10px">中国剩余定理</a> <a href="/tags/乘法逆元/" style="font-size: 12px">乘法逆元</a> <a href="/tags/二分图/" style="font-size: 12px">二分图</a> <a href="/tags/动态规划/" style="font-size: 12px">动态规划</a> <a href="/tags/单调队列/" style="font-size: 10px">单调队列</a> <a href="/tags/字符串/" style="font-size: 10px">字符串</a> <a href="/tags/找规律/" style="font-size: 10px">找规律</a> <a href="/tags/搜索/" style="font-size: 10px">搜索</a> <a href="/tags/数列差分/" style="font-size: 10px">数列差分</a> <a href="/tags/数据结构/" style="font-size: 12px">数据结构</a> <a href="/tags/数论/" style="font-size: 18px">数论</a> <a href="/tags/最大流/" style="font-size: 12px">最大流</a> <a href="/tags/最小割/" style="font-size: 12px">最小割</a> <a href="/tags/最小表示法/" style="font-size: 12px">最小表示法</a> <a href="/tags/最短路/" style="font-size: 10px">最短路</a> <a href="/tags/模拟/" style="font-size: 10px">模拟</a> <a href="/tags/欧拉函数/" style="font-size: 10px">欧拉函数</a> <a href="/tags/线段树/" style="font-size: 10px">线段树</a> <a href="/tags/网络流/" style="font-size: 14px">网络流</a> <a href="/tags/置换/" style="font-size: 10px">置换</a> <a href="/tags/面壁反省/" style="font-size: 14px">面壁反省</a>
     </div>
   </div>
   
     <div class="widget-wrap">
     <h3 class="widget-title">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
   
