@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="某fractal的自留地">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Fractal128">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="初等数论（二）"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="某fractal的自留地" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Zone-128"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>初等数论（二） - Zone-128</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/music.html">
+                    MusicPlayer
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-code" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2015/09/27/number-theory2/">
+                初等数论（二）
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2015-09-27</span>
+            
+            
+                <a href="#disqus_thread" class="comments">Comments</a>
+            
+            
+                <span class="category">
+                    <a href="/categories/OI/">OI</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>中秋快乐！<br>继续填坑喽。。。<br><a id="more"></a></p>
+<h1 id="初等数论"><a href="#初等数论" class="headerlink" title="初等数论"></a>初等数论</h1><h2 id="数论筛法"><a href="#数论筛法" class="headerlink" title="数论筛法"></a>数论筛法</h2><h3 id="Eraosthens筛法"><a href="#Eraosthens筛法" class="headerlink" title="Eraosthens筛法"></a>Eraosthens筛法</h3><p>基本筛法，一般情况下都不会被卡，时间复杂度Θ(nlogn)[我不会算。。。</p>
+<h3 id="线性筛法-积性函数"><a href="#线性筛法-积性函数" class="headerlink" title="线性筛法(积性函数)"></a>线性筛法(积性函数)</h3><p>时间复杂度Θ(n)[还是不会算。。。<br>直接放代码。。。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=i;i&lt;=n;i++)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(!mindiv[i])prime[++tot]=mindiv[i]=i;</div><div class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=tot&amp;&amp;prime[j]&lt;=mindiv[i]&amp;&amp;(k=prime[j]*i)&lt;=n;j++)</div><div class="line">    mindiv[k]=prime[j];</div><div class="line">&#125;</div><div class="line"><span class="comment">//mindiv[k]表示k的最小质因数，这样保证了每一个数只会被他的最小质因数筛掉一遍。</span></div></pre></td></tr></table></figure></p>
+<h3 id="常用性质"><a href="#常用性质" class="headerlink" title="常用性质"></a>常用性质</h3><p>n以内素数个数O(n/ln(n))</p>
+<h2 id="素数测试"><a href="#素数测试" class="headerlink" title="素数测试"></a>素数测试</h2><h3 id="Fermat素数测试"><a href="#Fermat素数测试" class="headerlink" title="Fermat素数测试"></a>Fermat素数测试</h3><h4 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h4><blockquote>
+<p>对于素数p与任意与p互素的整数a满足a(p-1) ≡1(mod p)</p>
+</blockquote>
+<h4 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h4><blockquote><p>这个证明就有点麻烦了。<br>    首先我们证明这样一个结论：如果p是一个素数的话，那么对任意一个小于p的正整数a，a, 2a, 3a, …, (p-1)a除以p的余数正好是一个1到p-1的排列。例如，5是素数，3, 6, 9, 12除以5的余数分别为3, 1, 4, 2，正好就是1到4这四个数。<br>    反证法，假如结论不成立的话，那么就是说有两个小于p的正整数m和n使得na和ma除以p的余数相同。不妨假设n&gt;m，则p可以整除a(n-m)。但p是素数，那么a和n-m中至少有一个含有因子p。这显然是不可能的，因为a和n-m都比p小。<br>    用同余式表述，我们证明了：<br>(p-1)! ≡ a * 2a * 3a * … * (p-1)a (mod p)<br>    也即：<br>(p-1)! ≡ (p-1)! * a^(p-1) (mod p)<br>    两边同时除以(p-1)!，就得到了我们的最终结论：<br>1 ≡ a^(p-1) (mod p)</p>
+<footer><strong>Matrix67</strong><cite><a href="http://www.matrix67.com/blog/archives/234" target="_blank" rel="external">数论部分第一节：素数与素性测试</a></cite></footer></blockquote>
+<h4 id="限制与伪素数"><a href="#限制与伪素数" class="headerlink" title="限制与伪素数"></a>限制与伪素数</h4><blockquote><p>谈到Fermat小定理，数学历史上有很多误解。很长一段时间里，人们都认为Fermat小定理的逆命题是正确的，并且有人亲自验证了a=2, p&lt;300的所有情况。国外甚至流传着一种说法，认为中国在孔子时代就证明了这样的定理：如果n整除2^(n-1)-1，则n就是素数。后来某个英国学者进行考证后才发现那是因为他们翻译中国古文时出了错。1819年有人发现了Fermat小定理逆命题的第一个反例：虽然2的340次方除以341余1，但341=11*31。后来，人们又发现了561, 645, 1105等数都表明a=2时Fermat小定理的逆命题不成立。虽然这样的数不多，但不能忽视它们的存在。于是，人们把所有能整除2^(n-1)-1的合数n叫做伪素数(pseudoprime)，意思就是告诉人们这个素数是假的。</p>
+<p>不满足2^(n-1) mod n = 1的n一定不是素数；如果满足的话则多半是素数。这样，一个比试除法效率更高的素性判断方法出现了：制作一张伪素数表，记录某个范围内的所有伪素数，那么所有满足2^(n-1) mod n = 1且不在伪素数表中的n就是素数。之所以这种方法更快，是因为我们可以使用二分法快速计算2^(n-1) mod n 的值，这在计算机的帮助下变得非常容易；在计算机中也可以用二分查找有序数列、Hash表开散列、构建Trie树等方法使得查找伪素数表效率更高。</p>
+<p>有人自然会关心这样一个问题：伪素数的个数到底有多少？换句话说，如果我只计算2^(n-1) mod n的值，事先不准备伪素数表，那么素性判断出错的概率有多少？研究这个问题是很有价值的，毕竟我们是OIer，不可能背一个长度上千的常量数组带上考场。统计表明，在前10亿个自然数中共有50847534个素数，而满足2^(n-1) mod n = 1的合数n有5597个。这样算下来，算法出错的可能性约为0.00011。这个概率太高了，如果想免去建立伪素数表的工作，我们需要改进素性判断的算法。  </p>
+<p>最简单的想法就是，我们刚才只考虑了a=2的情况。对于式子a^(n-1) mod n，取不同的a可能导致不同的结果。一个合数可能在a=2时通过了测试，但a=3时的计算结果却排除了素数的可能。于是，人们扩展了伪素数的定义，称满足a^(n-1) mod n = 1的合数n叫做以a为底的伪素数(pseudoprime to base a)。前10亿个自然数中同时以2和3为底的伪素数只有1272个，这个数目不到刚才的1/4。这告诉我们如果同时验证a=2和a=3两种情况，算法出错的概率降到了0.000025。容易想到，选择用来测试的a越多，算法越准确。通常我们的做法是，随机选择若干个小于待测数的正整数作为底数a进行若干次测试，只要有一次没有通过测试就立即把这个数扔回合数的世界。这就是Fermat素性测试。</p>
+<p>人们自然会想，如果考虑了所有小于n的底数a，出错的概率是否就可以降到0呢？没想到的是，居然就有这样的合数，它可以通过所有a的测试（这个说法不准确，详见我在地核楼层的回复）。Carmichael第一个发现这样极端的伪素数，他把它们称作Carmichael数。你一定会以为这样的数一定很大。错。第一个Carmichael数小得惊人，仅仅是一个三位数，561。前10亿个自然数中Carmichael数也有600个之多。Carmichael数的存在说明，我们还需要继续加强素性判断的算法。</p>
+<footer><strong>Matrix67</strong><cite><a href="http://www.matrix67.com/blog/archives/234" target="_blank" rel="external">数论部分第一节：素数与素性测试</a></cite></footer></blockquote>
+<h3 id="Miller-Rabin-素性测试与二次探测"><a href="#Miller-Rabin-素性测试与二次探测" class="headerlink" title="Miller-Rabin 素性测试与二次探测"></a>Miller-Rabin 素性测试与二次探测</h3><blockquote>
+<p>Miller-Rabin算法是目前主流的基于概率的素数测试算法，在构建密码安全体系中占有重要的地位。通过比较各种素数测试算法和对Miller-Rabin算法进行的仔细研究，证明在计算机中构建密码安全体系时， Miller-Rain算法是完成素数测试的最佳选择。通过对Miller-Rabin 算法底层运算的优化，可以取得较以往实现更好的性能。</p>
+</blockquote>
+<p>以上基本没用。。下面是该算法的一些引理</p>
+<blockquote>
+<p>二次探测引理：若p为奇素数，方程x^2≡1(mod p)的解只有±1<br>long long 范围内的所有整数均能用前9个素数进行准确的二次探测</p>
+</blockquote>
+<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><p><a href="http://codevs.cn/problem/1702/" target="_blank" rel="external">codevs1702</a><br>一个数，他是素数么？<br>设他为P满足(P&lt;=2^63-1)</p>
+<p>Code<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> n=<span class="number">16</span>;</div><div class="line"><span class="keyword">const</span> ll p[<span class="number">17</span>]=&#123;<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">11</span>,<span class="number">13</span>,<span class="number">17</span>,<span class="number">19</span>,<span class="number">23</span>,<span class="number">29</span>,<span class="number">31</span>,<span class="number">37</span>,<span class="number">41</span>,<span class="number">43</span>,<span class="number">47</span>,<span class="number">53</span>&#125;;</div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line">ll x;</div><div class="line"><span class="function">ll <span class="title">mul</span><span class="params">(ll a,ll b,ll MOD)</span></span>&#123;</div><div class="line">	ll ans=<span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span> (b&gt;<span class="number">0</span>)&#123;</div><div class="line">		<span class="keyword">if</span> ((b &amp; <span class="number">1</span>)==<span class="number">1</span>)&#123;</div><div class="line">			ans+=a; ans%=MOD;</div><div class="line">		&#125;</div><div class="line">		a=(a+a)%MOD;</div><div class="line">		b&gt;&gt;=<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">power</span><span class="params">(ll a,ll b,ll MOD)</span></span>&#123;</div><div class="line">	ll ans=<span class="number">1</span>;</div><div class="line">	<span class="keyword">while</span> (b&gt;<span class="number">0</span>)&#123;</div><div class="line">		<span class="keyword">if</span> ((b &amp; <span class="number">1</span>)==<span class="number">1</span>) ans=mul(ans,a,MOD);</div><div class="line">		a=mul(a,a,MOD);</div><div class="line">		b&gt;&gt;=<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">Isprime</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span> (b==<span class="number">2</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span> ((b==<span class="number">1</span>)||((b &amp; <span class="number">1</span>)==<span class="number">0</span>)) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	ll t=b<span class="number">-1</span>;</div><div class="line">	<span class="keyword">while</span> ((t &amp; <span class="number">1</span>)==<span class="number">0</span>) t&gt;&gt;=<span class="number">1</span>;</div><div class="line">	ll tmp=power(a,t,b);</div><div class="line">	<span class="keyword">while</span> ((t!=b<span class="number">-1</span>)&amp;&amp;(tmp!=<span class="number">1</span>)&amp;&amp;(tmp!=b<span class="number">-1</span>))&#123;</div><div class="line">		tmp=mul(tmp,tmp,b);</div><div class="line">		t&lt;&lt;=<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> ((tmp==b<span class="number">-1</span>)||((t &amp; <span class="number">1</span>)==<span class="number">1</span>)) <span class="keyword">return</span> <span class="number">1</span>; <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;x);</div><div class="line">	<span class="keyword">int</span> flag=<span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</div><div class="line">		<span class="keyword">if</span> (p[i]==x)&#123;</div><div class="line">			<span class="built_in">puts</span>(<span class="string">"Yes"</span>);</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			flag=flag &amp; Isprime(p[i],x);</div><div class="line">			<span class="keyword">if</span> (flag==<span class="number">0</span>) &#123;<span class="keyword">break</span>;&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (flag==<span class="number">1</span>) <span class="built_in">puts</span>(<span class="string">"Yes"</span>); <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"No"</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="质因数分解法"><a href="#质因数分解法" class="headerlink" title="质因数分解法"></a>质因数分解法</h2><h3 id="O-sqrt-n-暴力分解"><a href="#O-sqrt-n-暴力分解" class="headerlink" title="O(sqrt(n))暴力分解"></a>O(sqrt(n))暴力分解</h3><h3 id="Pollard-Rho椭圆曲线分解法"><a href="#Pollard-Rho椭圆曲线分解法" class="headerlink" title="Pollard-Rho椭圆曲线分解法"></a>Pollard-Rho椭圆曲线分解法</h3><p>这坑太大了，有点填不动该怎么办。。。</p>
+<p>经过一晚上的学习，终于<del>还是没懂</del><br>其实是找到了一个关于pollard-rho算法的很好的<a href="http://wenku.baidu.com/link?url=T5oeGiGSqfaurODiXMoErWJS1G8z4M0pnXf24x-gqgxswPyNmxdLdd2UByJPVYAqW-991k5UjJIeABtzQlu1MOGZ4072fQPeBopHiGiPm7m" target="_blank" rel="external">Tutorial</a><br>牵扯到圆锥曲线的方面太难了，有兴趣的可以自行深入研究，然后我们了解一下pollard-rho的原理。<br>据研究可得(具体可以看那个tutorial)，当我们在一定范围内随机数的时候，随记一些数并使用它们的差值作为结果效果会远远优于朴素的枚举法［生日悖论］。<br>利用以上性质我们可以设计一种算法，来随机枚举一个可以整除待分解大质数的数，具体如下。</p>
+<p>我们使用一个函数来生成伪随机数。<br>换句话说,我们不断地使用函数 𝑓 来生成(看上去或者说感觉上像的)随机数。 并不是所有的函都能够这样做,但是有一个神奇的函数可以。它就是</p>
+<p> $$ f(x)=x^2+c$$</p>
+<p>( 我们可以自己指定𝑎,也可以用 rand()随即函数来生成,这不是重点 )<br>我们从𝑥1 = 2 或者其他数开始,让𝑥2 = 𝑓(𝑥1), 𝑥3 = 𝑓(𝑥2), … … 生成规则为𝑥𝑛+1 = 𝑓(𝑥𝑛)</p>
+<p>具体实现和详细过程都在那份PDF中［我只是个搬运工。。。</p>
+<p>自己写的bzoj3667, 为什么T了。。。不懂，以后再改吧。</p>
+<p>错误的Code<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> NN=<span class="number">5</span>;</div><div class="line"><span class="keyword">const</span> ll p[<span class="number">6</span>]=&#123;<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">61</span>,<span class="number">24251</span>&#125;;</div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function">ll <span class="title">read</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    ll x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">    <span class="keyword">while</span>(ch&lt;<span class="string">'0'</span>||ch&gt;<span class="string">'9'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">    <span class="keyword">while</span>(ch&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">    <span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line">ll x;</div><div class="line">ll ans;</div><div class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll x,ll y)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span> (x&lt;y) swap(x,y);</div><div class="line">	ll r = x % y;</div><div class="line">	<span class="keyword">while</span> (r!=<span class="number">0</span>)&#123;</div><div class="line">		ll tmp = r;</div><div class="line">		r = y % r;</div><div class="line">		x = y;</div><div class="line">		y = tmp;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> y;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">mul</span><span class="params">(ll a,ll b,ll p)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    ll tmp=(a*b-(ll)((<span class="keyword">long</span> <span class="keyword">double</span>)a/p*b+<span class="number">1e-8</span>)*p);</div><div class="line">    <span class="keyword">return</span> tmp&lt;<span class="number">0</span>?tmp+p:tmp;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">power</span><span class="params">(ll a,ll b,ll MOD)</span></span>&#123;</div><div class="line">	ll ans=<span class="number">1</span>;</div><div class="line">	<span class="keyword">while</span> (b&gt;<span class="number">0</span>)&#123;</div><div class="line">		<span class="keyword">if</span> ((b &amp; <span class="number">1</span>)==<span class="number">1</span>) ans=mul(ans,a,MOD);</div><div class="line">		a=mul(a,a,MOD);</div><div class="line">		b&gt;&gt;=<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">Isprime</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span> (b==<span class="number">2</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span> ((b==<span class="number">1</span>)||((b &amp; <span class="number">1</span>)==<span class="number">0</span>)) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	ll t=b<span class="number">-1</span>;</div><div class="line">	<span class="keyword">while</span> ((t &amp; <span class="number">1</span>)==<span class="number">0</span>) t&gt;&gt;=<span class="number">1</span>;</div><div class="line">	ll tmp=power(a,t,b);</div><div class="line">	<span class="keyword">while</span> ((t!=b<span class="number">-1</span>)&amp;&amp;(tmp!=<span class="number">1</span>)&amp;&amp;(tmp!=b<span class="number">-1</span>))&#123;</div><div class="line">		tmp=mul(tmp,tmp,b);</div><div class="line">		t&lt;&lt;=<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> ((tmp==b<span class="number">-1</span>)||((t &amp; <span class="number">1</span>)==<span class="number">1</span>)) <span class="keyword">return</span> <span class="number">1</span>; <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">MR</span><span class="params">(ll x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> flag=<span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=NN; i++)&#123;</div><div class="line">		<span class="keyword">if</span> (p[i]==x)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			flag=flag &amp; Isprime(p[i],x);</div><div class="line">			<span class="keyword">if</span> (flag==<span class="number">0</span>) &#123;<span class="keyword">break</span>;&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (flag==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>; <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function">ll <span class="title">f</span><span class="params">(ll x,ll y)</span></span>&#123;</div><div class="line">	<span class="keyword">return</span> (mul(x,x,y)+rand()+<span class="number">12894</span>)%y;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">Prho</span><span class="params">(ll N)</span></span>&#123;</div><div class="line">	ll p=<span class="number">1</span>,t=<span class="number">0</span>;</div><div class="line">	<span class="keyword">if</span> (MR(N)==<span class="number">1</span>) <span class="keyword">return</span> N;</div><div class="line">	ll a=<span class="number">2</span>,b=<span class="number">2</span>;</div><div class="line">	<span class="keyword">while</span> (<span class="number">1</span>)&#123;</div><div class="line">		a=f(a,N);</div><div class="line">		b=f(f(b,N),N);</div><div class="line">		<span class="keyword">if</span> (a==b) <span class="keyword">break</span>;</div><div class="line">		<span class="keyword">if</span> (a&gt;b) t=a-b; <span class="keyword">else</span> t=b-a;</div><div class="line">		p=gcd(t,N);</div><div class="line">		<span class="keyword">if</span> (p&gt;<span class="number">1</span>) <span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (p&gt;<span class="number">1</span>) <span class="keyword">return</span> max(Prho(p),Prho(N/p)); <span class="keyword">else</span> <span class="keyword">return</span> N;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> T;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</div><div class="line">	<span class="keyword">while</span> (T--)&#123;</div><div class="line">		x=read();</div><div class="line">		<span class="keyword">if</span> (x==<span class="number">1</span>) <span class="built_in">puts</span>(<span class="string">"1"</span>); </div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (MR(x)==<span class="number">1</span>) <span class="built_in">puts</span>(<span class="string">"Prime"</span>);</div><div class="line">		<span class="keyword">else</span>&#123;</div><div class="line">			ans=Prho(x);</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>发现我在写f(x)的时候每次都rand()了，这是极端错误的。。。<br>而且情况是这样的，如果在miller-rabin算法中用2,3,7,61,24251,那么会有一个十分厉害的叫做46 856 248 255 981的超强伪素数的存在，OTL</p>
+<p>AC的Code<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> NN=<span class="number">5</span>;</div><div class="line"><span class="keyword">const</span> ll p[<span class="number">6</span>]=&#123;<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">61</span>,<span class="number">24251</span>&#125;;</div><div class="line">ll ran;</div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function">ll <span class="title">read</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    ll x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">    <span class="keyword">while</span>(ch&lt;<span class="string">'0'</span>||ch&gt;<span class="string">'9'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">    <span class="keyword">while</span>(ch&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">    <span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line">ll x;</div><div class="line">ll ans;</div><div class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll x,ll y)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (x&lt;y) swap(x,y);</div><div class="line">    ll r = x % y;</div><div class="line">    <span class="keyword">while</span> (r!=<span class="number">0</span>)&#123;</div><div class="line">        ll tmp = r;</div><div class="line">        r = y % r;</div><div class="line">        x = y;</div><div class="line">        y = tmp;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> y;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">mul</span><span class="params">(ll a,ll b,ll p)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    ll tmp=(a*b-(ll)((<span class="keyword">long</span> <span class="keyword">double</span>)a/p*b+<span class="number">1e-8</span>)*p);</div><div class="line">    <span class="keyword">return</span> tmp&lt;<span class="number">0</span>?tmp+p:tmp;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">power</span><span class="params">(ll a,ll b,ll MOD)</span></span>&#123;</div><div class="line">    ll ans=<span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span> (b&gt;<span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">if</span> ((b &amp; <span class="number">1</span>)==<span class="number">1</span>) ans=mul(ans,a,MOD);</div><div class="line">        a=mul(a,a,MOD);</div><div class="line">        b&gt;&gt;=<span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">Isprime</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (b==<span class="number">2</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span> ((b==<span class="number">1</span>)||((b &amp; <span class="number">1</span>)==<span class="number">0</span>)) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    ll t=b<span class="number">-1</span>;</div><div class="line">    <span class="keyword">while</span> ((t &amp; <span class="number">1</span>)==<span class="number">0</span>) t&gt;&gt;=<span class="number">1</span>;</div><div class="line">    ll tmp=power(a,t,b);</div><div class="line">    <span class="keyword">while</span> ((t!=b<span class="number">-1</span>)&amp;&amp;(tmp!=<span class="number">1</span>)&amp;&amp;(tmp!=b<span class="number">-1</span>))&#123;</div><div class="line">        tmp=mul(tmp,tmp,b);</div><div class="line">        t&lt;&lt;=<span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> ((tmp==b<span class="number">-1</span>)||((t &amp; <span class="number">1</span>)==<span class="number">1</span>)) <span class="keyword">return</span> <span class="number">1</span>; <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">MR</span><span class="params">(ll x)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (x==<span class="number">46856248255981</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> flag=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=NN; i++)&#123;</div><div class="line">        <span class="keyword">if</span> (p[i]==x)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            flag=flag &amp; Isprime(p[i],x);</div><div class="line">            <span class="keyword">if</span> (flag==<span class="number">0</span>) &#123;<span class="keyword">break</span>;&#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (flag==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>; <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function">ll <span class="title">f</span><span class="params">(ll x,ll y)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> (mul(x,x,y)+ran+<span class="number">12894</span>)%y;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">Prho</span><span class="params">(ll N)</span></span>&#123;</div><div class="line">    ll p=<span class="number">1</span>,t=<span class="number">0</span>;</div><div class="line">    ll a=<span class="number">2</span>,b=<span class="number">2</span>;</div><div class="line">    <span class="keyword">while</span> (<span class="number">1</span>)&#123;</div><div class="line">        a=f(a,N);</div><div class="line">        b=f(f(b,N),N);</div><div class="line">        <span class="keyword">if</span> (a==b) <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">if</span> (a&gt;b) t=a-b; <span class="keyword">else</span> t=b-a;</div><div class="line">        p=gcd(t,N);</div><div class="line">        <span class="keyword">if</span> (p&gt;<span class="number">1</span>) <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> p;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function">ll <span class="title">work</span><span class="params">(ll x)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (MR(x)==<span class="number">1</span>) <span class="keyword">return</span> x;</div><div class="line">    <span class="keyword">if</span> (x==<span class="number">4</span>) <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">    ll p=x;</div><div class="line">    <span class="keyword">while</span> (p==x||p==<span class="number">1</span>)&#123;</div><div class="line">        ran=rand()+<span class="number">19980929</span>; ran%=x;</div><div class="line">        p=Prho(x);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> max(work(p),work(x/p));</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> T;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</div><div class="line">    <span class="keyword">while</span> (T--)&#123;</div><div class="line">        x=read();</div><div class="line">        <span class="keyword">if</span> (x==<span class="number">1</span>) <span class="built_in">puts</span>(<span class="string">"1"</span>); </div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (MR(x)==<span class="number">1</span>) <span class="built_in">puts</span>(<span class="string">"Prime"</span>);</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            ans=work(x);</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>data</strong><br><a href="http://pan.baidu.com/s/1o6064WU" target="_blank" rel="external">http://pan.baidu.com/s/1o6064WU</a></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/数论/">#数论</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+    <div class="comments">
+        
+<div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+    </div>
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    实力弱渣的blog。。我一定要写出如cmg君小熊日历般精彩的故事。。 <s>Winner Winner, chicken dinner.</s>Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2017/08/16/coming-back/">Coming-Back</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2017/08/16/hello-world/">Hello World</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/02/05/3/">数学中从来不缺有意思的东西</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/10/01/number-theory3/">初等数论（三）</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Math/">Math</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/随记/">随记</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/OI/">OI</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/OI/数论/">数论</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/fractal128">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:qjc98@foxmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'fractal128';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
