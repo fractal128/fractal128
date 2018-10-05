@@ -31,95 +31,44 @@
 	</header>
 
 	<main>
-		
+		<h1>Archive</h1>
 
-<h1>#发散级数</h1>
+
 
 
 
 <ul class="archive">
-		<li class="archive__year archive__expendable archive__expendable_disabled">
+	
+	
+		<li class="archive__year archive__expendable ">
+			<span>2016</span>
 			<ul>
-			
 				
-					
-					
-						<li class="archive__entry"><a href="/2016/02/05/3/">数学中从来不缺有意思的东西</a></li>
-					
+					<li class="archive__month archive__expendable">
+						<span>January</span>
+						<ul>
+							
+								<li class="archive__entry"><a href="/2016/01/08/happy-birthday-to-patina/">1月8日:Patina27 de 诞生</a></li>
+							
+						</ul>
+					</li>
 
 				
-			
-				
-			
-				
-			
-				
-			
-				
-			
-				
-			
-				
-					
-					
-
-				
-			
-				
-					
-					
-
-				
-			
-				
-					
-					
-
-				
-			
-				
-					
-					
-
-				
-					
-					
-
-				
-			
-				
-					
-					
-
-				
-			
-				
-					
-					
-
-				
-			
-				
-					
-					
-
-				
-			
-				
-					
-					
-
-				
-			
-				
-					
-					
-
-				
-			
 			</ul>
 		</li>
+		
+	
 </ul>
+
+<script>
+	const expandables = document.querySelectorAll('.archive__expendable')
+	for(let i = 0; i < expandables.length; i++) {
+		expandables[i].addEventListener('click', (e) => {
+			e.stopPropagation()
+			expandables[i].classList.toggle('archive__expendable_collapsed')
+		})
+	}
+</script>
 
 	</main>
 
