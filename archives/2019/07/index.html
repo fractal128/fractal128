@@ -31,111 +31,44 @@
 	</header>
 
 	<main>
-		
+		<h1>Archive</h1>
 
-<h1>#东野圭吾</h1>
+
 
 
 
 <ul class="archive">
-		<li class="archive__year archive__expendable archive__expendable_disabled">
+	
+	
+		<li class="archive__year archive__expendable ">
+			<span>2019</span>
 			<ul>
-			
 				
-					
-					
+					<li class="archive__month archive__expendable">
+						<span>July</span>
+						<ul>
+							
+								<li class="archive__entry"><a href="/2019/07/19/ACM/">我也曾经是ACM选手</a></li>
+							
+						</ul>
+					</li>
 
 				
-			
-				
-					
-					
-
-				
-			
-				
-			
-				
-			
-				
-			
-				
-			
-				
-					
-					
-
-				
-			
-				
-					
-					
-
-				
-			
-				
-					
-					
-
-				
-			
-				
-			
-				
-					
-					
-
-				
-					
-					
-
-				
-			
-				
-			
-				
-					
-					
-
-				
-			
-				
-					
-					
-
-				
-			
-				
-			
-				
-					
-					
-
-				
-			
-				
-					
-					
-
-				
-			
-				
-					
-					
-						<li class="archive__entry"><a href="/2015/08/17/读东野圭吾《解忧杂货店》的感受/">读东野圭吾《解忧杂货店》的感受</a></li>
-					
-
-				
-			
-				
-					
-					
-
-				
-			
 			</ul>
 		</li>
+		
+	
 </ul>
+
+<script>
+	const expandables = document.querySelectorAll('.archive__expendable')
+	for(let i = 0; i < expandables.length; i++) {
+		expandables[i].addEventListener('click', (e) => {
+			e.stopPropagation()
+			expandables[i].classList.toggle('archive__expendable_collapsed')
+		})
+	}
+</script>
 
 	</main>
 
